@@ -53,10 +53,6 @@ This will create a new private repository on your GitHub account.
 ```
 git clone git@github.com:your-username/VirtualWorkspaceMicroserviceCluster.git
 ```
-7. In the submodule adding step, use the SSH URL for the submodule as well:
-```
-git submodule add git@github.com:your-username/private-repo.git modules/private-repo
-```
 >By following these steps, you'll be able to set up SSH, create the remote repository, and perform all the setup from the terminal.
 
 ## Setup Project Folder Structure
@@ -193,6 +189,33 @@ git push --tags
 
 >Now, you have combined your private repos into the "Virtual Workspace Microservice Cluster" repository, organized as modules with dummy commits for all GitFlow branches, and added a README.md file with setup instructions.
 
+## Setup Submodules
+
+### Adding submodules
+* Research modules for testing go in research-microservices as a feature
+  >Use the SSH URL for the submodule
+  ```
+  git submodule add git@github.com:your-username/microservice-private-repo.git research-microservers/research-microservices-private-repo
+  ```
+* Live modules go into microservices as a feature
+  ```
+  git submodule add git@github.com:your-username/microservice-private-repo.git microservers/microservices-private-repo
+  ```
+
+### Update submodules
+  * Update all submodules to fetch the latest changes:
+  ```
+  git submodule update --init --recursive
+  ```
+###  Commit the submodule:
+```
+git add .gitmodules research-microservers/research-microservices-private-repo
+git commit -m "Add research-microservices-private-repo as submodule"
+```
+```
+git add .gitmodules microservers/microservice-microservice
+git commit -m "Add microservices-private-repo as submodule"
+```
 
 ## Cloud Setup
 > To set up a Docker container for your project and automate deployment to Azure and GitHub, follow these steps:
@@ -309,4 +332,4 @@ Please follow the GitFlow workflow when making contributions to this repository.
 
 This project is built using open-source components and is NOT open source itself. This software is the property of the author, and any copying, distribution, or modification without the explicit written consent of the author is strictly prohibited. For any inquiries or requests for permission, please contact the author at wesleythomas360@gmail.com.
 
-This README file provides step-by-step instructions for setting up and working with the "Virtual Workspace Microservice Cluster" repository, organized using the GitFlow workflow.
+This `README` file provides step-by-step instructions for setting up and working with the "Virtual Workspace Microservice Cluster" repository, organized using the GitFlow workflow.

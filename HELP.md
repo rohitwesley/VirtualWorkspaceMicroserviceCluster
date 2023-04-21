@@ -117,3 +117,23 @@ git checkout -b feature/dummy-feature d123456
 Replace `d123456` with the actual commit hash you found in step 1.
 
 Now, you have successfully recovered the deleted branch, and it is pointing to the last commit before the deletion. If you made any changes to the branch after the last commit, those changes may be lost, and you'll need to reapply them manually.
+
+# Enable Long Path on Windows
+It seems you are encountering an issue with the maximum filename length on Windows. Git on Windows has a limit of 260 characters for file paths, and some files in the repository you are trying to clone as a submodule have paths longer than that.
+
+To resolve this issue, you can try the following steps:
+
+1. Enable long paths on Windows:
+* Press `Win` + `R` to open the Run dialog.
+* Type `gpedit.msc` and press Enter to open the Local Group Policy Editor.
+* Navigate to `Local Computer Policy > Computer Configuration > Administrative Templates > System > Filesystem`.
+* Find the `Enable Win32 long paths` setting, double-click on it, and set it to `Enabled`.
+* Click `Apply` and then `OK`.
+* Restart your computer for the changes to take effect.
+2. Configure Git to allow long paths:
+* Open the Git Bash or Command Prompt.
+* Run the following command:
+```
+git config --global core.longpaths true
+```
+After completing these steps, try adding the submodule again. If you still encounter issues, consider moving your project to a shorter directory path to further reduce the total path length of the files.
