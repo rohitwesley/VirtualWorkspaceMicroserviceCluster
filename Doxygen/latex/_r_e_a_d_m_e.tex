@@ -1,0 +1,231 @@
+This repository combines multiple private microservice repositories as submodules, organized under the Git\+Flow workflow. The repository also includes Doxygen-\/generated documentation for each microservice, as well as additional resources and tools to help manage and maintain the project. Follow the steps below to set up the project and access its features.\hypertarget{_r_e_a_d_m_e_toc}{}\doxysection{Table of Contents}\label{_r_e_a_d_m_e_toc}
+
+\begin{DoxyEnumerate}
+\item \mbox{\hyperlink{_r_e_a_d_m_e_setting-up-ssh-for-the-microservers}{Setting up SSH for the microservers}}
+\item \mbox{\hyperlink{_r_e_a_d_m_e_project-folder-structure}{Project Folder Structure}}
+\item \mbox{\hyperlink{_r_e_a_d_m_e_working-with-gitflow-branches}{Working with Git\+Flow branches}}
+\item \mbox{\hyperlink{_r_e_a_d_m_e_setting-up-submodules}{Setting up submodules}}
+\item \mbox{\hyperlink{_r_e_a_d_m_e_cloud-setup}{Cloud Setup}}
+\item \mbox{\hyperlink{_r_e_a_d_m_e_doxygen-documentation}{Doxygen Documentation}}
+\item \mbox{\hyperlink{_r_e_a_d_m_e_contributing}{Contributing}}
+\item \mbox{\hyperlink{_r_e_a_d_m_e_license}{License}}
+\end{DoxyEnumerate}\hypertarget{_r_e_a_d_m_e_setting-up-ssh-for-the-microservers}{}\doxysection{Setting up SSH for the microservers}\label{_r_e_a_d_m_e_setting-up-ssh-for-the-microservers}
+...\hypertarget{_r_e_a_d_m_e_project-folder-structure}{}\doxysection{Project Folder Structure}\label{_r_e_a_d_m_e_project-folder-structure}
+...\hypertarget{_r_e_a_d_m_e_working-with-gitflow-branches}{}\doxysection{Working with Git\+Flow branches}\label{_r_e_a_d_m_e_working-with-gitflow-branches}
+...\hypertarget{_r_e_a_d_m_e_setting-up-submodules}{}\doxysection{Setting up submodules}\label{_r_e_a_d_m_e_setting-up-submodules}
+...\hypertarget{_r_e_a_d_m_e_cloud-setup}{}\doxysection{Cloud Setup}\label{_r_e_a_d_m_e_cloud-setup}
+...\hypertarget{_r_e_a_d_m_e_doxygen-documentation}{}\doxysection{Doxygen Documentation}\label{_r_e_a_d_m_e_doxygen-documentation}
+Each microservice has its own Doxygen-\/generated documentation. To generate and access the documentation, see the \mbox{[}HELP\+\_\+\+Doc\mbox{]}(HELP\+\_\+\+Doc) file.\hypertarget{_r_e_a_d_m_e_further-resources}{}\doxysection{Further Resources}\label{_r_e_a_d_m_e_further-resources}
+
+\begin{DoxyItemize}
+\item \href{./HELP_Doc}{\texttt{ HELP\+\_\+\+Doc}}\+: Detailed guidelines for project documentation.
+\item \href{./HELP_ProjMang}{\texttt{ HELP\+\_\+\+Proj\+Mang}}\+: A guide to project management practices within the repository.
+\end{DoxyItemize}\hypertarget{_r_e_a_d_m_e_contributing}{}\doxysection{Contributing}\label{_r_e_a_d_m_e_contributing}
+Please see the CONTRIBUTING file for guidelines on how to contribute to the project. Please follow the Git\+Flow workflow when making contributions to this repository.\hypertarget{_r_e_a_d_m_e_license}{}\doxysection{License}\label{_r_e_a_d_m_e_license}
+\char`\"{}\+This project is built using open-\/source components and is NOT open source itself. This software is the property of the author, and any copying, distribution, or modification without the explicit written consent of the author is strictly prohibited. For any inquiries or requests for permission, please contact the author at wesleythomas360@gmail.\+com.\char`\"{}
+
+This project is licensed under the MIT License. See the \mbox{[}LICENSE\mbox{]}(LICENSE) file for details.
+
+This {\ttfamily README} file provides step-\/by-\/step instructions for setting up and working with the \char`\"{}\+Virtual Workspace Microservice Cluster\char`\"{} repository, organized using the Git\+Flow workflow.
+
+$\ast$/\hypertarget{_r_e_a_d_m_e_autotoc_md0}{}\doxysection{Virtual Workspace Microservice Cluster $<$a href=\char`\"{}\textbackslash{}\+Doxygen\textbackslash{}html\textbackslash{}index.\+html\char`\"{} $>$\+Doc$<$/a$>$}\label{_r_e_a_d_m_e_autotoc_md0}
+This repository combines multiple private microservice repositories as submodules, organized under the Git\+Flow workflow. The repository also includes Doxygen-\/generated documentation for each microservice, as well as additional resources and tools to help manage and maintain the project. Follow the steps below to set up the project and access its features.
+
+\DoxyHorRuler{0}
+\hypertarget{_r_e_a_d_m_e_autotoc_md2}{}\doxysubsection{Table of Contents}\label{_r_e_a_d_m_e_autotoc_md2}
+
+\begin{DoxyEnumerate}
+\item \mbox{\hyperlink{_r_e_a_d_m_e_setting-up-ssh-for-the-microservers}{Setting up SSH for the microservers}}
+\item \mbox{\hyperlink{_r_e_a_d_m_e_project-folder-structure}{Project Folder Structure}}
+\item \mbox{\hyperlink{_r_e_a_d_m_e_working-with-gitflow-branches}{Working with Git\+Flow branches}}
+\item \mbox{\hyperlink{_r_e_a_d_m_e_setting-up-submodules}{Setting up submodules}}
+\item \mbox{\hyperlink{_r_e_a_d_m_e_cloud-setup}{Cloud Setup}}
+\item \mbox{\hyperlink{_r_e_a_d_m_e_doxygen-documentation}{Doxygen Documentation}}
+\item \mbox{\hyperlink{_r_e_a_d_m_e_contributing}{Contributing}}
+\item \mbox{\hyperlink{_r_e_a_d_m_e_license}{License}}
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+\hypertarget{_r_e_a_d_m_e_autotoc_md4}{}\doxysubsection{Setting up SSH for the microservers}\label{_r_e_a_d_m_e_autotoc_md4}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Generate an SSH key}}\+: If you haven\textquotesingle{}t already, generate an SSH key using the Ed25519 algorithm with
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ssh-\/keygen\ -\/t\ ed25519\ -\/C\ "{}your\_email@example.com"{}}
+
+\end{DoxyCode}
+ \texorpdfstring{$>$}{>}This will create a new SSH key pair using the Ed25519 algorithm. Follow the prompts to save the key pair and set a passphrase (optional). Follow the prompts to save the key pair and set a passphrase (optional).
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Add your SSH key to your Git\+Hub account}}\+:
+\end{DoxyEnumerate}
+\begin{DoxyItemize}
+\item Copy your public key (default location\+: {\ttfamily $\sim$/.ssh/id\+\_\+ed25519.\+pub}) to the clipboard\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cat\ \string~/.ssh/id\_ed25519.pub\ |\ clip}
+
+\end{DoxyCode}
+
+\item Go to \href{https://github.com/settings/keys}{\texttt{ Git\+Hub\textquotesingle{}s SSH and GPG keys settings}}.
+\item Click \char`\"{}\+New SSH key\char`\"{} and paste your public key into the \char`\"{}\+Key\char`\"{} field. Provide a title and click \char`\"{}\+Add SSH key\char`\"{}.
+\end{DoxyItemize}
+\begin{DoxyEnumerate}
+\item {\bfseries{Verify your SSH connection to Git\+Hub}}\+:
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ssh\ -\/T\ git@github.com}
+
+\end{DoxyCode}
+ You should see a message like\+: \char`\"{}\+Hi your-\/username! You\textquotesingle{}ve successfully authenticated, but Git\+Hub does not provide shell access.\char`\"{}
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Install the {\ttfamily hub} command-\/line tool}} (if you haven\textquotesingle{}t already)\+:
+\end{DoxyEnumerate}
+
+For Windows\+: download the \href{https://github.com/github/hub/releases}{\texttt{ latest release}} and add the hub executable to your system\textquotesingle{}s PATH.
+
+For mac\+OS\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{brew\ install\ hub}
+
+\end{DoxyCode}
+ For Linux (Debian/\+Ubuntu)\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo\ apt-\/get\ install\ hub}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Create the remote \char`\"{}\+Virtual Workspace Microservice Cluster\char`\"{} repository using {\ttfamily hub}}}\+:
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{hub\ create\ -\/p\ -\/d\ "{}Virtual\ Workspace\ Microservice\ Cluster"{}\ VirtualWorkspaceMicroserviceCluster}
+
+\end{DoxyCode}
+ This will create a new private repository on your Git\+Hub account.
+
+
+\begin{DoxyEnumerate}
+\item Now, follow the steps from the previous answer (starting from step 2) to port and organize your private repos into the \char`\"{}\+Virtual Workspace Microservice Cluster\char`\"{} repository. When cloning the repository, use the SSH URL\+:
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ clone\ git@github.com:your-\/username/VirtualWorkspaceMicroserviceCluster.git}
+
+\end{DoxyCode}
+ \texorpdfstring{$>$}{>}By following these steps, you\textquotesingle{}ll be able to set up SSH, create the remote repository, and perform all the setup from the terminal.
+
+\DoxyHorRuler{0}
+\hypertarget{_r_e_a_d_m_e_autotoc_md6}{}\doxysubsection{Project Folder Structure}\label{_r_e_a_d_m_e_autotoc_md6}
+The repository includes the following directories\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily Doxygen}\+: Contains the Doxyfile configuration file and the generated Doxygen documentation for the microservices.
+\item {\ttfamily microservices}\+: Contains live microservice submodules.
+\item {\ttfamily research-\/microservices}\+: Contains research microservice submodules.
+\end{DoxyItemize}
+
+In addition, the repository contains the following files\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily README}\+: This file provides an overview of the project and setup instructions.
+\item {\ttfamily HELP\+\_\+\+Doc}\+: Provides instructions on how to generate and access the Doxygen documentation.
+\item {\ttfamily HELP\+\_\+\+Proj\+Mang}\+: Offers guidance on managing the project, including working with Git\+Flow branches and submodules.
+\item {\ttfamily .env}\+: Contains environment variables for the project
+\item {\ttfamily .gitignore}\+: Lists files and directories that should not be tracked by Git.
+\item {\ttfamily Doxfile}\+: The Doxyfile configuration file used to generate Doxygen documentation for each microservice.
+\item {\ttfamily LICENSE}\+: The license file for the repository.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{_r_e_a_d_m_e_autotoc_md8}{}\doxysubsection{Project Tree}\label{_r_e_a_d_m_e_autotoc_md8}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{.}
+\DoxyCodeLine{├──\ .gitignore}
+\DoxyCodeLine{├──\ Doxfile}
+\DoxyCodeLine{├──\ Doxygen}
+\DoxyCodeLine{│\ ├──\ index.html}
+\DoxyCodeLine{│\ └──\ ...}
+\DoxyCodeLine{├──\ HELP\_Doc}
+\DoxyCodeLine{├──\ HELP\_ProjMang}
+\DoxyCodeLine{├──\ LICENSE}
+\DoxyCodeLine{├──\ microservices}
+\DoxyCodeLine{│\ ├──\ microservice-\/1}
+\DoxyCodeLine{│\ │\ ├──\ Doxyfile}
+\DoxyCodeLine{│\ │\ ├──\ LICENSE}
+\DoxyCodeLine{│\ │\ ├──\ README.md}
+\DoxyCodeLine{│\ │\ └──\ ...}
+\DoxyCodeLine{│\ ├──\ microservice-\/2}
+\DoxyCodeLine{│\ │\ ├──\ Doxyfile}
+\DoxyCodeLine{│\ │\ ├──\ LICENSE}
+\DoxyCodeLine{│\ │\ ├──\ README.md}
+\DoxyCodeLine{│\ │\ └──\ ...}
+\DoxyCodeLine{│\ └──\ ...}
+\DoxyCodeLine{├──\ README.md}
+\DoxyCodeLine{└──\ research-\/microservices}
+\DoxyCodeLine{│\ ├──\ research-\/microservice-\/1}
+\DoxyCodeLine{│\ │\ ├──\ Doxyfile}
+\DoxyCodeLine{│\ │\ ├──\ LICENSE}
+\DoxyCodeLine{│\ │\ ├──\ README.md}
+\DoxyCodeLine{│\ │\ └──\ ...}
+\DoxyCodeLine{│\ ├──\ research-\/microservice-\/2}
+\DoxyCodeLine{│\ │\ ├──\ Doxyfile}
+\DoxyCodeLine{│\ │\ ├──\ LICENSE}
+\DoxyCodeLine{│\ │\ ├──\ README.md}
+\DoxyCodeLine{│\ │\ └──\ ...}
+\DoxyCodeLine{└──\ ...}
+
+\end{DoxyCode}
+ \DoxyHorRuler{0}
+\hypertarget{_r_e_a_d_m_e_autotoc_md10}{}\doxysubsection{Working with Git\+Flow branches}\label{_r_e_a_d_m_e_autotoc_md10}
+Git\+Flow is a Git branching model that organizes the project\textquotesingle{}s branches and releases. For detailed instructions on using Git\+Flow in your project, see the \mbox{[}HELP\+\_\+\+Proj\+Mang\mbox{]}(HELP\+\_\+\+Proj\+Mang) file.
+
+\DoxyHorRuler{0}
+\hypertarget{_r_e_a_d_m_e_autotoc_md12}{}\doxysubsection{Setting up submodules}\label{_r_e_a_d_m_e_autotoc_md12}
+Submodules are used to include the microservice repositories within the main repository. To set up the submodules, see the \mbox{[}HELP\+\_\+\+Proj\+Mang\mbox{]}(HELP\+\_\+\+Proj\+Mang) file.
+
+\DoxyHorRuler{0}
+\hypertarget{_r_e_a_d_m_e_autotoc_md14}{}\doxysubsection{Cloud Setup}\label{_r_e_a_d_m_e_autotoc_md14}
+The repository is set up to work with cloud environments. To configure the cloud setup, see the Cloud Setup file.
+
+\DoxyHorRuler{0}
+\hypertarget{_r_e_a_d_m_e_autotoc_md16}{}\doxysubsection{Doxygen Documentation}\label{_r_e_a_d_m_e_autotoc_md16}
+Each microservice has its own Doxygen-\/generated documentation. To generate and access the documentation, see the \mbox{[}HELP\+\_\+\+Doc\mbox{]}(HELP\+\_\+\+Doc) file.
+
+\DoxyHorRuler{0}
+ \hypertarget{_r_e_a_d_m_e_autotoc_md18}{}\doxysubsection{Further Resources}\label{_r_e_a_d_m_e_autotoc_md18}
+
+\begin{DoxyItemize}
+\item \href{./HELP_Doc}{\texttt{ HELP\+\_\+\+Doc}}\+: Detailed guidelines for project documentation.
+\item \href{./HELP_ProjMang}{\texttt{ HELP\+\_\+\+Proj\+Mang}}\+: A guide to project management practices within the repository.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{_r_e_a_d_m_e_autotoc_md20}{}\doxysubsection{Contributing}\label{_r_e_a_d_m_e_autotoc_md20}
+Please see the CONTRIBUTING file for guidelines on how to contribute to the project. Please follow the Git\+Flow workflow when making contributions to this repository.
+
+\DoxyHorRuler{0}
+\hypertarget{_r_e_a_d_m_e_autotoc_md22}{}\doxysubsection{License}\label{_r_e_a_d_m_e_autotoc_md22}
+\char`\"{}\+This project is built using open-\/source components and is NOT open source itself. This software is the property of the author, and any copying, distribution, or modification without the explicit written consent of the author is strictly prohibited. For any inquiries or requests for permission, please contact the author at wesleythomas360@gmail.\+com.\char`\"{}
+
+This project is licensed under the MIT License. See the \mbox{[}LICENSE\mbox{]}(LICENSE) file for details.
+
+This {\ttfamily README} file provides step-\/by-\/step instructions for setting up and working with the \char`\"{}\+Virtual Workspace Microservice Cluster\char`\"{} repository, organized using the Git\+Flow workflow.
+
+\DoxyHorRuler{0}
+ \mbox{[}END\mbox{]} 

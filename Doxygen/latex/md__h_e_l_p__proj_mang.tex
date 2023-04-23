@@ -1,0 +1,381 @@
+This repository contains a collection of microservices that make up the Virtual Workspace Microservice Cluster. The project is organized as a set of submodules, each representing a microservice within the cluster.
+
+The repository uses the Git\+Flow branching model to manage the development process. In this document, you will find instructions on how to clone the repository, set up the project folder structure, work with Git\+Flow branches, and add Doxygen comments.\hypertarget{md__h_e_l_p__proj_mang_autotoc_md31}{}\doxysection{Prerequisites}\label{md__h_e_l_p__proj_mang_autotoc_md31}
+
+\begin{DoxyItemize}
+\item Git
+\item Doxygen (optional, for generating documentation)
+\end{DoxyItemize}\hypertarget{md__h_e_l_p__proj_mang_autotoc_md32}{}\doxysection{Setup Project Folder Structure}\label{md__h_e_l_p__proj_mang_autotoc_md32}
+
+\begin{DoxyEnumerate}
+\item Clone the repository using the SSH URL\+:
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ clone\ git@github.com:your-\/username/VirtualWorkspaceMicroserviceCluster.git}
+\DoxyCodeLine{cd\ VirtualWorkspaceMicroserviceCluster}
+
+\end{DoxyCode}
+ or 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{md\ VirtualWorkspaceMicroserviceCluster}
+\DoxyCodeLine{cd\ VirtualWorkspaceMicroserviceCluster}
+\DoxyCodeLine{git\ init}
+
+\end{DoxyCode}
+ \hypertarget{md__h_e_l_p__proj_mang_autotoc_md33}{}\doxysubsection{2. Initialize Git\+Flow}\label{md__h_e_l_p__proj_mang_autotoc_md33}
+Run the following command to initialize Git\+Flow in the repository\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ flow\ init\ -\/d}
+
+\end{DoxyCode}
+ \hypertarget{md__h_e_l_p__proj_mang_autotoc_md34}{}\doxysubsection{3. Update submodules}\label{md__h_e_l_p__proj_mang_autotoc_md34}
+Update all submodules to fetch the latest changes\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ submodule\ update\ -\/-\/init\ -\/-\/recursive}
+
+\end{DoxyCode}
+ \hypertarget{md__h_e_l_p__proj_mang_autotoc_md35}{}\doxysubsection{4. Working with Git\+Flow branches}\label{md__h_e_l_p__proj_mang_autotoc_md35}
+The repository is organized using the Git\+Flow workflow. The main branches are master and develop. Use feature, release, and hotfix branches as needed.
+
+{\bfseries{4.\+1. Feature branches}}
+
+To work on a new feature, create a feature branch\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ flow\ feature\ start\ my-\/feature}
+
+\end{DoxyCode}
+ Once the feature is complete, finish the feature branch\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ flow\ feature\ finish\ my-\/feature}
+
+\end{DoxyCode}
+ {\bfseries{4.\+2. Release branches}}
+
+To prepare a new release, create a release branch\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ flow\ release\ start\ my-\/release}
+
+\end{DoxyCode}
+ After the release is ready, finish the release branch\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ flow\ release\ finish\ my-\/release}
+
+\end{DoxyCode}
+
+
+{\bfseries{4.\+3. Hotfix branches}}
+
+To apply a hotfix, create a hotfix branch\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ flow\ hotfix\ start\ my-\/hotfix}
+
+\end{DoxyCode}
+ Once the hotfix is complete, finish the hotfix branch\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ flow\ hotfix\ finish\ my-\/hotfix}
+
+\end{DoxyCode}
+ \hypertarget{md__h_e_l_p__proj_mang_autotoc_md36}{}\doxysubsection{5. Create dummy commits for all Git\+Flow branches\+:}\label{md__h_e_l_p__proj_mang_autotoc_md36}
+\texorpdfstring{$>$}{>}In {\bfseries{Windows}}, you can create an empty file using the {\ttfamily type nul \texorpdfstring{$>$}{>}} command. This is equivalent to the {\ttfamily touch} command in Unix-\/based systems. To create an empty file called {\ttfamily example.\+txt}, open the Command Prompt and run\+: \texorpdfstring{$>$}{>}\`{}\`{}\`{} \texorpdfstring{$>$}{>}type nul \texorpdfstring{$>$}{>} example.\+txt \texorpdfstring{$>$}{>}\`{}\`{}\`{} \texorpdfstring{$>$}{>}If the file already exists, this command will not modify the file\textquotesingle{}s contents or update its timestamp. If the file does not exist, it will be created as an empty file. \begin{quote}
+ \end{quote}
+\texorpdfstring{$>$}{>}Alternatively, you can use Power\+Shell to create an empty file with the {\ttfamily New-\/\+Item} command\+: \texorpdfstring{$>$}{>}\`{}\`{}\`{} \texorpdfstring{$>$}{>}New-\/\+Item -\/Item\+Type File -\/Path example.\+txt -\/Force \texorpdfstring{$>$}{>}\`{}\`{}{\ttfamily  \texorpdfstring{$>$}{>}This command will create an empty}example.\+txt{\ttfamily file or overwrite the existing file if it exists. Remove the}-\/Force\`{} flag if you want to keep the existing file unchanged. \begin{quote}
+ \end{quote}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#\ Develop\ branch}
+\DoxyCodeLine{git\ checkout\ develop}
+\DoxyCodeLine{touch\ dummy\_develop.txt}
+\DoxyCodeLine{git\ add\ dummy\_develop.txt}
+\DoxyCodeLine{git\ commit\ -\/m\ "{}Dummy\ commit\ for\ develop\ branch"{}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#\ Feature\ branch}
+\DoxyCodeLine{git\ checkout\ -\/b\ feature/dummy-\/feature\ develop}
+\DoxyCodeLine{touch\ dummy\_feature.txt}
+\DoxyCodeLine{git\ add\ dummy\_feature.txt}
+\DoxyCodeLine{git\ commit\ -\/m\ "{}Dummy\ commit\ for\ feature\ branch"{}}
+\DoxyCodeLine{git\ checkout\ develop}
+\DoxyCodeLine{git\ merge\ -\/-\/no-\/ff\ feature/dummy-\/feature}
+\DoxyCodeLine{\#\ To\ Delete\ the\ feature\ branch}
+\DoxyCodeLine{git\ branch\ -\/d\ feature/dummy-\/feature}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#\ Release\ branch}
+\DoxyCodeLine{git\ checkout\ -\/b\ release/dummy-\/release\ develop}
+\DoxyCodeLine{touch\ dummy\_release.txt}
+\DoxyCodeLine{git\ add\ dummy\_release.txt}
+\DoxyCodeLine{git\ commit\ -\/m\ "{}Dummy\ commit\ for\ release\ branch"{}}
+\DoxyCodeLine{git\ checkout\ master}
+\DoxyCodeLine{git\ merge\ -\/-\/no-\/ff\ release/dummy-\/release}
+\DoxyCodeLine{git\ tag\ -\/a\ dummy-\/release}
+\DoxyCodeLine{\#\ To\ Delete\ the\ feature\ branch}
+\DoxyCodeLine{git\ branch\ -\/d\ release/dummy-\/release}
+\DoxyCodeLine{git\ push\ origin\ master}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#\ Hotfix\ branch}
+\DoxyCodeLine{git\ checkout\ -\/b\ hotfix/dummy-\/hotfix\ master}
+\DoxyCodeLine{touch\ dummy\_hotfix.txt}
+\DoxyCodeLine{git\ add\ dummy\_hotfix.txt}
+\DoxyCodeLine{git\ commit\ -\/m\ "{}Dummy\ commit\ for\ hotfix\ branch"{}}
+\DoxyCodeLine{git\ checkout\ master}
+\DoxyCodeLine{git\ merge\ -\/-\/no-\/ff\ hotfix/dummy-\/hotfix}
+\DoxyCodeLine{git\ tag\ -\/a\ dummy-\/hotfix}
+\DoxyCodeLine{git\ checkout\ develop}
+\DoxyCodeLine{git\ merge\ -\/-\/no-\/ff\ hotfix/dummy-\/hotfix}
+\DoxyCodeLine{git\ branch\ -\/d\ hotfix/dummy-\/hotfix}
+
+\end{DoxyCode}
+ \hypertarget{md__h_e_l_p__proj_mang_autotoc_md37}{}\doxysubsection{6. Create a README.\+md file to explain the setup\+:}\label{md__h_e_l_p__proj_mang_autotoc_md37}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{touch\ README.md}
+
+\end{DoxyCode}
+ Edit the \mbox{\hyperlink{_r_e_a_d_m_e_8md}{README.\+md}} file to provide information about the \char`\"{}\+Virtual Workspace Microservice Cluster\char`\"{} repository, its modules, and how to set up and use the project. Save the file and commit it\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ add\ README.md}
+\DoxyCodeLine{git\ commit\ -\/m\ "{}Add\ README.md\ with\ setup\ instructions"{}}
+
+\end{DoxyCode}
+ \hypertarget{md__h_e_l_p__proj_mang_autotoc_md38}{}\doxysubsection{7. Push the changes to the remote repository\+:}\label{md__h_e_l_p__proj_mang_autotoc_md38}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ push\ -\/-\/all}
+\DoxyCodeLine{git\ push\ -\/-\/tags}
+
+\end{DoxyCode}
+
+
+\texorpdfstring{$>$}{>}Now, you have combined your private repos into the \char`\"{}\+Virtual Workspace Microservice Cluster\char`\"{} repository, organized as modules with dummy commits for all Git\+Flow branches, and added a \mbox{\hyperlink{_r_e_a_d_m_e_8md}{README.\+md}} file with setup instructions.\hypertarget{md__h_e_l_p__proj_mang_autotoc_md39}{}\doxysection{Working with Git\+Flow branches}\label{md__h_e_l_p__proj_mang_autotoc_md39}
+\hypertarget{md__h_e_l_p__proj_mang_autotoc_md40}{}\doxysubsection{Adding submodules}\label{md__h_e_l_p__proj_mang_autotoc_md40}
+
+\begin{DoxyItemize}
+\item Research modules for testing go in research-\/microservices as a feature \texorpdfstring{$>$}{>}Use the SSH URL for the submodule 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ submodule\ add\ git@github.com:your-\/username/microservice-\/private-\/repo.git\ research-\/microservers/research-\/microservices-\/private-\/repo}
+
+\end{DoxyCode}
+
+\item Live modules go into microservices as a feature 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ submodule\ add\ git@github.com:your-\/username/microservice-\/private-\/repo.git\ microservers/microservices-\/private-\/repo}
+
+\end{DoxyCode}
+ 
+\end{DoxyItemize}\hypertarget{md__h_e_l_p__proj_mang_autotoc_md41}{}\doxysubsection{Update submodules}\label{md__h_e_l_p__proj_mang_autotoc_md41}
+
+\begin{DoxyItemize}
+\item Update all submodules to fetch the latest changes\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ submodule\ update\ -\/-\/init\ -\/-\/recursive}
+
+\end{DoxyCode}
+ 
+\end{DoxyItemize}\hypertarget{md__h_e_l_p__proj_mang_autotoc_md42}{}\doxysubsection{Commit the submodule\+:}\label{md__h_e_l_p__proj_mang_autotoc_md42}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ add\ `.gitmodules`\ research-\/microservers/research-\/microservices-\/private-\/repo}
+\DoxyCodeLine{git\ commit\ -\/m\ "{}Add\ research-\/microservices-\/private-\/repo\ as\ submodule"{}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ add\ `.gitmodules`\ microservers/microservice-\/microservice}
+\DoxyCodeLine{git\ commit\ -\/m\ "{}Add\ microservices-\/private-\/repo\ as\ submodule"{}}
+
+\end{DoxyCode}
+ \hypertarget{md__h_e_l_p__proj_mang_autotoc_md43}{}\doxysubsection{Delete submodule\+:}\label{md__h_e_l_p__proj_mang_autotoc_md43}
+To delete a Git submodule, follow these steps\+: \begin{quote}
+ \end{quote}
+1. Remove the submodule entry from the {\ttfamily .gitmodules} file\+: \begin{quote}
+ \end{quote}
+\texorpdfstring{$>$}{>}Open the {\ttfamily .gitmodules} file in your project\textquotesingle{}s root directory and remove the section corresponding to the submodule you want to delete. The section should look like this\+: \texorpdfstring{$>$}{>}\`{}\`{}\`{} \texorpdfstring{$>$}{>}\mbox{[}submodule \char`\"{}submodule\+\_\+name\char`\"{}\mbox{]} \begin{quote}
+ path = path/to/submodule url = \href{https://github.com/user/repo.git}{\texttt{ https\+://github.\+com/user/repo.\+git}} \end{quote}
+\texorpdfstring{$>$}{>}\`{}\`{}\`{} \texorpdfstring{$>$}{>}Save and close the file after removing the section. \begin{quote}
+ \end{quote}
+2. Remove the submodule entry from the {\ttfamily .git/config} file\+: \begin{quote}
+ \end{quote}
+\texorpdfstring{$>$}{>}Open the {\ttfamily .git/config} file in your project\textquotesingle{}s root directory and remove the corresponding submodule section, which should look like this\+: \texorpdfstring{$>$}{>}\`{}\`{}\`{} \texorpdfstring{$>$}{>}\mbox{[}submodule \char`\"{}submodule\+\_\+name\char`\"{}\mbox{]} \begin{quote}
+ url = \href{https://github.com/user/repo.git}{\texttt{ https\+://github.\+com/user/repo.\+git}} \end{quote}
+\texorpdfstring{$>$}{>}\`{}\`{}\`{} \texorpdfstring{$>$}{>}Save and close the file after removing the section. \begin{quote}
+ \end{quote}
+3. Stage the changes\+:
+
+\texorpdfstring{$>$}{>}In your terminal, run the following command to stage the changes to the {\ttfamily .gitmodules} file\+: \texorpdfstring{$>$}{>}\`{}\`{}{\ttfamily  \texorpdfstring{$>$}{>}git add}.gitmodules{\ttfamily  \texorpdfstring{$>$}{>}}\`{}\`{}
+\begin{DoxyEnumerate}
+\item Remove the submodule files from the Git index\+: \begin{quote}
+ \end{quote}
+\texorpdfstring{$>$}{>}Run the following command to remove the submodule files from the Git index\+: \texorpdfstring{$>$}{>}\`{}\`{}\`{} \texorpdfstring{$>$}{>}git rm --cached path/to/submodule \texorpdfstring{$>$}{>}\`{}\`{}{\ttfamily  \texorpdfstring{$>$}{>}Replace}path/to/submodule\`{} with the actual path to the submodule directory. \begin{quote}
+ \end{quote}
+5. Commit the changes\+:
+\end{DoxyEnumerate}
+
+\texorpdfstring{$>$}{>}Run the following commands to commit the changes\+: \texorpdfstring{$>$}{>}\`{}\`{}\`{} \texorpdfstring{$>$}{>}git commit -\/m \char`\"{}\+Removed submodule\char`\"{} \texorpdfstring{$>$}{>}\`{}\`{}\`{}
+\begin{DoxyEnumerate}
+\item Delete the submodule directory\+: \begin{quote}
+ \end{quote}
+\texorpdfstring{$>$}{>}Finally, delete the submodule directory using your file manager or a command\+: \begin{quote}
+ \end{quote}
+\texorpdfstring{$>$}{>}For Windows\+: \texorpdfstring{$>$}{>}\`{}\`{}\`{} \texorpdfstring{$>$}{>}rmdir /s /q path\textbackslash{}to\textbackslash{}submodule \texorpdfstring{$>$}{>}\`{}\`{}\`{} \texorpdfstring{$>$}{>}For mac\+OS and Linux\+: \texorpdfstring{$>$}{>}\`{}\`{}\`{} \texorpdfstring{$>$}{>}rm -\/rf path/to/submodule \texorpdfstring{$>$}{>}\`{}\`{}{\ttfamily  \texorpdfstring{$>$}{>}Replace}path/to/submodule\`{} with the actual path to the submodule directory.
+\end{DoxyEnumerate}
+
+After completing these steps, the submodule should be completely removed from your Git repository.
+
+\DoxyHorRuler{0}
+\hypertarget{md__h_e_l_p__proj_mang_autotoc_md45}{}\doxysection{Project $<$tt$>$.\+gitignore$<$/tt$>$}\label{md__h_e_l_p__proj_mang_autotoc_md45}
+A {\ttfamily .gitignore} file specifies intentionally untracked files that Git should ignore. It helps prevent accidentally committing unnecessary files to the repository. Here\textquotesingle{}s a basic {\ttfamily .gitignore} file that you can use for your \char`\"{}\+Visual Workspace Microserver Cluster\char`\"{} project. It includes common files and directories that are often ignored in software projects\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#\ .gitignore}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ Ignore\ system\ files}
+\DoxyCodeLine{.DS\_Store}
+\DoxyCodeLine{Thumbs.db}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ Ignore\ files\ related\ to\ code\ editors\ and\ IDEs}
+\DoxyCodeLine{.vscode/}
+\DoxyCodeLine{.idea/}
+\DoxyCodeLine{*.iml}
+\DoxyCodeLine{*.swp}
+\DoxyCodeLine{*.swo}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ Ignore\ compiled\ files\ and\ build\ artifacts}
+\DoxyCodeLine{*.o}
+\DoxyCodeLine{*.lo}
+\DoxyCodeLine{*.la}
+\DoxyCodeLine{*.so}
+\DoxyCodeLine{*.dylib}
+\DoxyCodeLine{*.dll}
+\DoxyCodeLine{*.exe}
+\DoxyCodeLine{*.out}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ Ignore\ log\ files}
+\DoxyCodeLine{*.log}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ Ignore\ temporary\ files}
+\DoxyCodeLine{*.tmp}
+\DoxyCodeLine{*.temp}
+\DoxyCodeLine{*.bak}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ Ignore\ Node.js\ dependencies}
+\DoxyCodeLine{node\_modules/}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ Ignore\ Python\ build\ and\ cache\ files}
+\DoxyCodeLine{\_\_pycache\_\_/}
+\DoxyCodeLine{*.pyc}
+\DoxyCodeLine{*.pyo}
+\DoxyCodeLine{*.egg-\/info/}
+\DoxyCodeLine{dist/}
+\DoxyCodeLine{build/}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ Ignore\ Ruby\ gems}
+\DoxyCodeLine{*.gem}
+\DoxyCodeLine{*.rbc}
+\DoxyCodeLine{/.config}
+\DoxyCodeLine{/coverage/}
+\DoxyCodeLine{/InstalledFiles}
+\DoxyCodeLine{/pkg/}
+\DoxyCodeLine{/spec/reports/}
+\DoxyCodeLine{/spec/examples.txt}
+\DoxyCodeLine{/test/tmp/}
+\DoxyCodeLine{/tmp/}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ Ignore\ Java\ build\ files}
+\DoxyCodeLine{*.class}
+\DoxyCodeLine{*.jar}
+\DoxyCodeLine{*.war}
+\DoxyCodeLine{*.ear}
+\DoxyCodeLine{*.zip}
+\DoxyCodeLine{*.tar.gz}
+\DoxyCodeLine{*.rar}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ Ignore\ generated\ files\ and\ directories}
+\DoxyCodeLine{bin/}
+\DoxyCodeLine{gen/}
+\DoxyCodeLine{out/}
+
+\end{DoxyCode}
+ \texorpdfstring{$>$}{>}Create a file named {\ttfamily .gitignore} in the root directory of your repository and paste the contents above into the file. This will help prevent unnecessary files from being tracked by Git. You can customize this file to fit the specific needs of your project and its components.
+
+\DoxyHorRuler{0}
+\hypertarget{md__h_e_l_p__proj_mang_autotoc_md47}{}\doxysection{Project tags}\label{md__h_e_l_p__proj_mang_autotoc_md47}
+When you execute the command {\ttfamily git tag -\/a dummy-\/release}, Git will open your default text editor, which in your case is Vim, to input the tag message (similar to a commit message).
+
+In Vim, follow these steps to add a tag message and save the changes\+:
+
+
+\begin{DoxyEnumerate}
+\item Press {\ttfamily i} to enter insert mode. This allows you to edit the file and input your tag message.
+\item Type your tag message, such as \char`\"{}\+Dummy release for Git\+Flow setup.\char`\"{}
+\item Press the {\ttfamily Esc} key to exit insert mode.
+\item To save the changes and exit Vim, type {\ttfamily \+:wq} and press Enter. The colon \+: enters command-\/line mode in Vim, {\ttfamily w} stands for \char`\"{}write\char`\"{} (save), and q stands for \char`\"{}quit\char`\"{} (exit).
+\end{DoxyEnumerate}
+
+If you want to discard your changes and exit without saving, type {\ttfamily \+:q!} and press {\ttfamily Enter}.
+
+Now, your {\ttfamily dummy-\/release} tag will be created with the specified message. To view the tag message, run {\ttfamily git show dummy-\/release}.\hypertarget{md__h_e_l_p__proj_mang_autotoc_md48}{}\doxysection{Recover Deleted Branch\+:}\label{md__h_e_l_p__proj_mang_autotoc_md48}
+If you accidentally deleted a branch using {\ttfamily git branch -\/d feature/dummy-\/feature} or {\ttfamily git branch -\/D feature/dummy-\/feature}, you can undo the deletion by finding the last commit on the deleted branch and creating a new branch pointing to that commit.
+
+Follow these steps to recover the deleted branch\+:
+
+
+\begin{DoxyEnumerate}
+\item Find the last commit on the deleted branch using the git reflog command\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ reflog}
+
+\end{DoxyCode}
+ Look for an entry in the reflog that refers to the deleted branch, for example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{d123456\ HEAD@\{1\}:\ checkout:\ moving\ from\ feature/dummy-\/feature\ to\ main}
+
+\end{DoxyCode}
+ In this case, {\ttfamily d123456} is the commit hash of the last commit on the deleted branch.
+\item Create a new branch pointing to the last commit on the deleted branch\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ checkout\ -\/b\ feature/dummy-\/feature\ d123456}
+
+\end{DoxyCode}
+ Replace {\ttfamily d123456} with the actual commit hash you found in step 1.
+\end{DoxyEnumerate}
+
+Now, you have successfully recovered the deleted branch, and it is pointing to the last commit before the deletion. If you made any changes to the branch after the last commit, those changes may be lost, and you\textquotesingle{}ll need to reapply them manually.\hypertarget{md__h_e_l_p__proj_mang_autotoc_md49}{}\doxysection{Enable Long Path on Windows}\label{md__h_e_l_p__proj_mang_autotoc_md49}
+It seems you are encountering an issue with the maximum filename length on Windows. Git on Windows has a limit of 260 characters for file paths, and some files in the repository you are trying to clone as a submodule have paths longer than that.
+
+To resolve this issue, you can try the following steps\+:
+
+
+\begin{DoxyEnumerate}
+\item Enable long paths on Windows\+:
+\end{DoxyEnumerate}
+\begin{DoxyItemize}
+\item Press {\ttfamily Win} + {\ttfamily R} to open the Run dialog.
+\item Type {\ttfamily gpedit.\+msc} and press Enter to open the Local Group Policy Editor.
+\item Navigate to {\ttfamily Local Computer Policy \texorpdfstring{$>$}{>} Computer Configuration \texorpdfstring{$>$}{>} Administrative Templates \texorpdfstring{$>$}{>} System \texorpdfstring{$>$}{>} Filesystem}.
+\item Find the {\ttfamily Enable Win32 long paths} setting, double-\/click on it, and set it to {\ttfamily Enabled}.
+\item Click {\ttfamily Apply} and then {\ttfamily OK}.
+\item Restart your computer for the changes to take effect.
+\end{DoxyItemize}
+\begin{DoxyEnumerate}
+\item Configure Git to allow long paths\+:
+\end{DoxyEnumerate}
+\begin{DoxyItemize}
+\item Open the Git Bash or Command Prompt.
+\item Run the following command\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ config\ -\/-\/global\ core.longpaths\ true}
+
+\end{DoxyCode}
+ After completing these steps, try adding the submodule again. If you still encounter issues, consider moving your project to a shorter directory path to further reduce the total path length of the files.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+ \mbox{[}END\mbox{]} 

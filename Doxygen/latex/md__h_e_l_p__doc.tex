@@ -1,0 +1,205 @@
+\hypertarget{md__h_e_l_p__doc_autotoc_md24}{}\doxysection{Doxygen for microservices\+:}\label{md__h_e_l_p__doc_autotoc_md24}
+If you\textquotesingle{}re working with a project that uses multiple languages, including Java\+Script, Python, C\#, and C++, it\textquotesingle{}s best to use a documentation generator that supports all these languages. Doxygen is a good choice as it supports all these languages out of the box.
+
+To set up Doxygen for your project, follow these steps\+:
+
+
+\begin{DoxyEnumerate}
+\item Install Doxygen\+:
+\end{DoxyEnumerate}
+
+On Windows, you can download the installer from the \href{https://www.doxygen.nl/download.html}{\texttt{ official website}}. On mac\+OS, you can use Homebrew to install it\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{brew\ install\ doxygen}
+
+\end{DoxyCode}
+ On Linux, use the package manager for your distribution\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo\ apt-\/get\ install\ doxygen\ \#\ Ubuntu/Debian}
+\DoxyCodeLine{sudo\ yum\ install\ doxygen\ \ \ \ \ \#\ CentOS/Fedora}
+
+\end{DoxyCode}
+
+\begin{DoxyEnumerate}
+\item Generate a Doxyfile\+: In your project\textquotesingle{}s root directory, run\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{doxygen\ -\/g}
+
+\end{DoxyCode}
+ This will create a configuration file called {\ttfamily Doxyfile}.
+\item Edit the {\ttfamily Doxyfile} to support your languages and project structure. For example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{PROJECT\_NAME\ \ \ \ \ \ \ \ \ \ \ =\ "{}Your\ Project\ Name"{}}
+\DoxyCodeLine{OUTPUT\_DIRECTORY\ \ \ \ \ \ \ =\ docs}
+\DoxyCodeLine{INPUT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ src}
+\DoxyCodeLine{RECURSIVE\ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ YES}
+\DoxyCodeLine{FILE\_PATTERNS\ \ \ \ \ \ \ \ \ \ =\ *.js\ *.py\ *.cs\ *.cpp\ *.h}
+\DoxyCodeLine{EXTRACT\_ALL\ \ \ \ \ \ \ \ \ \ \ \ =\ YES}
+\DoxyCodeLine{EXTRACT\_PRIVATE\ \ \ \ \ \ \ \ =\ YES}
+\DoxyCodeLine{EXTRACT\_STATIC\ \ \ \ \ \ \ \ \ =\ YES}
+\DoxyCodeLine{GENERATE\_HTML\ \ \ \ \ \ \ \ \ \ =\ YES}
+\DoxyCodeLine{GENERATE\_LATEX\ \ \ \ \ \ \ \ \ =\ YES}
+
+\end{DoxyCode}
+ Adjust the {\ttfamily INPUT}, {\ttfamily FILE\+\_\+\+PATTERNS}, and other settings as needed for your project.
+\end{DoxyEnumerate}
+
+Generate the documentation\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{doxygen\ Doxyfile}
+
+\end{DoxyCode}
+ This will generate the documentation in the specified {\ttfamily OUTPUT\+\_\+\+DIRECTORY}, in this case, the {\ttfamily docs/} directory.
+
+Doxygen supports a wide range of languages and is highly configurable, making it an excellent choice for projects with a diverse language stack.
+
+\DoxyHorRuler{0}
+\hypertarget{md__h_e_l_p__doc_autotoc_md26}{}\doxysection{Documentation for Java\+Script}\label{md__h_e_l_p__doc_autotoc_md26}
+To use Doxygen with the Type\+Script server you\textquotesingle{}ve been working on, you\textquotesingle{}ll need to follow these steps\+:
+
+
+\begin{DoxyEnumerate}
+\item Install Doxygen, as mentioned in the previous response.
+\item Generate a Doxyfile\+: In your project\textquotesingle{}s root directory, run\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{doxygen\ -\/g}
+
+\end{DoxyCode}
+ This will create a configuration file called {\ttfamily Doxyfile}.
+\item Edit the {\ttfamily Doxyfile} to support Type\+Script and your project structure. For example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{PROJECT\_NAME\ \ \ \ \ \ \ \ \ \ \ =\ "{}Your\ TypeScript\ Server"{}}
+\DoxyCodeLine{OUTPUT\_DIRECTORY\ \ \ \ \ \ \ =\ docs}
+\DoxyCodeLine{INPUT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ src}
+\DoxyCodeLine{RECURSIVE\ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ YES}
+\DoxyCodeLine{FILE\_PATTERNS\ \ \ \ \ \ \ \ \ \ =\ *.ts}
+\DoxyCodeLine{EXTRACT\_ALL\ \ \ \ \ \ \ \ \ \ \ \ =\ YES}
+\DoxyCodeLine{EXTRACT\_PRIVATE\ \ \ \ \ \ \ \ =\ YES}
+\DoxyCodeLine{EXTRACT\_STATIC\ \ \ \ \ \ \ \ \ =\ YES}
+\DoxyCodeLine{GENERATE\_HTML\ \ \ \ \ \ \ \ \ \ =\ YES}
+\DoxyCodeLine{GENERATE\_LATEX\ \ \ \ \ \ \ \ \ =\ YES}
+
+\end{DoxyCode}
+ Adjust the {\ttfamily INPUT}, {\ttfamily FILE\+\_\+\+PATTERNS}, and other settings as needed for your project.
+\item Doxygen does not support Type\+Script out of the box. You can use the {\ttfamily FILTER\+\_\+\+PATTERNS} option in the Doxyfile to convert Type\+Script files to Java\+Script before parsing. Install the Type\+Script compiler globally if you haven\textquotesingle{}t already\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{npm\ install\ -\/g\ typescript}
+
+\end{DoxyCode}
+ Then, add the following line to your Doxyfile\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{FILTER\_PATTERNS\ \ \ \ \ \ \ \ =\ "{}*.ts=tsc\ -\/-\/allowJs\ -\/-\/declaration\ -\/-\/removeComments\ -\/-\/outFile\ /dev/null"{}}
+
+\end{DoxyCode}
+ This will tell Doxygen to run the Type\+Script files through the Type\+Script compiler and remove the comments before parsing them. Note that this method does not provide full Type\+Script support, but it\textquotesingle{}s a workaround to get basic documentation for your Type\+Script files.
+\item Document your Type\+Script code using \href{https://jsdoc.app/}{\texttt{ JSDoc}} style comments. For example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{/**}
+\DoxyCodeLine{\ *\ This\ function\ adds\ two\ numbers.}
+\DoxyCodeLine{\ *\ @param\ \{number\}\ a\ -\/\ The\ first\ number.}
+\DoxyCodeLine{\ *\ @param\ \{number\}\ b\ -\/\ The\ second\ number.}
+\DoxyCodeLine{\ *\ @returns\ \{number\}\ The\ sum\ of\ a\ and\ b.}
+\DoxyCodeLine{\ */}
+\DoxyCodeLine{function\ add(a:\ number,\ b:\ number):\ number\ \{}
+\DoxyCodeLine{\ \ return\ a\ +\ b;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+\item Generate the documentation\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{doxygen\ Doxyfile}
+
+\end{DoxyCode}
+ This will generate the documentation in the specified {\ttfamily OUTPUT\+\_\+\+DIRECTORY}, in this case, the {\ttfamily docs/} directory.
+\end{DoxyEnumerate}
+
+Keep in mind that this workaround does not provide full Type\+Script support. If you want a more Type\+Script-\/focused documentation generator, consider using Type\+Doc.
+
+\DoxyHorRuler{0}
+\hypertarget{md__h_e_l_p__doc_autotoc_md28}{}\doxysection{Adding Doxygen Comments}\label{md__h_e_l_p__doc_autotoc_md28}
+To add Doxygen comments to your source code, follow the Doxygen commenting style. Here\textquotesingle{}s a brief example of how to add Doxygen comments to a C++ header file\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{/**}
+\DoxyCodeLine{\ *\ @file\ example.h}
+\DoxyCodeLine{\ *\ @brief\ This\ file\ contains\ an\ example\ class\ declaration.}
+\DoxyCodeLine{\ */}
+\DoxyCodeLine{}
+\DoxyCodeLine{/**}
+\DoxyCodeLine{\ *\ @class\ Example}
+\DoxyCodeLine{\ *\ @brief\ An\ example\ class.}
+\DoxyCodeLine{\ *}
+\DoxyCodeLine{\ *\ This\ class\ demonstrates\ how\ to\ add\ Doxygen\ comments\ to\ your\ source\ code.}
+\DoxyCodeLine{\ */}
+\DoxyCodeLine{class\ Example\ \{}
+\DoxyCodeLine{public:}
+\DoxyCodeLine{\ \ /**}
+\DoxyCodeLine{\ \ \ *\ @brief\ Default\ constructor\ for\ the\ Example\ class.}
+\DoxyCodeLine{\ \ \ */}
+\DoxyCodeLine{\ \ Example();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ /**}
+\DoxyCodeLine{\ \ \ *\ @brief\ Computes\ the\ sum\ of\ two\ integers.}
+\DoxyCodeLine{\ \ \ *\ @param\ a\ First\ integer.}
+\DoxyCodeLine{\ \ \ *\ @param\ b\ Second\ integer.}
+\DoxyCodeLine{\ \ \ *\ @return\ The\ sum\ of\ a\ and\ b.}
+\DoxyCodeLine{\ \ \ */}
+\DoxyCodeLine{\ \ int\ sum(int\ a,\ int\ b);}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+ To generate the documentation from the Doxygen comments, you\textquotesingle{}ll need to have Doxygen installed on your machine. Follow these steps to generate the documentation\+:
+
+
+\begin{DoxyEnumerate}
+\item Navigate to your project\textquotesingle{}s root directory.
+\item Create a Doxygen configuration file\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{doxygen\ -\/g\ Doxyfile}
+
+\end{DoxyCode}
+
+\item Edit the {\ttfamily Doxyfile} to set the desired options for your documentation. For example, set the {\ttfamily OUTPUT\+\_\+\+DIRECTORY} to {\ttfamily ./docs}.
+\item Run Doxygen to generate the documentation\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{doxygen\ Doxyfile}
+
+\end{DoxyCode}
+
+\item Open the generated documentation in your web browser. For example, open {\ttfamily ./docs/html/index.html}. For more information on Doxygen and its features, please refer to the \href{https://www.doxygen.nl/manual/index.html}{\texttt{ official Doxygen documentation}}.
+\end{DoxyEnumerate}\hypertarget{md__h_e_l_p__doc_autotoc_md29}{}\doxysection{Seting Up Doxygen Theme}\label{md__h_e_l_p__doc_autotoc_md29}
+To change the theme in Doxygen, you can use the HTML\+\_\+\+EXTRA\+\_\+\+STYLESHEET option. Here\textquotesingle{}s how you can update your Doxyfile to get a modern theme UI\+:
+
+
+\begin{DoxyEnumerate}
+\item First, download a modern theme CSS file for Doxygen or create your own. For example, you can download the \char`\"{}\mbox{[}\+Doxygen-\/\+Bootstrap\mbox{]}(https\+://github.\+com/\+Velron/doxygen-\/bootstrapped)\char`\"{} theme from this repository\+:
+\item Save the downloaded or created CSS file in a specific folder, e.\+g., \char`\"{}custom\+\_\+theme\char`\"{}.
+\end{DoxyEnumerate}
+
+Update your Doxyfile with the following changes\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{PROJECT\_NAME\ \ \ \ \ \ \ \ \ \ \ =\ "{}Your\ Project\ Name"{}}
+\DoxyCodeLine{OUTPUT\_DIRECTORY\ \ \ \ \ \ \ =\ docs}
+\DoxyCodeLine{INPUT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ src}
+\DoxyCodeLine{RECURSIVE\ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ YES}
+\DoxyCodeLine{FILE\_PATTERNS\ \ \ \ \ \ \ \ \ \ =\ *.js\ *.py\ *.cs\ *.cpp\ *.h}
+\DoxyCodeLine{EXTRACT\_ALL\ \ \ \ \ \ \ \ \ \ \ \ =\ YES}
+\DoxyCodeLine{EXTRACT\_PRIVATE\ \ \ \ \ \ \ \ =\ YES}
+\DoxyCodeLine{EXTRACT\_STATIC\ \ \ \ \ \ \ \ \ =\ YES}
+\DoxyCodeLine{GENERATE\_HTML\ \ \ \ \ \ \ \ \ \ =\ YES}
+\DoxyCodeLine{GENERATE\_LATEX\ \ \ \ \ \ \ \ \ =\ YES}
+\DoxyCodeLine{\#\ Add\ the\ following\ lines:}
+\DoxyCodeLine{HTML\_HEADER\ \ =\ Doxygen/custom\_theme/header.html}
+\DoxyCodeLine{HTML\_FOOTER\ \ =\ Doxygen/custom\_theme/footer.html}
+\DoxyCodeLine{HTML\_STYLESHEET\ \ =\ Doxygen/custom\_theme/customdoxygen.css}
+\DoxyCodeLine{HTML\_EXTRA\_STYLESHEET\ \ =\ Doxygen/custom\_theme/doxygen-\/bootstrapped.css}
+
+\end{DoxyCode}
+ Replace {\ttfamily Doxygen/custom\+\_\+theme/doxygen-\/bootstrapped.\+css} with the path to your downloaded or created CSS file.
+
+Now, when you generate the documentation using Doxygen, it will use the specified modern theme.
+
+\DoxyHorRuler{0}
+ \mbox{[}END\mbox{]} 
