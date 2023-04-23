@@ -1,20 +1,20 @@
-Virtual Workspace Microservice Cluster
-======================================
+# Virtual Workspace Microservice Cluster
 
-This repository contains a collection of microservices that make up the Virtual Workspace Microservice Cluster. The project is organized as a set of submodules, each representing a microservice within the cluster.
+---
 
-The repository uses the GitFlow branching model to manage the development process. In this document, you will find instructions on how to clone the repository, set up the project folder structure, work with GitFlow branches, and add Doxygen comments.
+*"This repository contains a collection of microservices that make up the Virtual Workspace Microservice Cluster. The project is organized as a set of submodules, each representing a microservice within the cluster."*
 
-Prerequisites
--------------
+*"The repository uses the GitFlow branching model to manage the development process. In this document, you will find instructions on how to clone the repository, set up the project folder structure, work with GitFlow branches, and add Doxygen comments."*
 
+---
+
+## Setup Project Folder Structure
+
+### Prerequisites
 - Git
 - Doxygen (optional, for generating documentation)
 
-Setup Project Folder Structure
--------------------------------
-
-1. Clone the repository using the SSH URL:
+### 1. Clone the repository using the SSH URL:
 
 ```sh
 git clone git@github.com:your-username/VirtualWorkspaceMicroserviceCluster.git
@@ -36,53 +36,57 @@ Update all submodules to fetch the latest changes:
 ```
 git submodule update --init --recursive
 ```
-### 4. Working with GitFlow branches
+---
+## Working with GitFlow branches
 The repository is organized using the GitFlow workflow. The main branches are master and develop. Use feature, release, and hotfix branches as needed.
 
-**4.1. Feature branches**
-
-To work on a new feature, create a feature branch:
-```
-git flow feature start my-feature
-```
-Once the feature is complete, finish the feature branch:
-```
-git flow feature finish my-feature
-```
-**4.2. Release branches**
-
-To prepare a new release, create a release branch:
-```
-git flow release start my-release
-```
-After the release is ready, finish the release branch:
-```
-git flow release finish my-release
-```
-
-**4.3. Hotfix branches**
-
-To apply a hotfix, create a hotfix branch:
-```
-git flow hotfix start my-hotfix
-```
-Once the hotfix is complete, finish the hotfix branch:
-```
-git flow hotfix finish my-hotfix
-```
-### 5. Create dummy commits for all GitFlow branches:
->In **Windows**, you can create an empty file using the `type nul >` command. This is equivalent to the `touch` command in Unix-based systems. To create an empty file called `example.txt`, open the Command Prompt and run:
->```
->type nul > example.txt
->```
->If the file already exists, this command will not modify the file's contents or update its timestamp. If the file does not exist, it will be created as an empty file.
+>**Feature branches**
 >
->Alternatively, you can use PowerShell to create an empty file with the `New-Item` command:
+>To work on a new feature, create a feature branch:
 >```
->New-Item -ItemType File -Path example.txt -Force
+>git flow feature start my-feature
 >```
->This command will create an empty `example.txt` file or overwrite the existing file if it exists. Remove the `-Force` flag if you want to keep the existing file unchanged.
+>Once the feature is complete, finish the feature branch:
+>```
+>git flow feature finish my-feature
+>```
+>---
+>**Release branches**
 >
+>To prepare a new release, create a release branch:
+>```
+>git flow release start my-release
+>```
+>After the release is ready, finish the release branch:
+>```
+>git flow release finish my-release
+>```
+>---
+>**Hotfix branches**
+>
+>To apply a hotfix, create a hotfix branch:
+>```
+>git flow hotfix start my-hotfix
+>```
+>Once the hotfix is complete, finish the hotfix branch:
+>```
+>git flow hotfix finish my-hotfix
+>```
+>---
+
+### 1. Create dummy commits for all GitFlow branches:
+In **Windows**, you can create an empty file using the `type nul >` command. This is equivalent to the `touch` command in Unix-based systems. To create an empty file called `example.txt`, open the Command Prompt and run:
+```
+type nul > example.txt
+```
+If the file already exists, this command will not modify the file's contents or update its timestamp. If the file does not exist, it will be created as an empty file.
+
+Alternatively, you can use PowerShell to create an empty file with the `New-Item` command:
+```
+New-Item -ItemType File -Path example.txt -Force
+```
+This command will create an empty `example.txt` file or overwrite the existing file if it exists. Remove the `-Force` flag if you want to keep the existing file unchanged.
+
 
 ```
 # Develop branch
@@ -128,7 +132,7 @@ git checkout develop
 git merge --no-ff hotfix/dummy-hotfix
 git branch -d hotfix/dummy-hotfix
 ```
-### 6. Create a README.md file to explain the setup:
+### 2. Create a README.md file to explain the setup:
 ```
 touch README.md
 ```
@@ -137,15 +141,15 @@ Edit the README.md file to provide information about the "Virtual Workspace Micr
 git add README.md
 git commit -m "Add README.md with setup instructions"
 ```
-### 7. Push the changes to the remote repository:
+### 3. Push the changes to the remote repository:
 ```
 git push --all
 git push --tags
 ```
+Now, you have combined your private repos into the "Virtual Workspace Microservice Cluster" repository, organized as modules with dummy commits for all GitFlow branches, and added a README.md file with setup instructions.
 
->Now, you have combined your private repos into the "Virtual Workspace Microservice Cluster" repository, organized as modules with dummy commits for all GitFlow branches, and added a README.md file with setup instructions.
+## Setting up submodules
 
-## Working with GitFlow branches
 ### Adding submodules
 * Research modules for testing go in research-microservices as a feature
   >Use the SSH URL for the submodule
@@ -172,50 +176,50 @@ git commit -m "Add microservices-private-repo as submodule"
 ```
 ### Delete submodule:
 To delete a Git submodule, follow these steps:
->
+
 1. Remove the submodule entry from the `.gitmodules` file:
->
->Open the `.gitmodules` file in your project's root directory and remove the section corresponding to the submodule you want to delete. The section should look like this:
->```
->[submodule "submodule_name"]
->    path = path/to/submodule
->    url = https://github.com/user/repo.git
->```
->Save and close the file after removing the section.
->
+
+Open the `.gitmodules` file in your project's root directory and remove the section corresponding to the submodule you want to delete. The section should look like this:
+```
+[submodule "submodule_name"]
+    path = path/to/submodule
+    url = https://github.com/user/repo.git
+```
+Save and close the file after removing the section.
+
 2. Remove the submodule entry from the `.git/config` file:
->
->Open the `.git/config` file in your project's root directory and remove the corresponding submodule section, which should look like this:
->```
->[submodule "submodule_name"]
->    url = https://github.com/user/repo.git
->```
->Save and close the file after removing the section.
->
+
+Open the `.git/config` file in your project's root directory and remove the corresponding submodule section, which should look like this:
+```
+[submodule "submodule_name"]
+    url = https://github.com/user/repo.git
+```
+Save and close the file after removing the section.
+
 3. Stage the changes:
 
->In your terminal, run the following command to stage the changes to the `.gitmodules` file:
->```
->git add `.gitmodules`
->```
+In your terminal, run the following command to stage the changes to the `.gitmodules` file:
+```
+git add `.gitmodules`
+```
 4. Remove the submodule files from the Git index:
->
->Run the following command to remove the submodule files from the Git index:
->```
->git rm --cached path/to/submodule
->```
->Replace `path/to/submodule` with the actual path to the submodule directory.
->
+
+Run the following command to remove the submodule files from the Git index:
+```
+git rm --cached path/to/submodule
+```
+Replace `path/to/submodule` with the actual path to the submodule directory.
+
 5. Commit the changes:
 
->Run the following commands to commit the changes:
->```
->git commit -m "Removed submodule"
->```
+Run the following commands to commit the changes:
+```
+git commit -m "Removed submodule"
+```
 6. Delete the submodule directory:
->
->Finally, delete the submodule directory using your file manager or a command:
->
+
+Finally, delete the submodule directory using your file manager or a command:
+
 >For Windows:
 >```
 >rmdir /s /q path\to\submodule
@@ -228,11 +232,12 @@ To delete a Git submodule, follow these steps:
 
 After completing these steps, the submodule should be completely removed from your Git repository.
 
----
 ### Rename submodule folder:
 ```
 git mv research-microservers/microservice-template research-microservers/VirtualWorkspaceMicroservice
 ```
+
+---
 
 ## Project `.gitignore`
 
@@ -328,7 +333,7 @@ If you want to discard your changes and exit without saving, type `:q!` and pres
 
 Now, your `dummy-release` tag will be created with the specified message. To view the tag message, run `git show dummy-release`.
 
-## Recover Deleted Branch:
+### Recover Deleted Branch:
 
 If you accidentally deleted a branch using `git branch -d feature/dummy-feature` or `git branch -D feature/dummy-feature`, you can undo the deletion by finding the last commit on the deleted branch and creating a new branch pointing to that commit.
 
@@ -374,4 +379,7 @@ After completing these steps, try adding the submodule again. If you still encou
 
 
 ---
-[END]
+
+[END OF PAGE]
+
+[BACK](README.md)
