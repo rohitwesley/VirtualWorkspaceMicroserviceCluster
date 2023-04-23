@@ -192,4 +192,7 @@ Replace `Doxygen/custom_theme/doxygen-bootstrapped.css` with the path to your do
 Now, when you generate the documentation using Doxygen, it will use the specified modern theme.
 
 ---
-[END]
+
+[END OF PAGE]
+
+[BACK](README.md)
