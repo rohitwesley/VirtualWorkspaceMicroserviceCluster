@@ -172,7 +172,7 @@ Update your Doxyfile with the following changes:
 
 ```
 PROJECT_NAME           = "Your Project Name"
-OUTPUT_DIRECTORY       = docs
+OUTPUT_DIRECTORY       = Doxygen
 INPUT                  = src
 RECURSIVE              = YES
 FILE_PATTERNS          = *.js *.py *.cs *.cpp *.h
