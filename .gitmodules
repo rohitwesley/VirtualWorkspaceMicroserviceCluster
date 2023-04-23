@@ -1,0 +1,7 @@
+[submodule "research-microservers/Procedural-Workspace"]
+	path = research-microservers/Procedural-Workspace
+	url = git@github.com:rohitwesley/Procedural-Workspace.git
+	branch = origin/feature/IpadEditor
+[submodule "research-microservers/VirtualWorkspaceMicroservice"]
+	path = research-microservers/VirtualWorkspaceMicroservice
+	url = git@github.com:wwlib/microservice-template.git
