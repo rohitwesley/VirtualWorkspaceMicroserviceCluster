@@ -229,6 +229,10 @@ To delete a Git submodule, follow these steps:
 After completing these steps, the submodule should be completely removed from your Git repository.
 
 ---
+### Rename submodule folder:
+```
+git mv research-microservers/microservice-template research-microservers/VirtualWorkspaceMicroservice
+```
 
 ## Project `.gitignore`
 
