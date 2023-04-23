@@ -73,50 +73,51 @@ $(function() {
   <div class="headertitle"><div class="title">Virtual Workspace Microservice Cluster </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>This repository contains a collection of microservices that make up the Virtual Workspace Microservice Cluster. The project is organized as a set of submodules, each representing a microservice within the cluster.</p>
-<p>The repository uses the GitFlow branching model to manage the development process. In this document, you will find instructions on how to clone the repository, set up the project folder structure, work with GitFlow branches, and add Doxygen comments.</p>
-<h1><a class="anchor" id="autotoc_md31"></a>
-Prerequisites</h1>
+<div class="textblock"><hr  />
+<p>*"This repository contains a collection of microservices that make up the Virtual Workspace Microservice Cluster. The project is organized as a set of submodules, each representing a microservice within the cluster."*</p>
+<p>*"The repository uses the GitFlow branching model to manage the development process. In this document, you will find instructions on how to clone the repository, set up the project folder structure, work with GitFlow branches, and add Doxygen comments."*</p>
+<hr  />
+<h1><a class="anchor" id="autotoc_md34"></a>
+Setup Project Folder Structure</h1>
+<h2><a class="anchor" id="autotoc_md35"></a>
+Prerequisites</h2>
 <ul>
 <li>Git</li>
 <li>Doxygen (optional, for generating documentation)</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md32"></a>
-Setup Project Folder Structure</h1>
-<ol type="1">
-<li>Clone the repository using the SSH URL:</li>
-</ol>
+<h2><a class="anchor" id="autotoc_md36"></a>
+1. Clone the repository using the SSH URL:</h2>
 <div class="fragment"><div class="line">git clone git@github.com:your-username/VirtualWorkspaceMicroserviceCluster.git</div>
 <div class="line">cd VirtualWorkspaceMicroserviceCluster</div>
 </div><!-- fragment --><p> or </p><div class="fragment"><div class="line">md VirtualWorkspaceMicroserviceCluster</div>
 <div class="line">cd VirtualWorkspaceMicroserviceCluster</div>
 <div class="line">git init</div>
-</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md33"></a>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md37"></a>
 2. Initialize GitFlow</h2>
 <p>Run the following command to initialize GitFlow in the repository: </p><div class="fragment"><div class="line">git flow init -d</div>
-</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md34"></a>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md38"></a>
 3. Update submodules</h2>
 <p>Update all submodules to fetch the latest changes: </p><div class="fragment"><div class="line">git submodule update --init --recursive</div>
-</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md35"></a>
-4. Working with GitFlow branches</h2>
+</div><!-- fragment --> <hr  />
+ <h1><a class="anchor" id="autotoc_md40"></a>
+Working with GitFlow branches</h1>
 <p>The repository is organized using the GitFlow workflow. The main branches are master and develop. Use feature, release, and hotfix branches as needed.</p>
-<p><b>4.1. Feature branches</b></p>
-<p>To work on a new feature, create a feature branch: </p><div class="fragment"><div class="line">git flow feature start my-feature</div>
-</div><!-- fragment --><p> Once the feature is complete, finish the feature branch: </p><div class="fragment"><div class="line">git flow feature finish my-feature</div>
-</div><!-- fragment --><p> <b>4.2. Release branches</b></p>
-<p>To prepare a new release, create a release branch: </p><div class="fragment"><div class="line">git flow release start my-release</div>
-</div><!-- fragment --><p> After the release is ready, finish the release branch: </p><div class="fragment"><div class="line">git flow release finish my-release</div>
-</div><!-- fragment --><p><b>4.3. Hotfix branches</b></p>
-<p>To apply a hotfix, create a hotfix branch: </p><div class="fragment"><div class="line">git flow hotfix start my-hotfix</div>
-</div><!-- fragment --><p> Once the hotfix is complete, finish the hotfix branch: </p><div class="fragment"><div class="line">git flow hotfix finish my-hotfix</div>
-</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md36"></a>
-5. Create dummy commits for all GitFlow branches:</h2>
-<p>&gt;In <b>Windows</b>, you can create an empty file using the <code>type nul &gt;</code> command. This is equivalent to the <code>touch</code> command in Unix-based systems. To create an empty file called <code>example.txt</code>, open the Command Prompt and run: &gt;``` &gt;type nul &gt; example.txt &gt;``` &gt;If the file already exists, this command will not modify the file's contents or update its timestamp. If the file does not exist, it will be created as an empty file. </p><blockquote class="doxtable">
+<p>&gt;<b>Feature branches</b> </p><blockquote class="doxtable">
 <p>&zwj; </p>
 </blockquote>
-<p>&gt;Alternatively, you can use PowerShell to create an empty file with the <code>New-Item</code> command: &gt;``` &gt;New-Item -ItemType File -Path example.txt -Force &gt;``<code> &gt;This command will create an empty</code>example.txt<code>file or overwrite the existing file if it exists. Remove the</code>-Force` flag if you want to keep the existing file unchanged. </p><blockquote class="doxtable">
+<p>&gt;To work on a new feature, create a feature branch: &gt;``` &gt;git flow feature start my-feature &gt;``` &gt;Once the feature is complete, finish the feature branch: &gt;``` &gt;git flow feature finish my-feature &gt;``` &gt;&mdash; &gt;<b>Release branches</b> </p><blockquote class="doxtable">
 <p>&zwj; </p>
 </blockquote>
+<p>&gt;To prepare a new release, create a release branch: &gt;``` &gt;git flow release start my-release &gt;``` &gt;After the release is ready, finish the release branch: &gt;``` &gt;git flow release finish my-release &gt;``` &gt;&mdash; &gt;<b>Hotfix branches</b> </p><blockquote class="doxtable">
+<p>&zwj; </p>
+</blockquote>
+<p>&gt;To apply a hotfix, create a hotfix branch: &gt;``` &gt;git flow hotfix start my-hotfix &gt;``` &gt;Once the hotfix is complete, finish the hotfix branch: &gt;``` &gt;git flow hotfix finish my-hotfix &gt;``` &gt;&mdash;</p>
+<h2><a class="anchor" id="autotoc_md41"></a>
+1. Create dummy commits for all GitFlow branches:</h2>
+<p>In <b>Windows</b>, you can create an empty file using the <code>type nul &gt;</code> command. This is equivalent to the <code>touch</code> command in Unix-based systems. To create an empty file called <code>example.txt</code>, open the Command Prompt and run: </p><div class="fragment"><div class="line">type nul &gt; example.txt</div>
+</div><!-- fragment --><p> If the file already exists, this command will not modify the file's contents or update its timestamp. If the file does not exist, it will be created as an empty file.</p>
+<p>Alternatively, you can use PowerShell to create an empty file with the <code>New-Item</code> command: </p><div class="fragment"><div class="line">New-Item -ItemType File -Path example.txt -Force</div>
+</div><!-- fragment --><p> This command will create an empty <code>example.txt</code> file or overwrite the existing file if it exists. Remove the <code>-Force</code> flag if you want to keep the existing file unchanged.</p>
 <div class="fragment"><div class="line"># Develop branch</div>
 <div class="line">git checkout develop</div>
 <div class="line">touch dummy_develop.txt</div>
@@ -153,19 +154,19 @@ Setup Project Folder Structure</h1>
 <div class="line">git checkout develop</div>
 <div class="line">git merge --no-ff hotfix/dummy-hotfix</div>
 <div class="line">git branch -d hotfix/dummy-hotfix</div>
-</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md37"></a>
-6. Create a README.md file to explain the setup:</h2>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md42"></a>
+2. Create a README.md file to explain the setup:</h2>
 <div class="fragment"><div class="line">touch README.md</div>
 </div><!-- fragment --><p> Edit the <a class="el" href="_r_e_a_d_m_e_8md.html">README.md</a> file to provide information about the "Virtual Workspace Microservice Cluster" repository, its modules, and how to set up and use the project. Save the file and commit it: </p><div class="fragment"><div class="line">git add README.md</div>
 <div class="line">git commit -m &quot;Add README.md with setup instructions&quot;</div>
-</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md38"></a>
-7. Push the changes to the remote repository:</h2>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md43"></a>
+3. Push the changes to the remote repository:</h2>
 <div class="fragment"><div class="line">git push --all</div>
 <div class="line">git push --tags</div>
-</div><!-- fragment --><p>&gt;Now, you have combined your private repos into the "Virtual Workspace Microservice Cluster" repository, organized as modules with dummy commits for all GitFlow branches, and added a <a class="el" href="_r_e_a_d_m_e_8md.html">README.md</a> file with setup instructions.</p>
-<h1><a class="anchor" id="autotoc_md39"></a>
-Working with GitFlow branches</h1>
-<h2><a class="anchor" id="autotoc_md40"></a>
+</div><!-- fragment --><p> Now, you have combined your private repos into the "Virtual Workspace Microservice Cluster" repository, organized as modules with dummy commits for all GitFlow branches, and added a <a class="el" href="_r_e_a_d_m_e_8md.html">README.md</a> file with setup instructions.</p>
+<h1><a class="anchor" id="autotoc_md44"></a>
+Setting up submodules</h1>
+<h2><a class="anchor" id="autotoc_md45"></a>
 Adding submodules</h2>
 <ul>
 <li>Research modules for testing go in research-microservices as a feature &gt;Use the SSH URL for the submodule <div class="fragment"><div class="line">git submodule add git@github.com:your-username/microservice-private-repo.git research-microservers/research-microservices-private-repo</div>
@@ -173,63 +174,58 @@ Adding submodules</h2>
 <li>Live modules go into microservices as a feature <div class="fragment"><div class="line">git submodule add git@github.com:your-username/microservice-private-repo.git microservers/microservices-private-repo</div>
 </div><!-- fragment --> </li>
 </ul>
-<h2><a class="anchor" id="autotoc_md41"></a>
+<h2><a class="anchor" id="autotoc_md46"></a>
 Update submodules</h2>
 <ul>
 <li>Update all submodules to fetch the latest changes: <div class="fragment"><div class="line">git submodule update --init --recursive</div>
 </div><!-- fragment --> </li>
 </ul>
-<h2><a class="anchor" id="autotoc_md42"></a>
+<h2><a class="anchor" id="autotoc_md47"></a>
 Commit the submodule:</h2>
 <div class="fragment"><div class="line">git add `.gitmodules` research-microservers/research-microservices-private-repo</div>
 <div class="line">git commit -m &quot;Add research-microservices-private-repo as submodule&quot;</div>
 </div><!-- fragment --> <div class="fragment"><div class="line">git add `.gitmodules` microservers/microservice-microservice</div>
 <div class="line">git commit -m &quot;Add microservices-private-repo as submodule&quot;</div>
-</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md43"></a>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md48"></a>
 Delete submodule:</h2>
-<p>To delete a Git submodule, follow these steps: </p><blockquote class="doxtable">
-<p>&zwj; </p>
-</blockquote>
-<p>1. Remove the submodule entry from the <code>.gitmodules</code> file: </p><blockquote class="doxtable">
-<p>&zwj; </p>
-</blockquote>
-<p>&gt;Open the <code>.gitmodules</code> file in your project's root directory and remove the section corresponding to the submodule you want to delete. The section should look like this: &gt;``` &gt;[submodule "submodule_name"] </p><blockquote class="doxtable">
-<p>&zwj; path = path/to/submodule url = <a href="https://github.com/user/repo.git">https://github.com/user/repo.git</a> </p>
-</blockquote>
-<p>&gt;``` &gt;Save and close the file after removing the section. </p><blockquote class="doxtable">
-<p>&zwj; </p>
-</blockquote>
-<p>2. Remove the submodule entry from the <code>.git/config</code> file: </p><blockquote class="doxtable">
-<p>&zwj; </p>
-</blockquote>
-<p>&gt;Open the <code>.git/config</code> file in your project's root directory and remove the corresponding submodule section, which should look like this: &gt;``` &gt;[submodule "submodule_name"] </p><blockquote class="doxtable">
-<p>&zwj; url = <a href="https://github.com/user/repo.git">https://github.com/user/repo.git</a> </p>
-</blockquote>
-<p>&gt;``` &gt;Save and close the file after removing the section. </p><blockquote class="doxtable">
-<p>&zwj; </p>
-</blockquote>
-<p>3. Stage the changes:</p>
-<p>&gt;In your terminal, run the following command to stage the changes to the <code>.gitmodules</code> file: &gt;``<code> &gt;git add</code>.gitmodules<code> &gt;</code>``</p><ol type="1">
-<li>Remove the submodule files from the Git index: <blockquote class="doxtable">
-<p>&zwj; </p>
-</blockquote>
-&gt;Run the following command to remove the submodule files from the Git index: &gt;``` &gt;git rm &ndash;cached path/to/submodule &gt;``<code> &gt;Replace</code>path/to/submodule` with the actual path to the submodule directory. <blockquote class="doxtable">
-<p>&zwj; </p>
-</blockquote>
-5. Commit the changes:</li>
+<p>To delete a Git submodule, follow these steps:</p>
+<ol type="1">
+<li>Remove the submodule entry from the <code>.gitmodules</code> file:</li>
 </ol>
-<p>&gt;Run the following commands to commit the changes: &gt;``` &gt;git commit -m "Removed submodule" &gt;```</p><ol type="1">
-<li>Delete the submodule directory: <blockquote class="doxtable">
-<p>&zwj; </p>
-</blockquote>
-&gt;Finally, delete the submodule directory using your file manager or a command: <blockquote class="doxtable">
-<p>&zwj; </p>
-</blockquote>
-&gt;For Windows: &gt;``` &gt;rmdir /s /q path\to\submodule &gt;``` &gt;For macOS and Linux: &gt;``` &gt;rm -rf path/to/submodule &gt;``<code> &gt;Replace</code>path/to/submodule` with the actual path to the submodule directory.</li>
+<p>Open the <code>.gitmodules</code> file in your project's root directory and remove the section corresponding to the submodule you want to delete. The section should look like this: </p><div class="fragment"><div class="line">[submodule &quot;submodule_name&quot;]</div>
+<div class="line">    path = path/to/submodule</div>
+<div class="line">    url = https://github.com/user/repo.git</div>
+</div><!-- fragment --><p> Save and close the file after removing the section.</p>
+<ol type="1">
+<li>Remove the submodule entry from the <code>.git/config</code> file:</li>
 </ol>
+<p>Open the <code>.git/config</code> file in your project's root directory and remove the corresponding submodule section, which should look like this: </p><div class="fragment"><div class="line">[submodule &quot;submodule_name&quot;]</div>
+<div class="line">    url = https://github.com/user/repo.git</div>
+</div><!-- fragment --><p> Save and close the file after removing the section.</p>
+<ol type="1">
+<li>Stage the changes:</li>
+</ol>
+<p>In your terminal, run the following command to stage the changes to the <code>.gitmodules</code> file: </p><div class="fragment"><div class="line">git add `.gitmodules`</div>
+</div><!-- fragment --><ol type="1">
+<li>Remove the submodule files from the Git index:</li>
+</ol>
+<p>Run the following command to remove the submodule files from the Git index: </p><div class="fragment"><div class="line">git rm --cached path/to/submodule</div>
+</div><!-- fragment --><p> Replace <code>path/to/submodule</code> with the actual path to the submodule directory.</p>
+<ol type="1">
+<li>Commit the changes:</li>
+</ol>
+<p>Run the following commands to commit the changes: </p><div class="fragment"><div class="line">git commit -m &quot;Removed submodule&quot;</div>
+</div><!-- fragment --><ol type="1">
+<li>Delete the submodule directory:</li>
+</ol>
+<p>Finally, delete the submodule directory using your file manager or a command:</p>
+<p>&gt;For Windows: &gt;``` &gt;rmdir /s /q path\to\submodule &gt;``` &gt;For macOS and Linux: &gt;``` &gt;rm -rf path/to/submodule &gt;``<code> &gt;Replace</code>path/to/submodule` with the actual path to the submodule directory.</p>
 <p>After completing these steps, the submodule should be completely removed from your Git repository.</p>
-<hr  />
-<h1><a class="anchor" id="autotoc_md45"></a>
+<h2><a class="anchor" id="autotoc_md49"></a>
+Rename submodule folder:</h2>
+<div class="fragment"><div class="line">git mv research-microservers/microservice-template research-microservers/VirtualWorkspaceMicroservice</div>
+</div><!-- fragment --><hr  />
+<h1><a class="anchor" id="autotoc_md51"></a>
 Project &lt;tt&gt;.gitignore&lt;/tt&gt;</h1>
 <p>A <code>.gitignore</code> file specifies intentionally untracked files that Git should ignore. It helps prevent accidentally committing unnecessary files to the repository. Here's a basic <code>.gitignore</code> file that you can use for your "Visual Workspace Microserver Cluster" project. It includes common files and directories that are often ignored in software projects: </p><div class="fragment"><div class="line"># .gitignore</div>
 <div class="line"> </div>
@@ -300,7 +296,7 @@ Project &lt;tt&gt;.gitignore&lt;/tt&gt;</h1>
 <div class="line">out/</div>
 </div><!-- fragment --><p> &gt;Create a file named <code>.gitignore</code> in the root directory of your repository and paste the contents above into the file. This will help prevent unnecessary files from being tracked by Git. You can customize this file to fit the specific needs of your project and its components.</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md47"></a>
+<h1><a class="anchor" id="autotoc_md53"></a>
 Project tags</h1>
 <p>When you execute the command <code>git tag -a dummy-release</code>, Git will open your default text editor, which in your case is Vim, to input the tag message (similar to a commit message).</p>
 <p>In Vim, follow these steps to add a tag message and save the changes:</p>
@@ -312,8 +308,8 @@ Project tags</h1>
 </ol>
 <p>If you want to discard your changes and exit without saving, type <code>:q!</code> and press <code>Enter</code>.</p>
 <p>Now, your <code>dummy-release</code> tag will be created with the specified message. To view the tag message, run <code>git show dummy-release</code>.</p>
-<h1><a class="anchor" id="autotoc_md48"></a>
-Recover Deleted Branch:</h1>
+<h2><a class="anchor" id="autotoc_md54"></a>
+Recover Deleted Branch:</h2>
 <p>If you accidentally deleted a branch using <code>git branch -d feature/dummy-feature</code> or <code>git branch -D feature/dummy-feature</code>, you can undo the deletion by finding the last commit on the deleted branch and creating a new branch pointing to that commit.</p>
 <p>Follow these steps to recover the deleted branch:</p>
 <ol type="1">
@@ -324,7 +320,7 @@ Recover Deleted Branch:</h1>
 </div><!-- fragment --> Replace <code>d123456</code> with the actual commit hash you found in step 1.</li>
 </ol>
 <p>Now, you have successfully recovered the deleted branch, and it is pointing to the last commit before the deletion. If you made any changes to the branch after the last commit, those changes may be lost, and you'll need to reapply them manually.</p>
-<h1><a class="anchor" id="autotoc_md49"></a>
+<h1><a class="anchor" id="autotoc_md55"></a>
 Enable Long Path on Windows</h1>
 <p>It seems you are encountering an issue with the maximum filename length on Windows. Git on Windows has a limit of 260 characters for file paths, and some files in the repository you are trying to clone as a submodule have paths longer than that.</p>
 <p>To resolve this issue, you can try the following steps:</p>
@@ -348,12 +344,13 @@ Enable Long Path on Windows</h1>
 </div><!-- fragment --> After completing these steps, try adding the submodule again. If you still encounter issues, consider moving your project to a shorter directory path to further reduce the total path length of the files.</li>
 </ul>
 <hr  />
-<p> [END] </p>
+<p>[END OF PAGE]</p>
+<p><a class="el" href="md__r_e_a_d_m_e.html">BACK</a> </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Apr 22 2023 21:25:26 for Virtual Workspace Microservice Cluster by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+Generated on Sun Apr 23 2023 22:16:57 for Virtual Workspace Microservice Cluster by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
 </small></address>
 </body>
 </html>
