@@ -172,7 +172,7 @@ Update your Doxyfile with the following changes:
 
 ```
 PROJECT_NAME           = "Your Project Name"
-OUTPUT_DIRECTORY       = docs
+OUTPUT_DIRECTORY       = Doxygen
 INPUT                  = src
 RECURSIVE              = YES
 FILE_PATTERNS          = *.js *.py *.cs *.cpp *.h
@@ -192,4 +192,7 @@ Replace `Doxygen/custom_theme/doxygen-bootstrapped.css` with the path to your do
 Now, when you generate the documentation using Doxygen, it will use the specified modern theme.
 
 ---
-[END]
+
+[END OF PAGE]
+
+[BACK](README.md)
