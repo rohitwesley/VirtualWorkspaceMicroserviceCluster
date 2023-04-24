@@ -1,0 +1,93 @@
+{
+  // "extends": "./tsconfig.paths.json",
+  "compilerOptions": {
+    /** ECMAScript target version for the compiled JavaScript */
+    "target": "ES2020",
+
+    /** Module format for the compiled JavaScript */
+    "module": "commonjs",
+
+    /** Library files to include when compiling */
+    "lib": [
+      "ES2020",
+      "DOM"
+    ],
+
+    /** Allows JavaScript files to be included in the project */
+    "allowJs": true,
+
+    /** Enables type checking in JavaScript files */
+    "checkJs": true,
+
+    /** Generates corresponding .d.ts files for each TypeScript source file */
+    "declaration": true,
+
+    /** Generates source map files for the generated .d.ts files */
+    "declarationMap": true,
+
+    /** Generates source map files for the compiled JavaScript */
+    "sourceMap": true,
+
+    /** Output directory for the compiled JavaScript files */
+    "outDir": "dist",
+
+    /** Enables all strict type checking options */
+    "strict": true,
+
+    /** Enables interoperability between CommonJS and ES modules */
+    "esModuleInterop": true,
+
+    /** Skips checking of declaration files */
+    "skipLibCheck": true,
+
+    /** Enforces consistent casing of file names */
+    "forceConsistentCasingInFileNames": true,
+
+    /** Module resolution strategy */
+    "moduleResolution": "node",
+
+    /** Allows importing JSON modules */
+    "resolveJsonModule": true,
+
+    /** Directories containing type definition files */
+    "typeRoots": [
+      "./src/types",
+      "./node_modules/@types"
+    ],
+
+    /** List of types to include from the typeRoots directories */
+    "types": [
+      "node",
+      "redis"
+    ],
+
+    /** Base directory for resolving non-relative module names */
+    "baseUrl": ".",
+
+    /** Custom path mappings */
+    "paths": {
+      "*": [ "node_modules/*" ],
+      "@handlers": [ "src/handlers" ],
+      "@types": [ "src/types" ],
+      "@errors": [ "src/errors" ],
+      "@model": [ "src/model" ],
+      "@auth": [ "src/auth" ]
+    }
+  },
+
+  /** Files and directories to include when compiling */
+  "include": [
+    "./**/*.ts",
+    "src/**/*",
+    "jest.config.ts",
+    "src/dbConfig.ts"
+  ],
+
+  /** Files and directories to exclude when compiling */
+  "exclude": [
+    "node_modules/*",
+    "src/types/*",
+    "test/**/*",
+    "dist/*"
+  ]
+}

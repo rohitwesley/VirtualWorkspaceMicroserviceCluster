@@ -1,0 +1,16 @@
+{
+  "name": "ws-template-tools",
+  "version": "0.0.1",
+  "main": "socket-cli.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Wesley T <wesleythomas360@gmail.com> (http://tecrt.co/)",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.24.0"
+  },
+  "keywords": [],
+  "devDependencies": {},
+  "description": ""
+}
