@@ -111,6 +111,30 @@ Keep in mind that this workaround does not provide full TypeScript support. If y
 
 ---
 
+## Support readme files(.md)
+
+You can certainly use Doxygen and .md files together in your project documentation. Doxygen is a powerful tool for generating documentation from source code, and it supports a variety of output formats, including HTML, LaTeX, and Markdown.
+
+To use Doxygen with Markdown files, you can add Markdown support to your Doxygen configuration file (usually named `Doxyfile`). To do this, set the `MARKDOWN_SUPPORT` option to YES, and specify the file extensions for your Markdown files using the `FILE_PATTERNS` option.
+
+Here's an example `Doxyfile` configuration that includes Markdown support:
+```
+# Doxyfile
+
+# ...
+ 
+# Enable Markdown support
+MARKDOWN_SUPPORT = YES
+
+# Specify file extensions for Markdown files
+FILE_PATTERNS = *.md
+ 
+# ...
+```
+Once you've configured Doxygen to support Markdown files, you can write your documentation in Markdown syntax and include it in your source code files. Doxygen will automatically process the Markdown files and generate documentation in the output format of your choice.
+
+Note that Doxygen provides additional support for generating documentation from comments in your source code, using special syntax such as `///` or `/** ... */`. You can use this syntax to generate documentation for your code elements, such as functions, classes, and variables. You can also include Markdown syntax in these comments to format your documentation.
+
 ## Adding Doxygen Comments
 
 To add Doxygen comments to your source code, follow the Doxygen commenting style. Here's a brief example of how to add Doxygen comments to a C++ header file:

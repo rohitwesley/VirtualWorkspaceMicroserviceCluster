@@ -236,8 +236,6 @@ Please follow the GitFlow workflow when making contributions to this repository.
 "This project is built using open-source components and is NOT open source itself. This software is the property of the author, and any copying, distribution, or modification without the explicit written consent of the author is strictly prohibited. For any inquiries or requests for permission, please contact the author at wesleythomas360@gmail.com."
 
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
 This `README` file provides step-by-step instructions for setting up and working with the "Virtual Workspace Microservice Cluster" repository, organized using the GitFlow workflow.
 
 ---
