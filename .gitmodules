@@ -2,3 +2,6 @@
 	path = research-microservers/Procedural-Workspace
 	url = git@github.com:rohitwesley/Procedural-Workspace.git
 	branch = origin/feature/IpadEditor
+[submodule "microservers/redis-microserver"]
+	path = microservers/redis-microserver
+	url = git@github.com:rohitwesley/VirtualWorkspaceRedisMicroservice.git
