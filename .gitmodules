@@ -5,3 +5,8 @@
 [submodule "microservers/redis-microserver"]
 	path = microservers/redis-microserver
 	url = git@github.com:rohitwesley/VirtualWorkspaceRedisMicroservice.git
+	branch = origin/master
+[submodule "microservers/dashboard-microserver"]
+	path = microservers/dashboard-microserver
+	url = git@github.com:rohitwesley/VirtualWorkspaceDashboardMicroservice-.git
+	branch = origin/develop

@@ -77,29 +77,29 @@ $(function() {
 <p>*"This repository contains a collection of microservices that make up the Virtual Workspace Microservice Cluster. The project is organized as a set of submodules, each representing a microservice within the cluster."*</p>
 <p>*"The repository uses the GitFlow branching model to manage the development process. In this document, you will find instructions on how to clone the repository, set up the project folder structure, work with GitFlow branches, and add Doxygen comments."*</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md34"></a>
+<h1><a class="anchor" id="autotoc_md35"></a>
 Setup Project Folder Structure</h1>
-<h2><a class="anchor" id="autotoc_md35"></a>
+<h2><a class="anchor" id="autotoc_md36"></a>
 Prerequisites</h2>
 <ul>
 <li>Git</li>
 <li>Doxygen (optional, for generating documentation)</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md36"></a>
+<h2><a class="anchor" id="autotoc_md37"></a>
 1. Clone the repository using the SSH URL:</h2>
 <div class="fragment"><div class="line">git clone git@github.com:your-username/VirtualWorkspaceMicroserviceCluster.git</div>
 <div class="line">cd VirtualWorkspaceMicroserviceCluster</div>
 </div><!-- fragment --><p> or </p><div class="fragment"><div class="line">md VirtualWorkspaceMicroserviceCluster</div>
 <div class="line">cd VirtualWorkspaceMicroserviceCluster</div>
 <div class="line">git init</div>
-</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md37"></a>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md38"></a>
 2. Initialize GitFlow</h2>
 <p>Run the following command to initialize GitFlow in the repository: </p><div class="fragment"><div class="line">git flow init -d</div>
-</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md38"></a>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md39"></a>
 3. Update submodules</h2>
 <p>Update all submodules to fetch the latest changes: </p><div class="fragment"><div class="line">git submodule update --init --recursive</div>
 </div><!-- fragment --> <hr  />
- <h1><a class="anchor" id="autotoc_md40"></a>
+ <h1><a class="anchor" id="autotoc_md41"></a>
 Working with GitFlow branches</h1>
 <p>The repository is organized using the GitFlow workflow. The main branches are master and develop. Use feature, release, and hotfix branches as needed.</p>
 <p>&gt;<b>Feature branches</b> </p><blockquote class="doxtable">
@@ -112,7 +112,7 @@ Working with GitFlow branches</h1>
 <p>&zwj; </p>
 </blockquote>
 <p>&gt;To apply a hotfix, create a hotfix branch: &gt;``` &gt;git flow hotfix start my-hotfix &gt;``` &gt;Once the hotfix is complete, finish the hotfix branch: &gt;``` &gt;git flow hotfix finish my-hotfix &gt;``` &gt;&mdash;</p>
-<h2><a class="anchor" id="autotoc_md41"></a>
+<h2><a class="anchor" id="autotoc_md42"></a>
 1. Create dummy commits for all GitFlow branches:</h2>
 <p>In <b>Windows</b>, you can create an empty file using the <code>type nul &gt;</code> command. This is equivalent to the <code>touch</code> command in Unix-based systems. To create an empty file called <code>example.txt</code>, open the Command Prompt and run: </p><div class="fragment"><div class="line">type nul &gt; example.txt</div>
 </div><!-- fragment --><p> If the file already exists, this command will not modify the file's contents or update its timestamp. If the file does not exist, it will be created as an empty file.</p>
@@ -154,19 +154,19 @@ Working with GitFlow branches</h1>
 <div class="line">git checkout develop</div>
 <div class="line">git merge --no-ff hotfix/dummy-hotfix</div>
 <div class="line">git branch -d hotfix/dummy-hotfix</div>
-</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md42"></a>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md43"></a>
 2. Create a README.md file to explain the setup:</h2>
 <div class="fragment"><div class="line">touch README.md</div>
 </div><!-- fragment --><p> Edit the <a class="el" href="_r_e_a_d_m_e_8md.html">README.md</a> file to provide information about the "Virtual Workspace Microservice Cluster" repository, its modules, and how to set up and use the project. Save the file and commit it: </p><div class="fragment"><div class="line">git add README.md</div>
 <div class="line">git commit -m &quot;Add README.md with setup instructions&quot;</div>
-</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md43"></a>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md44"></a>
 3. Push the changes to the remote repository:</h2>
 <div class="fragment"><div class="line">git push --all</div>
 <div class="line">git push --tags</div>
 </div><!-- fragment --><p> Now, you have combined your private repos into the "Virtual Workspace Microservice Cluster" repository, organized as modules with dummy commits for all GitFlow branches, and added a <a class="el" href="_r_e_a_d_m_e_8md.html">README.md</a> file with setup instructions.</p>
-<h1><a class="anchor" id="autotoc_md44"></a>
+<h1><a class="anchor" id="autotoc_md45"></a>
 Setting up submodules</h1>
-<h2><a class="anchor" id="autotoc_md45"></a>
+<h2><a class="anchor" id="autotoc_md46"></a>
 Adding submodules</h2>
 <ul>
 <li>Research modules for testing go in research-microservices as a feature &gt;Use the SSH URL for the submodule <div class="fragment"><div class="line">git submodule add git@github.com:your-username/microservice-private-repo.git research-microservers/research-microservices-private-repo</div>
@@ -174,19 +174,19 @@ Adding submodules</h2>
 <li>Live modules go into microservices as a feature <div class="fragment"><div class="line">git submodule add git@github.com:your-username/microservice-private-repo.git microservers/microservices-private-repo</div>
 </div><!-- fragment --> </li>
 </ul>
-<h2><a class="anchor" id="autotoc_md46"></a>
+<h2><a class="anchor" id="autotoc_md47"></a>
 Update submodules</h2>
 <ul>
 <li>Update all submodules to fetch the latest changes: <div class="fragment"><div class="line">git submodule update --init --recursive</div>
 </div><!-- fragment --> </li>
 </ul>
-<h2><a class="anchor" id="autotoc_md47"></a>
+<h2><a class="anchor" id="autotoc_md48"></a>
 Commit the submodule:</h2>
 <div class="fragment"><div class="line">git add `.gitmodules` research-microservers/research-microservices-private-repo</div>
 <div class="line">git commit -m &quot;Add research-microservices-private-repo as submodule&quot;</div>
 </div><!-- fragment --> <div class="fragment"><div class="line">git add `.gitmodules` microservers/microservice-microservice</div>
 <div class="line">git commit -m &quot;Add microservices-private-repo as submodule&quot;</div>
-</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md48"></a>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md49"></a>
 Delete submodule:</h2>
 <p>To delete a Git submodule, follow these steps:</p>
 <ol type="1">
@@ -221,11 +221,35 @@ Delete submodule:</h2>
 <p>Finally, delete the submodule directory using your file manager or a command:</p>
 <p>&gt;For Windows: &gt;``` &gt;rmdir /s /q path\to\submodule &gt;``` &gt;For macOS and Linux: &gt;``` &gt;rm -rf path/to/submodule &gt;``<code> &gt;Replace</code>path/to/submodule` with the actual path to the submodule directory.</p>
 <p>After completing these steps, the submodule should be completely removed from your Git repository.</p>
-<h2><a class="anchor" id="autotoc_md49"></a>
+<h2><a class="anchor" id="autotoc_md50"></a>
 Rename submodule folder:</h2>
 <div class="fragment"><div class="line">git mv research-microservers/microservice-template research-microservers/VirtualWorkspaceMicroservice</div>
 </div><!-- fragment --><hr  />
-<h1><a class="anchor" id="autotoc_md51"></a>
+<h1><a class="anchor" id="autotoc_md52"></a>
+Project tags</h1>
+<p>When you execute the command <code>git tag -a dummy-release</code>, Git will open your default text editor, which in your case is Vim, to input the tag message (similar to a commit message).</p>
+<p>In Vim, follow these steps to add a tag message and save the changes:</p>
+<ol type="1">
+<li>Press <code>i</code> to enter insert mode. This allows you to edit the file and input your tag message.</li>
+<li>Type your tag message, such as "Dummy release for GitFlow setup."</li>
+<li>Press the <code>Esc</code> key to exit insert mode.</li>
+<li>To save the changes and exit Vim, type <code>:wq</code> and press Enter. The colon : enters command-line mode in Vim, <code>w</code> stands for "write" (save), and q stands for "quit" (exit).</li>
+</ol>
+<p>If you want to discard your changes and exit without saving, type <code>:q!</code> and press <code>Enter</code>.</p>
+<p>Now, your <code>dummy-release</code> tag will be created with the specified message. To view the tag message, run <code>git show dummy-release</code>.</p>
+<h2><a class="anchor" id="autotoc_md53"></a>
+Recover Deleted Branch:</h2>
+<p>If you accidentally deleted a branch using <code>git branch -d feature/dummy-feature</code> or <code>git branch -D feature/dummy-feature</code>, you can undo the deletion by finding the last commit on the deleted branch and creating a new branch pointing to that commit.</p>
+<p>Follow these steps to recover the deleted branch:</p>
+<ol type="1">
+<li>Find the last commit on the deleted branch using the git reflog command: <div class="fragment"><div class="line">git reflog</div>
+</div><!-- fragment --> Look for an entry in the reflog that refers to the deleted branch, for example: <div class="fragment"><div class="line">d123456 HEAD@{1}: checkout: moving from feature/dummy-feature to main</div>
+</div><!-- fragment --> In this case, <code>d123456</code> is the commit hash of the last commit on the deleted branch.</li>
+<li>Create a new branch pointing to the last commit on the deleted branch: <div class="fragment"><div class="line">git checkout -b feature/dummy-feature d123456</div>
+</div><!-- fragment --> Replace <code>d123456</code> with the actual commit hash you found in step 1.</li>
+</ol>
+<p>Now, you have successfully recovered the deleted branch, and it is pointing to the last commit before the deletion. If you made any changes to the branch after the last commit, those changes may be lost, and you'll need to reapply them manually.</p>
+<h1><a class="anchor" id="autotoc_md54"></a>
 Project &lt;tt&gt;.gitignore&lt;/tt&gt;</h1>
 <p>A <code>.gitignore</code> file specifies intentionally untracked files that Git should ignore. It helps prevent accidentally committing unnecessary files to the repository. Here's a basic <code>.gitignore</code> file that you can use for your "Visual Workspace Microserver Cluster" project. It includes common files and directories that are often ignored in software projects: </p><div class="fragment"><div class="line"># .gitignore</div>
 <div class="line"> </div>
@@ -296,31 +320,7 @@ Project &lt;tt&gt;.gitignore&lt;/tt&gt;</h1>
 <div class="line">out/</div>
 </div><!-- fragment --><p> &gt;Create a file named <code>.gitignore</code> in the root directory of your repository and paste the contents above into the file. This will help prevent unnecessary files from being tracked by Git. You can customize this file to fit the specific needs of your project and its components.</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md53"></a>
-Project tags</h1>
-<p>When you execute the command <code>git tag -a dummy-release</code>, Git will open your default text editor, which in your case is Vim, to input the tag message (similar to a commit message).</p>
-<p>In Vim, follow these steps to add a tag message and save the changes:</p>
-<ol type="1">
-<li>Press <code>i</code> to enter insert mode. This allows you to edit the file and input your tag message.</li>
-<li>Type your tag message, such as "Dummy release for GitFlow setup."</li>
-<li>Press the <code>Esc</code> key to exit insert mode.</li>
-<li>To save the changes and exit Vim, type <code>:wq</code> and press Enter. The colon : enters command-line mode in Vim, <code>w</code> stands for "write" (save), and q stands for "quit" (exit).</li>
-</ol>
-<p>If you want to discard your changes and exit without saving, type <code>:q!</code> and press <code>Enter</code>.</p>
-<p>Now, your <code>dummy-release</code> tag will be created with the specified message. To view the tag message, run <code>git show dummy-release</code>.</p>
-<h2><a class="anchor" id="autotoc_md54"></a>
-Recover Deleted Branch:</h2>
-<p>If you accidentally deleted a branch using <code>git branch -d feature/dummy-feature</code> or <code>git branch -D feature/dummy-feature</code>, you can undo the deletion by finding the last commit on the deleted branch and creating a new branch pointing to that commit.</p>
-<p>Follow these steps to recover the deleted branch:</p>
-<ol type="1">
-<li>Find the last commit on the deleted branch using the git reflog command: <div class="fragment"><div class="line">git reflog</div>
-</div><!-- fragment --> Look for an entry in the reflog that refers to the deleted branch, for example: <div class="fragment"><div class="line">d123456 HEAD@{1}: checkout: moving from feature/dummy-feature to main</div>
-</div><!-- fragment --> In this case, <code>d123456</code> is the commit hash of the last commit on the deleted branch.</li>
-<li>Create a new branch pointing to the last commit on the deleted branch: <div class="fragment"><div class="line">git checkout -b feature/dummy-feature d123456</div>
-</div><!-- fragment --> Replace <code>d123456</code> with the actual commit hash you found in step 1.</li>
-</ol>
-<p>Now, you have successfully recovered the deleted branch, and it is pointing to the last commit before the deletion. If you made any changes to the branch after the last commit, those changes may be lost, and you'll need to reapply them manually.</p>
-<h1><a class="anchor" id="autotoc_md55"></a>
+<h1><a class="anchor" id="autotoc_md56"></a>
 Enable Long Path on Windows</h1>
 <p>It seems you are encountering an issue with the maximum filename length on Windows. Git on Windows has a limit of 260 characters for file paths, and some files in the repository you are trying to clone as a submodule have paths longer than that.</p>
 <p>To resolve this issue, you can try the following steps:</p>
@@ -350,7 +350,7 @@ Enable Long Path on Windows</h1>
 </div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 23 2023 22:16:57 for Virtual Workspace Microservice Cluster by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+Generated on Tue Apr 25 2023 00:20:12 for Virtual Workspace Microservice Cluster by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
 </small></address>
 </body>
 </html>
