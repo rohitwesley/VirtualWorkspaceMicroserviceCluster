@@ -11,9 +11,9 @@ module.exports = {
     // dbName: "virtualworkspacedb",
     ip: ipInfo,
     baseDir: __dirname,//'E:/VirtualWorkspace/VirtualWorkspaceNetwork/VirtualWorkspaceMicroService/dist
-    masterDir: "E:/VirtualWorkspace/VirtualWorkspaceNetwork/VirtualWorkspaceMicroService/",
+    masterDir: "E:/VirtualWorkspace/VirtualWorkspaceNetwork/VirtualWorkspaceMicroserviceCluster/research-microservers/VirtualWorkspaceMicroservice/",
     hostname: ipInfo.address(),//'192.168.50.140',
-    portHttp: portInfo,
+    cdportHttp: portInfo,
     url: "http://"+ipInfo.address()+":"+portInfo,//"http://localhost:3000",
     portWS: 4000,
     portUDP: 5000,

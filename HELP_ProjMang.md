@@ -231,14 +231,44 @@ Finally, delete the submodule directory using your file manager or a command:
 >Replace `path/to/submodule` with the actual path to the submodule directory.
 
 After completing these steps, the submodule should be completely removed from your Git repository.
-
 ### Rename submodule folder:
 ```
 git mv research-microservers/microservice-template research-microservers/VirtualWorkspaceMicroservice
 ```
+### Change a local folder into a submodule
 
+To reset a submodule we need to do the following:
+1. Check if there is any existing file or directory at the specified path:
+```
+ls -la Doxygen/custom_theme/doxygen-bootstrapped
+```
+2. If there is a file or directory at the specified path, remove or move it to a different location. Make sure to back up any important data before removing the file or directory. You can remove it using the following command:
+```
+rm -r Doxygen/custom_theme/doxygen-bootstrapped
+```
+3. After removing the file or directory, remove the entry from the Git index as well:
+```
+git rm --cached Doxygen/custom_theme/doxygen-bootstrapped
+```
+4. Now you should be able to add the submodule without any issues:
+```
+git submodule add git@github.com:Velron/doxygen-bootstrapped.git Doxygen/custom_theme/doxygen-bootstrapped
+```
+This command will add the submodule to the specified path and create a `.gitmodules` file that contains the submodule information.
+
+2. Reuse the local Git repository by adding the submodule using the `--force` option if you're sure the local Git repository is the correct one:
+```
+git submodule add --force git@github.com:Velron/doxygen-bootstrapped.git Doxygen/custom_theme/doxygen-bootstrapped
+```
+>`--force`: This option will reuse the existing local Git repository instead of cloning the remote repository. This can save time and bandwidth if the local repository is up to date and you're sure it's the correct one. Be cautious when using this option, as it can cause inconsistencies if the local repository is not in sync with the remote one.
+3. Choose another name for the submodule using the `--name` option if the local repository is not the correct one or if you're unsure about its purpose.
+Before proceeding, it's important to understand the implications of both options:
+```
+git submodule add --name new_submodule_name git@github.com:Velron/doxygen-bootstrapped.git Doxygen/custom_theme/doxygen-bootstrapped
+```
+>`--name`: This option allows you to specify a different name for the submodule. This can be useful if you want to avoid conflicts with existing local repositories, but it requires you to update the submodule path in your project's configuration files.
+Replace `new_submodule_name` with the desired name for your submodule.
 ---
-
 ## Project tags
 When you execute the command `git tag -a dummy-release`, Git will open your default text editor, which in your case is Vim, to input the tag message (similar to a commit message).
 
@@ -281,6 +311,39 @@ Replace `d123456` with the actual commit hash you found in step 1.
 Now, you have successfully recovered the deleted branch, and it is pointing to the last commit before the deletion. If you made any changes to the branch after the last commit, those changes may be lost, and you'll need to reapply them manually.
 
 
+## Append Commit
+
+To append changes to your most recent commit without changing the commit message, you can use the `--amend` option with the `--no-edit` flag in Git. Here is the command:
+```
+git add .
+git commit --amend --no-edit
+```
+> Explanation:
+>
+>1. `git add .` - This command stages all the changes you made. Replace the `.` with the specific file or files you want to add if you don't want to stage all changes.
+>
+>2. `git commit --amend --no-edit` - This command alters the most recent commit with the new changes you just staged. The `--no-edit` flag tells Git to keep the current commit message.
+>
+Remember to be careful when amending commits that have already been pushed to a remote repository, as this can cause issues for other people working in the same repository. If you've already pushed your commit to a remote repository, you'll need to force push with `git push origin <branch> --force` after amending the commit. However, you should generally avoid force pushing whenever possible.
+
+## Reset Branch
+To revert your local branch to the state of the remote branch, follow these steps:
+
+1. Make sure you have the latest version of the remote branch in your local repository. To do this, fetch the remote updates:
+```
+git fetch origin
+```
+Replace `origin` with the name of your remote if it's different. This command fetches the latest changes from the remote repository without modifying your local branches.
+
+2. Assuming you want to revert your local branch to the remote branch with the same name, you can use `git reset` with the `--hard` flag. This command resets your local branch to the specified commit and discards any local changes:
+```
+git reset --hard origin/branch_name
+```
+Replace `origin/branch_name` with the remote branch you want to revert your local branch to. For example, if your remote is named origin and the branch is named main, you would use `git reset --hard origin/main`.
+
+>**Warning**: The `--hard` flag will discard any local changes in your working directory and reset the index. If you have any uncommitted changes, they will be lost. Make sure to commit or stash any important changes before running this command.
+
+After running the `git reset --hard` command, your local branch will be reverted to the state of the remote branch, discarding any local changes or commits made since the last synchronization with the remote branch.
 ## Project `.gitignore`
 
 A `.gitignore` file specifies intentionally untracked files that Git should ignore. It helps prevent accidentally committing unnecessary files to the repository. Here's a basic `.gitignore` file that you can use for your "Visual Workspace Microserver Cluster" project. It includes common files and directories that are often ignored in software projects:

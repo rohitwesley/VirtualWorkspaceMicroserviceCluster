@@ -1,64 +1,4 @@
 
-/**
-  @page README Virtual Workspace Microservice Cluster
-
-  This repository combines multiple private microservice repositories as submodules, organized under the GitFlow workflow. The repository also includes Doxygen-generated documentation for each microservice, as well as additional resources and tools to help manage and maintain the project. Follow the steps below to set up the project and access its features.
-
-  @section toc Table of Contents
-
-  1. [Setting up SSH for the microservers](#setting-up-ssh-for-the-microservers)
-  2. [Project Folder Structure](#project-folder-structure)
-  3. [Working with GitFlow branches](#working-with-gitflow-branches)
-  4. [Setting up submodules](#setting-up-submodules)
-  5. [Cloud Setup](#cloud-setup)
-  6. [Doxygen Documentation](#doxygen-documentation)
-  7. [Contributing](#contributing)
-  8. [License](#license)
-
-  @section setting-up-ssh-for-the-microservers Setting up SSH for the microservers
-
-  ...
-
-  @section project-folder-structure Project Folder Structure
-
-  ...
-
-  @section working-with-gitflow-branches Working with GitFlow branches
-
-  ...
-
-  @section setting-up-submodules Setting up submodules
-
-  ...
-
-  @section cloud-setup Cloud Setup
-
-  ...
-
-  @section doxygen-documentation Doxygen Documentation
-
-  Each microservice has its own Doxygen-generated documentation. To generate and access the documentation, see the [HELP_Doc](HELP_Doc) file.
-
-  @section further-resources Further Resources
-
-  - [HELP_Doc](./HELP_Doc): Detailed guidelines for project documentation.
-  - [HELP_ProjMang](./HELP_ProjMang): A guide to project management practices within the repository.
-
-  @section contributing Contributing
-
-  Please see the [CONTRIBUTING](CONTRIBUTING.md) file for guidelines on how to contribute to the project.
-  Please follow the GitFlow workflow when making contributions to this repository.
-
-  @section license License
-
-  "This project is built using open-source components and is NOT open source itself. This software is the property of the author, and any copying, distribution, or modification without the explicit written consent of the author is strictly prohibited. For any inquiries or requests for permission, please contact the author at wesleythomas360@gmail.com."
-
-  This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-  This `README` file provides step-by-step instructions for setting up and working with the "Virtual Workspace Microservice Cluster" repository, organized using the GitFlow workflow.
-
-*/
-
 # Virtual Workspace Microservice Cluster [Doc](\Doxygen\html\index.html)
 
 This repository combines multiple private microservice repositories as submodules, organized under the GitFlow workflow. The repository also includes Doxygen-generated documentation for each microservice, as well as additional resources and tools to help manage and maintain the project. Follow the steps below to set up the project and access its features.
@@ -76,6 +16,55 @@ This repository combines multiple private microservice repositories as submodule
 7. [Contributing](#contributing)
 8. [License](#license)
 
+---
+
+## Prerequisites
+
+- [Docker](https://www.docker.com/) (v20.10.0 or later)
+- [Git](https://git-scm.com/) (v2.25.0 or later)
+- [Docker Compose](https://docs.docker.com/compose/)
+- Node.js (v14+)
+- [Redis Stack](https://redis.io/)
+- Unity (optional, for the Unity client)
+- FFmpeg
+
+## Project Structure
+```
+.
+├── .gitignore
+├── Doxfile
+├── Doxygen
+│ ├── index.html
+│ └── ...
+├── HELP_Doc
+├── HELP_ProjMang
+├── LICENSE
+├── microservices
+│ ├── microservice-1
+│ │ ├── Doxyfile
+│ │ ├── LICENSE
+│ │ ├── README.md
+│ │ └── ...
+│ ├── microservice-2
+│ │ ├── Doxyfile
+│ │ ├── LICENSE
+│ │ ├── README.md
+│ │ └── ...
+│ └── ...
+├── README.md
+└── research-microservices
+│ ├── research-microservice-1
+│ │ ├── Doxyfile
+│ │ ├── LICENSE
+│ │ ├── README.md
+│ │ └── ...
+│ ├── research-microservice-2
+│ │ ├── Doxyfile
+│ │ ├── LICENSE
+│ │ ├── README.md
+│ │ └── ...
+└── ...
+```
 ---
 
 ## Setting up SSH for the microservers
@@ -240,3 +229,65 @@ This `README` file provides step-by-step instructions for setting up and working
 
 ---
 [END]
+
+---
+---
+/**
+  @page README Virtual Workspace Microservice Cluster
+
+  This repository combines multiple private microservice repositories as submodules, organized under the GitFlow workflow. The repository also includes Doxygen-generated documentation for each microservice, as well as additional resources and tools to help manage and maintain the project. Follow the steps below to set up the project and access its features.
+
+  @section toc Table of Contents
+
+  1. [Setting up SSH for the microservers](#setting-up-ssh-for-the-microservers)
+  2. [Project Folder Structure](#project-folder-structure)
+  3. [Working with GitFlow branches](#working-with-gitflow-branches)
+  4. [Setting up submodules](#setting-up-submodules)
+  5. [Cloud Setup](#cloud-setup)
+  6. [Doxygen Documentation](#doxygen-documentation)
+  7. [Contributing](#contributing)
+  8. [License](#license)
+
+  @section setting-up-ssh-for-the-microservers Setting up SSH for the microservers
+
+  ...
+
+  @section project-folder-structure Project Folder Structure
+
+  ...
+
+  @section working-with-gitflow-branches Working with GitFlow branches
+
+  ...
+
+  @section setting-up-submodules Setting up submodules
+
+  ...
+
+  @section cloud-setup Cloud Setup
+
+  ...
+
+  @section doxygen-documentation Doxygen Documentation
+
+  Each microservice has its own Doxygen-generated documentation. To generate and access the documentation, see the [HELP_Doc](HELP_Doc) file.
+
+  @section further-resources Further Resources
+
+  - [HELP_Doc](./HELP_Doc): Detailed guidelines for project documentation.
+  - [HELP_ProjMang](./HELP_ProjMang): A guide to project management practices within the repository.
+
+  @section contributing Contributing
+
+  Please see the [CONTRIBUTING](CONTRIBUTING.md) file for guidelines on how to contribute to the project.
+  Please follow the GitFlow workflow when making contributions to this repository.
+
+  @section license License
+
+  "This project is built using open-source components and is NOT open source itself. This software is the property of the author, and any copying, distribution, or modification without the explicit written consent of the author is strictly prohibited. For any inquiries or requests for permission, please contact the author at wesleythomas360@gmail.com."
+
+  This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+  This `README` file provides step-by-step instructions for setting up and working with the "Virtual Workspace Microservice Cluster" repository, organized using the GitFlow workflow.
+
+*/
