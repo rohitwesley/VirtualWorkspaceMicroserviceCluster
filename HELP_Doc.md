@@ -1,4 +1,5 @@
 # Documentation Help & Tips:
+
 ---
 
 ## Doxygen for microservices:
@@ -184,6 +185,8 @@ doxygen Doxyfile
 ```
 5. Open the generated documentation in your web browser. For example, open `./docs/html/index.html`.
 For more information on Doxygen and its features, please refer to the [official Doxygen documentation](https://www.doxygen.nl/manual/index.html).
+
+---
 
 ## Seting Up Doxygen Theme
 
