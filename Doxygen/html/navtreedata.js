@@ -93,33 +93,34 @@ var NAVTREE =
     [ "# Documentation Help & Tips:", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__doc.html", [
       [ "Doxygen for microservices:", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__doc.html#autotoc_md59", null ],
       [ "Documentation for JavaScript", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__doc.html#autotoc_md61", null ],
-      [ "Adding Doxygen Comments", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__doc.html#autotoc_md63", null ],
-      [ "Seting Up Doxygen Theme", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__doc.html#autotoc_md64", null ]
+      [ "Support readme files(.md)", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__doc.html#autotoc_md63", null ],
+      [ "Adding Doxygen Comments", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__doc.html#autotoc_md64", null ],
+      [ "Seting Up Doxygen Theme", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__doc.html#autotoc_md65", null ]
     ] ],
     [ "Virtual Workspace Microservice Cluster", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__proj_mang.html", [
-      [ "Setup Project Folder Structure", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__proj_mang.html#autotoc_md69", [
-        [ "Prerequisites", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__proj_mang.html#autotoc_md70", null ],
-        [ "1. Clone the repository using the SSH URL:", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__proj_mang.html#autotoc_md71", null ],
-        [ "2. Initialize GitFlow", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__proj_mang.html#autotoc_md72", null ],
-        [ "3. Update submodules", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__proj_mang.html#autotoc_md73", null ]
+      [ "Setup Project Folder Structure", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__proj_mang.html#autotoc_md70", [
+        [ "Prerequisites", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__proj_mang.html#autotoc_md71", null ],
+        [ "1. Clone the repository using the SSH URL:", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__proj_mang.html#autotoc_md72", null ],
+        [ "2. Initialize GitFlow", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__proj_mang.html#autotoc_md73", null ],
+        [ "3. Update submodules", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__proj_mang.html#autotoc_md74", null ]
       ] ],
-      [ "Working with GitFlow branches", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__proj_mang.html#autotoc_md75", [
-        [ "1. Create dummy commits for all GitFlow branches:", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__proj_mang.html#autotoc_md76", null ],
-        [ "2. Create a README.md file to explain the setup:", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__proj_mang.html#autotoc_md77", null ],
-        [ "3. Push the changes to the remote repository:", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__proj_mang.html#autotoc_md78", null ]
+      [ "Working with GitFlow branches", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__proj_mang.html#autotoc_md76", [
+        [ "1. Create dummy commits for all GitFlow branches:", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__proj_mang.html#autotoc_md77", null ],
+        [ "2. Create a README.md file to explain the setup:", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__proj_mang.html#autotoc_md78", null ],
+        [ "3. Push the changes to the remote repository:", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__proj_mang.html#autotoc_md79", null ]
       ] ],
-      [ "Setting up submodules", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__proj_mang.html#autotoc_md79", [
-        [ "Adding submodules", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__proj_mang.html#autotoc_md80", null ],
-        [ "Update submodules", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__proj_mang.html#autotoc_md81", null ],
-        [ "Commit the submodule:", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__proj_mang.html#autotoc_md82", null ],
-        [ "Delete submodule:", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__proj_mang.html#autotoc_md83", null ],
-        [ "Rename submodule folder:", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__proj_mang.html#autotoc_md84", null ]
+      [ "Setting up submodules", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__proj_mang.html#autotoc_md80", [
+        [ "Adding submodules", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__proj_mang.html#autotoc_md81", null ],
+        [ "Update submodules", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__proj_mang.html#autotoc_md82", null ],
+        [ "Commit the submodule:", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__proj_mang.html#autotoc_md83", null ],
+        [ "Delete submodule:", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__proj_mang.html#autotoc_md84", null ],
+        [ "Rename submodule folder:", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__proj_mang.html#autotoc_md85", null ]
       ] ],
-      [ "Project <tt>.gitignore</tt>", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__proj_mang.html#autotoc_md86", null ],
-      [ "Project tags", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__proj_mang.html#autotoc_md88", [
-        [ "Recover Deleted Branch:", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__proj_mang.html#autotoc_md89", null ]
+      [ "Project tags", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__proj_mang.html#autotoc_md87", [
+        [ "Recover Deleted Branch:", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__proj_mang.html#autotoc_md88", null ]
       ] ],
-      [ "Enable Long Path on Windows", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__proj_mang.html#autotoc_md90", null ]
+      [ "Project <tt>.gitignore</tt>", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__proj_mang.html#autotoc_md89", null ],
+      [ "Enable Long Path on Windows", "md__e___virtual_workspace__virtual_workspace_network__virtual_workspace_microservice_cluster__h_e_l_p__proj_mang.html#autotoc_md91", null ]
     ] ],
     [ "Bug List", "bug.html", null ],
     [ "Deprecated List", "deprecated.html", null ],

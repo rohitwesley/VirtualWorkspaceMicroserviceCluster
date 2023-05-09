@@ -117,7 +117,29 @@ To use Doxygen with the Type\+Script server you\textquotesingle{}ve been working
 Keep in mind that this workaround does not provide full Type\+Script support. If you want a more Type\+Script-\/focused documentation generator, consider using Type\+Doc.
 
 \DoxyHorRuler{0}
-\hypertarget{md__h_e_l_p__doc_autotoc_md28}{}\doxysection{Adding Doxygen Comments}\label{md__h_e_l_p__doc_autotoc_md28}
+\hypertarget{md__h_e_l_p__doc_autotoc_md28}{}\doxysection{Support readme files(.\+md)}\label{md__h_e_l_p__doc_autotoc_md28}
+You can certainly use Doxygen and .md files together in your project documentation. Doxygen is a powerful tool for generating documentation from source code, and it supports a variety of output formats, including HTML, La\+TeX, and Markdown.
+
+To use Doxygen with Markdown files, you can add Markdown support to your Doxygen configuration file (usually named {\ttfamily Doxyfile}). To do this, set the {\ttfamily MARKDOWN\+\_\+\+SUPPORT} option to YES, and specify the file extensions for your Markdown files using the {\ttfamily FILE\+\_\+\+PATTERNS} option.
+
+Here\textquotesingle{}s an example {\ttfamily Doxyfile} configuration that includes Markdown support\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#\ Doxyfile}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ ...}
+\DoxyCodeLine{\ }
+\DoxyCodeLine{\#\ Enable\ Markdown\ support}
+\DoxyCodeLine{MARKDOWN\_SUPPORT\ =\ YES}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ Specify\ file\ extensions\ for\ Markdown\ files}
+\DoxyCodeLine{FILE\_PATTERNS\ =\ *.md}
+\DoxyCodeLine{\ }
+\DoxyCodeLine{\#\ ...}
+
+\end{DoxyCode}
+ Once you\textquotesingle{}ve configured Doxygen to support Markdown files, you can write your documentation in Markdown syntax and include it in your source code files. Doxygen will automatically process the Markdown files and generate documentation in the output format of your choice.
+
+Note that Doxygen provides additional support for generating documentation from comments in your source code, using special syntax such as {\ttfamily ///} or {\ttfamily /$\ast$$\ast$ ... $\ast$/}. You can use this syntax to generate documentation for your code elements, such as functions, classes, and variables. You can also include Markdown syntax in these comments to format your documentation.\hypertarget{md__h_e_l_p__doc_autotoc_md29}{}\doxysection{Adding Doxygen Comments}\label{md__h_e_l_p__doc_autotoc_md29}
 To add Doxygen comments to your source code, follow the Doxygen commenting style. Here\textquotesingle{}s a brief example of how to add Doxygen comments to a C++ header file\+: 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{/**}
@@ -167,7 +189,7 @@ To add Doxygen comments to your source code, follow the Doxygen commenting style
 \end{DoxyCode}
 
 \item Open the generated documentation in your web browser. For example, open {\ttfamily ./docs/html/index.html}. For more information on Doxygen and its features, please refer to the \href{https://www.doxygen.nl/manual/index.html}{\texttt{ official Doxygen documentation}}.
-\end{DoxyEnumerate}\hypertarget{md__h_e_l_p__doc_autotoc_md29}{}\doxysection{Seting Up Doxygen Theme}\label{md__h_e_l_p__doc_autotoc_md29}
+\end{DoxyEnumerate}\hypertarget{md__h_e_l_p__doc_autotoc_md30}{}\doxysection{Seting Up Doxygen Theme}\label{md__h_e_l_p__doc_autotoc_md30}
 To change the theme in Doxygen, you can use the HTML\+\_\+\+EXTRA\+\_\+\+STYLESHEET option. Here\textquotesingle{}s how you can update your Doxyfile to get a modern theme UI\+:
 
 
