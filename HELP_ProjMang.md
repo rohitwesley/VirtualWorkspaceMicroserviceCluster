@@ -310,8 +310,6 @@ Replace `d123456` with the actual commit hash you found in step 1.
 
 Now, you have successfully recovered the deleted branch, and it is pointing to the last commit before the deletion. If you made any changes to the branch after the last commit, those changes may be lost, and you'll need to reapply them manually.
 
-
-<<<<<<< HEAD
 ## Append Commit
 
 To append changes to your most recent commit without changing the commit message, you can use the `--amend` option with the `--no-edit` flag in Git. Here is the command:
@@ -326,9 +324,6 @@ git commit --amend --no-edit
 >2. `git commit --amend --no-edit` - This command alters the most recent commit with the new changes you just staged. The `--no-edit` flag tells Git to keep the current commit message.
 >
 Remember to be careful when amending commits that have already been pushed to a remote repository, as this can cause issues for other people working in the same repository. If you've already pushed your commit to a remote repository, you'll need to force push with `git push origin <branch> --force` after amending the commit. However, you should generally avoid force pushing whenever possible.
-
-=======
->>>>>>> 4f8afd329fff84decac02039fe9632bd5b6cc13a
 ## Reset Branch
 To revert your local branch to the state of the remote branch, follow these steps:
 

@@ -28,7 +28,27 @@ This repository combines multiple private microservice repositories as submodule
 - Unity (optional, for the Unity client)
 - FFmpeg
 
-## Project Structure
+## Project Folder Structure
+
+The repository includes the following directories:
+
+- `Doxygen`: Contains the Doxyfile configuration file and the generated Doxygen documentation for the microservices.
+- `microservices`: Contains live microservice submodules.
+- `research-microservices`: Contains research microservice submodules.
+
+In addition, the repository contains the following files:
+
+- `README`: This file provides an overview of the project and setup instructions.
+- `HELP_Doc`: Provides instructions on how to generate and access the Doxygen documentation.
+- `HELP_ProjMang`: Offers guidance on managing the project, including working with GitFlow branches and submodules.
+- `.env`: Contains environment variables for the project
+- `.gitignore`: Lists files and directories that should not be tracked by Git.
+- `Doxfile`: The Doxyfile configuration file used to generate Doxygen documentation for each microservice.
+- `LICENSE`: The license file for the repository.
+
+---
+
+## Project Tree
 ```
 .
 ├── .gitignore
@@ -122,65 +142,6 @@ git clone git@github.com:your-username/VirtualWorkspaceMicroserviceCluster.git
 >By following these steps, you'll be able to set up SSH, create the remote repository, and perform all the setup from the terminal.
 
 
----
-
-## Project Folder Structure
-
-The repository includes the following directories:
-
-- `Doxygen`: Contains the Doxyfile configuration file and the generated Doxygen documentation for the microservices.
-- `microservices`: Contains live microservice submodules.
-- `research-microservices`: Contains research microservice submodules.
-
-In addition, the repository contains the following files:
-
-- `README`: This file provides an overview of the project and setup instructions.
-- `HELP_Doc`: Provides instructions on how to generate and access the Doxygen documentation.
-- `HELP_ProjMang`: Offers guidance on managing the project, including working with GitFlow branches and submodules.
-- `.env`: Contains environment variables for the project
-- `.gitignore`: Lists files and directories that should not be tracked by Git.
-- `Doxfile`: The Doxyfile configuration file used to generate Doxygen documentation for each microservice.
-- `LICENSE`: The license file for the repository.
-
----
-
-## Project Tree
-```
-.
-├── .gitignore
-├── Doxfile
-├── Doxygen
-│ ├── index.html
-│ └── ...
-├── HELP_Doc
-├── HELP_ProjMang
-├── LICENSE
-├── microservices
-│ ├── microservice-1
-│ │ ├── Doxyfile
-│ │ ├── LICENSE
-│ │ ├── README.md
-│ │ └── ...
-│ ├── microservice-2
-│ │ ├── Doxyfile
-│ │ ├── LICENSE
-│ │ ├── README.md
-│ │ └── ...
-│ └── ...
-├── README.md
-└── research-microservices
-│ ├── research-microservice-1
-│ │ ├── Doxyfile
-│ │ ├── LICENSE
-│ │ ├── README.md
-│ │ └── ...
-│ ├── research-microservice-2
-│ │ ├── Doxyfile
-│ │ ├── LICENSE
-│ │ ├── README.md
-│ │ └── ...
-└── ...
-```
 ---
 
 ## Working with GitFlow branches

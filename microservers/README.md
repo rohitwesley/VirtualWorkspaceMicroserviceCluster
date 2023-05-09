@@ -35,6 +35,7 @@ This project demonstrates a Virtual Studio Network using FFmpeg, Node.js, Redis,
 │ ├── envSetup.sh
 │ ├── envSetup.ps1
 │ ├── dashboard_microserver/
+│ │ ├── dist/
 │ │ ├── public/
 │ │ │ ├── dashboard/
 │ │ │ | ├── css/
