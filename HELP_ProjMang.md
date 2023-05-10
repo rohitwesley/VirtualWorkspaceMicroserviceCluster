@@ -8,6 +8,64 @@
 
 ---
 
+
+## Setting up SSH for the microservers
+
+1. **Generate an SSH key**: If you haven't already, generate an SSH key using the Ed25519 algorithm with
+
+```
+ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+>This will create a new SSH key pair using the Ed25519 algorithm. Follow the prompts to save the key pair and set a passphrase (optional).
+Follow the prompts to save the key pair and set a passphrase (optional).
+
+2. **Add your SSH key to your GitHub account**:
+
+- Copy your public key (default location: `~/.ssh/id_ed25519.pub`) to the clipboard:
+  ```
+  cat ~/.ssh/id_ed25519.pub | clip
+  ```
+- Go to [GitHub's SSH and GPG keys settings](https://github.com/settings/keys).
+- Click "New SSH key" and paste your public key into the "Key" field. Provide a title and click "Add SSH key".
+
+3. **Verify your SSH connection to GitHub**:
+
+```
+ssh -T git@github.com
+```
+You should see a message like: "Hi your-username! You've successfully authenticated, but GitHub does not provide shell access."
+
+4. **Install the `hub` command-line tool** (if you haven't already):
+
+For Windows: 
+download the [latest release](https://github.com/github/hub/releases) and add the hub executable to your system's PATH.
+
+For macOS:
+```
+brew install hub
+```
+For Linux (Debian/Ubuntu):
+```
+sudo apt-get install hub
+```
+
+5. **Create the remote "Virtual Workspace Microservice Cluster" repository using `hub`**:
+
+```
+hub create -p -d "Virtual Workspace Microservice Cluster" VirtualWorkspaceMicroserviceCluster
+```
+This will create a new private repository on your GitHub account.
+
+6. Now, follow the steps from the previous answer (starting from step 2) to port and organize your private repos into the "Virtual Workspace Microservice Cluster" repository. When cloning the repository, use the SSH URL:
+
+```
+git clone git@github.com:your-username/VirtualWorkspaceMicroserviceCluster.git
+```
+>By following these steps, you'll be able to set up SSH, create the remote repository, and perform all the setup from the terminal.
+
+
+---
+
 ## Setup Project Folder Structure
 
 ### Prerequisites
@@ -161,6 +219,10 @@ Now, you have combined your private repos into the "Virtual Workspace Microservi
   git submodule add git@github.com:your-username/microservice-private-repo.git microservers/microservices-private-repo
   ```
 ### Update submodules
+  * If you have changed the URL of a submodule, you also need to update the local configuration for that submodule:
+  ```
+  git submodule sync
+  ```
   * Update all submodules to fetch the latest changes:
   ```
   git submodule update --init --recursive
@@ -309,7 +371,6 @@ git checkout -b feature/dummy-feature d123456
 Replace `d123456` with the actual commit hash you found in step 1.
 
 Now, you have successfully recovered the deleted branch, and it is pointing to the last commit before the deletion. If you made any changes to the branch after the last commit, those changes may be lost, and you'll need to reapply them manually.
-
 ## Append Commit
 
 To append changes to your most recent commit without changing the commit message, you can use the `--amend` option with the `--no-edit` flag in Git. Here is the command:
@@ -418,7 +479,6 @@ out/
 >Create a file named `.gitignore` in the root directory of your repository and paste the contents above into the file. This will help prevent unnecessary files from being tracked by Git. You can customize this file to fit the specific needs of your project and its components.
 
 ---
-
 ## Enable Long Path on Windows
 It seems you are encountering an issue with the maximum filename length on Windows. Git on Windows has a limit of 260 characters for file paths, and some files in the repository you are trying to clone as a submodule have paths longer than that.
 

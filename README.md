@@ -88,62 +88,7 @@ In addition, the repository contains the following files:
 ---
 
 ## Setting up SSH for the microservers
-
-1. **Generate an SSH key**: If you haven't already, generate an SSH key using the Ed25519 algorithm with
-
-```
-ssh-keygen -t ed25519 -C "your_email@example.com"
-```
->This will create a new SSH key pair using the Ed25519 algorithm. Follow the prompts to save the key pair and set a passphrase (optional).
-Follow the prompts to save the key pair and set a passphrase (optional).
-
-2. **Add your SSH key to your GitHub account**:
-
-- Copy your public key (default location: `~/.ssh/id_ed25519.pub`) to the clipboard:
-  ```
-  cat ~/.ssh/id_ed25519.pub | clip
-  ```
-- Go to [GitHub's SSH and GPG keys settings](https://github.com/settings/keys).
-- Click "New SSH key" and paste your public key into the "Key" field. Provide a title and click "Add SSH key".
-
-3. **Verify your SSH connection to GitHub**:
-
-```
-ssh -T git@github.com
-```
-You should see a message like: "Hi your-username! You've successfully authenticated, but GitHub does not provide shell access."
-
-4. **Install the `hub` command-line tool** (if you haven't already):
-
-For Windows: 
-download the [latest release](https://github.com/github/hub/releases) and add the hub executable to your system's PATH.
-
-For macOS:
-```
-brew install hub
-```
-For Linux (Debian/Ubuntu):
-```
-sudo apt-get install hub
-```
-
-5. **Create the remote "Virtual Workspace Microservice Cluster" repository using `hub`**:
-
-```
-hub create -p -d "Virtual Workspace Microservice Cluster" VirtualWorkspaceMicroserviceCluster
-```
-This will create a new private repository on your GitHub account.
-
-6. Now, follow the steps from the previous answer (starting from step 2) to port and organize your private repos into the "Virtual Workspace Microservice Cluster" repository. When cloning the repository, use the SSH URL:
-
-```
-git clone git@github.com:your-username/VirtualWorkspaceMicroserviceCluster.git
-```
->By following these steps, you'll be able to set up SSH, create the remote repository, and perform all the setup from the terminal.
-
-
----
-
+Setup SSH to access the microserver. For detailed instructions on settingup SSH Keys for access to the project, see the [HELP_ProjMang](HELP_ProjMang) file.
 ## Working with GitFlow branches
 
 GitFlow is a Git branching model that organizes the project's branches and releases. For detailed instructions on using GitFlow in your project, see the [HELP_ProjMang](HELP_ProjMang) file.

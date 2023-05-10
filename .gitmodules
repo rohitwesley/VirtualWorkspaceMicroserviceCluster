@@ -14,3 +14,12 @@
 	path = microservers/unity-microserver
 	url = git@github.com:rohitwesley/VirtualWorkspaceUnityMicroservice-.git
 	branch = origin/develop
+[submodule "microservers/python-microserver"]
+	path = microservers/python-microserver
+	url = git@github.com:rohitwesley/VirtualWorkspacePythonMicroservice.git
+	branch = origin/develop
+[submodule "microservers/ffmpeg-microserver"]
+	path = microservers/ffmpeg-microserver
+	url = git@github.com:rohitwesley/VirtualWorkspaceFFMpegMicroservice.git
+	branch = origin/develop
+
