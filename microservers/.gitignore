@@ -22,11 +22,16 @@
 # Ignore envirment files
 .env
 
+# Ignore SSL certificates
+config/ssl-*.pem
+
 # Ignore system files
 .DS_Store
 Thumbs.db
 
 # Ignore local microservers
+ssl/
+DBfile/
 DBarchive/
 DBimage/
 DBvideo/

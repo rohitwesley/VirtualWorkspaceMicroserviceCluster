@@ -12,17 +12,17 @@ cp -f $ENV_FILE redis-microserver/.env
 cp -f $GITIGNORE_FILE redis-microserver/.gitignore
 cp -f $DOCKERIGNORE_FILE redis-microserver/.dockerignore
 
-# # Create files for python-microserver
-# echo "Setup python-microserver"
-# cp -f $ENV_FILE python-microserver/.env
-# cp -f $GITIGNORE_FILE python-microserver/.gitignore
-# cp -f $DOCKERIGNORE_FILE python-microserver/.dockerignore
+# Create files for python-microserver
+echo "Setup python-microserver"
+cp -f $ENV_FILE python-microserver/.env
+cp -f $GITIGNORE_FILE python-microserver/.gitignore
+cp -f $DOCKERIGNORE_FILE python-microserver/.dockerignore
 
-# # Create files for ffmpeg-microserver
-# echo "Setup ffmpeg-microserver"
-# cp -f $ENV_FILE ffmpeg-microserver/.env
-# cp -f $GITIGNORE_FILE ffmpeg-microserver/.gitignore
-# cp -f $DOCKERIGNORE_FILE ffmpeg-microserver/.dockerignore
+# Create files for ffmpeg-microserver
+echo "Setup ffmpeg-microserver"
+cp -f $ENV_FILE ffmpeg-microserver/.env
+cp -f $GITIGNORE_FILE ffmpeg-microserver/.gitignore
+cp -f $DOCKERIGNORE_FILE ffmpeg-microserver/.dockerignore
 
 # Create files for dashboard-microserver
 echo "Setup dashboard-microserver"

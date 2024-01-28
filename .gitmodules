@@ -2,15 +2,20 @@
 	path = research-microservers/Procedural-Workspace
 	url = git@github.com:rohitwesley/Procedural-Workspace.git
 	branch = origin/feature/IpadEditor
+
 [submodule "microservers/redis-microserver"]
 	path = microservers/redis-microserver
 	url = git@github.com:rohitwesley/VirtualWorkspaceRedisMicroservice.git
 	branch = origin/master
 [submodule "microservers/dashboard-microserver"]
 	path = microservers/dashboard-microserver
-	url = git@github.com:rohitwesley/VirtualWorkspaceDashboardMicroservice-.git
+	url = git@github.com:rohitwesley/VirtualWorkspaceDashboardMicroservice.git
 	branch = origin/develop
 [submodule "microservers/unity-microserver"]
 	path = microservers/unity-microserver
-	url = git@github.com:rohitwesley/VirtualWorkspaceUnityMicroservice-.git
+	url = git@github.com:rohitwesley/VirtualWorkspaceUnityMicroservice.git
+	branch = origin/develop
+[submodule "microservers/python-microserver"]
+	path = microservers/python-microserver
+	url = git@github.com:rohitwesley/VirtualWorkspacePythonMicroservice.git
 	branch = origin/develop

@@ -2,10 +2,10 @@
 ---
 | [BACK](README.md)
 
-| [MICROCLUSTER](microservers/README.md)
+| [MICROCLUSTER](microservers/INFO.md)
 | [MICROSERVICE](INFO_PROJMANG.md)
 | [API](INFO_DOC.md)
-| [CLOUD](CLOUD_SETUP.md)
+| [CLOUD](INFO_CLOUD.md)
 | [LICENSE](LICENSE.md)
 
 # Documentation Help & Tips:
