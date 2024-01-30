@@ -5,6 +5,9 @@ ENV_FILE=".env.example"
 DOCKERIGNORE_FILE=".dockerignore"
 GITIGNORE_FILE=".gitignore"
 
+# Make sure we're in the directory that the script is in
+pushd $(dirname "$0")
+
 # Create files for redis-microserver
 echo "Setup redis-microserver"
 # curl -sL https://raw.githubusercontent.com/redis/redis/6.2/redis.conf -o redis-microserver/redis.conf
@@ -32,3 +35,5 @@ cp -f $DOCKERIGNORE_FILE dashboard-microserver/.dockerignore
 
 # Display success message
 echo "Created $ENV_FILE, $DOCKERIGNORE_FILE, and $GITIGNORE_FILE files."
+
+popd
