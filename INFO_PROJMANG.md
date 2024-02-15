@@ -18,6 +18,10 @@
 
 ---
 
+<<<<<<< HEAD:INFO_PROJMANG.md
+=======
+
+>>>>>>> develop:HELP_ProjMang.md
 ## Setting up SSH for the microservers
 
 1. **Generate an SSH key**: If you haven't already, generate an SSH key using the Ed25519 algorithm with
@@ -239,6 +243,10 @@ Now, you have combined your private repos into the "Virtual Workspace Microservi
   git submodule add git@github.com:your-username/microservice-private-repo.git microservers/microservices-private-repo
   ```
 ### Update submodules
+  * If you have changed the URL of a submodule, you also need to update the local configuration for that submodule:
+  ```
+  git submodule sync
+  ```
   * Update all submodules to fetch the latest changes:
   ```
   git submodule update --init --recursive
@@ -387,7 +395,6 @@ git checkout -b feature/dummy-feature d123456
 Replace `d123456` with the actual commit hash you found in step 1.
 
 Now, you have successfully recovered the deleted branch, and it is pointing to the last commit before the deletion. If you made any changes to the branch after the last commit, those changes may be lost, and you'll need to reapply them manually.
-
 ## Append Commit
 
 To append changes to your most recent commit without changing the commit message, you can use the `--amend` option with the `--no-edit` flag in Git. Here is the command:
@@ -496,7 +503,6 @@ out/
 >Create a file named `.gitignore` in the root directory of your repository and paste the contents above into the file. This will help prevent unnecessary files from being tracked by Git. You can customize this file to fit the specific needs of your project and its components.
 
 ---
-
 ## Enable Long Path on Windows
 It seems you are encountering an issue with the maximum filename length on Windows. Git on Windows has a limit of 260 characters for file paths, and some files in the repository you are trying to clone as a submodule have paths longer than that.
 
