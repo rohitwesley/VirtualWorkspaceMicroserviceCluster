@@ -1,4 +1,19 @@
+
+---
+| [BACK](README.md)
+
+| [MICROCLUSTER](microservers/README.md)
+| [MICROSERVICE](INFO_PROJMANG.md)
+| [API](INFO_DOC.md)
+| [CLOUD](CLOUD_SETUP.md)
+| [LICENSE](LICENSE.md)
+
 # Documentation Help & Tips:
+
+---
+
+>## [Microservice API Documentation](\Doxygen\html\index.html)
+
 ---
 
 ## Doxygen for microservices:
@@ -185,6 +200,8 @@ doxygen Doxyfile
 5. Open the generated documentation in your web browser. For example, open `./docs/html/index.html`.
 For more information on Doxygen and its features, please refer to the [official Doxygen documentation](https://www.doxygen.nl/manual/index.html).
 
+---
+
 ## Seting Up Doxygen Theme
 
 To change the theme in Doxygen, you can use the HTML_EXTRA_STYLESHEET option. Here's how you can update your Doxyfile to get a modern theme UI:
@@ -213,10 +230,12 @@ HTML_EXTRA_STYLESHEET  = Doxygen/custom_theme/doxygen-bootstrapped.css
 ```
 Replace `Doxygen/custom_theme/doxygen-bootstrapped.css` with the path to your downloaded or created CSS file.
 
-Now, when you generate the documentation using Doxygen, it will use the specified modern theme.
+>Now, when you generate the documentation using Doxygen, it will use the specified modern theme.
 
 ---
 
 [END OF PAGE]
 
 [BACK](README.md)
+
+---

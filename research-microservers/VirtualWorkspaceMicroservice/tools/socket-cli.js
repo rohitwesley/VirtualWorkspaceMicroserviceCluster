@@ -4,7 +4,6 @@ const dotenv = require('dotenv');
 const WebSocket = require('ws');
 const readline = require("readline");
 const axios = require('axios');
-const socketIO = require('socket.io');
 
 dotenv.config();
 

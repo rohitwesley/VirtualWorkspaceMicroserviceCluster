@@ -1,65 +1,20 @@
 
-/**
-  @page README Virtual Workspace Microservice Cluster
+---
+| [START](README.md)
 
-  This repository combines multiple private microservice repositories as submodules, organized under the GitFlow workflow. The repository also includes Doxygen-generated documentation for each microservice, as well as additional resources and tools to help manage and maintain the project. Follow the steps below to set up the project and access its features.
+| [MICROCLUSTER](microservers/INFO.md)
+| [MICROSERVICE](INFO_PROJMANG.md)
+| [API](INFO_DOC.md)
+| [CLOUD](INFO_CLOUD.md)
+| [LICENSE](LICENSE.md)
 
-  @section toc Table of Contents
+# Virtual Workspace Microservice Cluster 
 
-  1. [Setting up SSH for the microservers](#setting-up-ssh-for-the-microservers)
-  2. [Project Folder Structure](#project-folder-structure)
-  3. [Working with GitFlow branches](#working-with-gitflow-branches)
-  4. [Setting up submodules](#setting-up-submodules)
-  5. [Cloud Setup](#cloud-setup)
-  6. [Doxygen Documentation](#doxygen-documentation)
-  7. [Contributing](#contributing)
-  8. [License](#license)
+---
 
-  @section setting-up-ssh-for-the-microservers Setting up SSH for the microservers
-
-  ...
-
-  @section project-folder-structure Project Folder Structure
-
-  ...
-
-  @section working-with-gitflow-branches Working with GitFlow branches
-
-  ...
-
-  @section setting-up-submodules Setting up submodules
-
-  ...
-
-  @section cloud-setup Cloud Setup
-
-  ...
-
-  @section doxygen-documentation Doxygen Documentation
-
-  Each microservice has its own Doxygen-generated documentation. To generate and access the documentation, see the [HELP_Doc](HELP_Doc) file.
-
-  @section further-resources Further Resources
-
-  - [HELP_Doc](./HELP_Doc): Detailed guidelines for project documentation.
-  - [HELP_ProjMang](./HELP_ProjMang): A guide to project management practices within the repository.
-
-  @section contributing Contributing
-
-  Please see the [CONTRIBUTING](CONTRIBUTING.md) file for guidelines on how to contribute to the project.
-  Please follow the GitFlow workflow when making contributions to this repository.
-
-  @section license License
-
-  "This project is built using open-source components and is NOT open source itself. This software is the property of the author, and any copying, distribution, or modification without the explicit written consent of the author is strictly prohibited. For any inquiries or requests for permission, please contact the author at wesleythomas360@gmail.com."
-
-  This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-  This `README` file provides step-by-step instructions for setting up and working with the "Virtual Workspace Microservice Cluster" repository, organized using the GitFlow workflow.
-
-*/
-
-# Virtual Workspace Microservice Cluster [Doc](\Doxygen\html\index.html)
+>## [Microservice Clust INFO.md](\microservers\INFO.md)
+>---
+>## [Microservice API Documentation ](\Doxygen\html\index.html)
 
 This repository combines multiple private microservice repositories as submodules, organized under the GitFlow workflow. The repository also includes Doxygen-generated documentation for each microservice, as well as additional resources and tools to help manage and maintain the project. Follow the steps below to set up the project and access its features.
 
@@ -67,71 +22,33 @@ This repository combines multiple private microservice repositories as submodule
 
 ## Table of Contents
 
-1. [Setting up SSH for the microservers](#setting-up-ssh-for-the-microservers)
+1. [Setting Up SSH for Microservers](#setting-up-ssh-for-the-microservers)
 2. [Project Folder Structure](#project-folder-structure)
 3. [Working with GitFlow branches](#working-with-gitflow-branches)
 4. [Setting up submodules](#setting-up-submodules)
-5. [Cloud Setup](#cloud-setup)
-6. [Doxygen Documentation](#doxygen-documentation)
-7. [Contributing](#contributing)
-8. [License](#license)
+5. [Environment Setup](#environment-setup)
+6. [Cloud Setup](#cloud-setup)
+7. [Doxygen Documentation](#doxygen-documentation)
+8. [Contributing](#contributing)
+9. [License](#license)
 
 ---
 
-## Setting up SSH for the microservers
+## Prerequisites
 
-1. **Generate an SSH key**: If you haven't already, generate an SSH key using the Ed25519 algorithm with
+- [Docker](https://www.docker.com/) (v20.10.0 or later)
+- [Git](https://git-scm.com/) (v2.25.0 or later)
+- [Docker Compose](https://docs.docker.com/compose/)
+- Node.js (v14+)
+- [Redis Stack](https://redis.io/)
+- Unity (optional, for the Unity client)
+- FFmpeg
 
-```
-ssh-keygen -t ed25519 -C "your_email@example.com"
-```
->This will create a new SSH key pair using the Ed25519 algorithm. Follow the prompts to save the key pair and set a passphrase (optional).
-Follow the prompts to save the key pair and set a passphrase (optional).
+---
 
-2. **Add your SSH key to your GitHub account**:
+## Setting Up SSH for Microservers
 
-- Copy your public key (default location: `~/.ssh/id_ed25519.pub`) to the clipboard:
-  ```
-  cat ~/.ssh/id_ed25519.pub | clip
-  ```
-- Go to [GitHub's SSH and GPG keys settings](https://github.com/settings/keys).
-- Click "New SSH key" and paste your public key into the "Key" field. Provide a title and click "Add SSH key".
-
-3. **Verify your SSH connection to GitHub**:
-
-```
-ssh -T git@github.com
-```
-You should see a message like: "Hi your-username! You've successfully authenticated, but GitHub does not provide shell access."
-
-4. **Install the `hub` command-line tool** (if you haven't already):
-
-For Windows: 
-download the [latest release](https://github.com/github/hub/releases) and add the hub executable to your system's PATH.
-
-For macOS:
-```
-brew install hub
-```
-For Linux (Debian/Ubuntu):
-```
-sudo apt-get install hub
-```
-
-5. **Create the remote "Virtual Workspace Microservice Cluster" repository using `hub`**:
-
-```
-hub create -p -d "Virtual Workspace Microservice Cluster" VirtualWorkspaceMicroserviceCluster
-```
-This will create a new private repository on your GitHub account.
-
-6. Now, follow the steps from the previous answer (starting from step 2) to port and organize your private repos into the "Virtual Workspace Microservice Cluster" repository. When cloning the repository, use the SSH URL:
-
-```
-git clone git@github.com:your-username/VirtualWorkspaceMicroserviceCluster.git
-```
->By following these steps, you'll be able to set up SSH, create the remote repository, and perform all the setup from the terminal.
-
+The setup process involves generating an SSH key, adding it to your GitHub account, verifying the connection, installing the 'hub' command-line tool, and creating a remote repository. For detailed step-by-step instructions, please refer to the [HELP_ProjMang](INFO_PROJMANG.md) file.
 
 ---
 
@@ -194,40 +111,128 @@ In addition, the repository contains the following files:
 ```
 ---
 
+<<<<<<< HEAD
+=======
+## Setting up SSH for the microservers
+Setup SSH to access the microserver. For detailed instructions on settingup SSH Keys for access to the project, see the [HELP_ProjMang](HELP_ProjMang) file.
+>>>>>>> develop
 ## Working with GitFlow branches
 
-GitFlow is a Git branching model that organizes the project's branches and releases. For detailed instructions on using GitFlow in your project, see the [HELP_ProjMang](HELP_ProjMang) file.
+GitFlow is a Git branching model that organizes the project's branches and releases. For detailed instructions on using GitFlow in your project, see the [HELP_ProjMang](INFO_PROJMANG.md) file.
 
 ---
 
 ## Setting up submodules
 
-Submodules are used to include the microservice repositories within the main repository. To set up the submodules, see the [HELP_ProjMang](HELP_ProjMang) file.
+Submodules are used to include the microservice repositories within the main repository. To set up the submodules, see the [HELP_ProjMang](INFO_PROJMANG.md) file.
 
 ---
 
+## Environment Setup
+
+Setup an [Anaconda](https://docs.anaconda.com/free/navigator/install/) Environment and use it as the Virtual Workspace Microservice Cluster Network Environment.
+To setup the Environment see the [Python Microservice](microservers/python-microserver/README.md)
+Eg.
+```
+> conda info --envs   
+
+# conda environments:
+#
+base                    *  C:\ProgramData\anaconda3
+virtualworkspace-microserver  C:\Users\user\.conda\envs\virtualworkspace-microserver
+
+> conda activate virtualworkspace-microserver
+
+> conda info --envs
+
+# conda environments:
+#
+base                     C:\ProgramData\anaconda3
+virtualworkspace-microserver  *  C:\Users\user\.conda\envs\virtualworkspace-microserver
+
+> conda info       
+
+     active environment : virtualworkspace-microserver
+    active env location : C:\Users\user\.conda\envs\virtualworkspace-microserver
+            shell level : 1
+       user config file : C:\Users\user\.condarc
+ populated config files : C:\Users\user\.condarc
+          conda version : 23.3.1
+    conda-build version : 3.24.0
+         python version : 3.10.9.final.0
+       virtual packages : __archspec=1=x86_64
+                          __cuda=12.2=0
+                          __win=0=0
+       base environment : C:\ProgramData\anaconda3  (read only)
+      conda av data dir : C:\ProgramData\anaconda3\etc\conda
+  conda av metadata url : None
+           channel URLs : https://conda.anaconda.org/conda-forge/win-64
+                          https://conda.anaconda.org/conda-forge/noarch
+                          https://repo.anaconda.com/pkgs/main/win-64
+                          https://repo.anaconda.com/pkgs/main/noarch
+                          https://repo.anaconda.com/pkgs/r/win-64
+                          https://repo.anaconda.com/pkgs/r/noarch
+                          https://repo.anaconda.com/pkgs/msys2/win-64
+                          https://repo.anaconda.com/pkgs/msys2/noarch
+          package cache : C:\ProgramData\anaconda3\pkgs
+                          C:\Users\user\.conda\pkgs
+                          C:\Users\user\AppData\Local\conda\conda\pkgs
+       envs directories : C:\Users\user\.conda\envs
+                          C:\ProgramData\anaconda3\envs
+                          C:\Users\user\AppData\Local\conda\conda\envs
+               platform : win-64
+             user-agent : conda/23.3.1 requests/2.28.1 CPython/3.10.9 Windows/10 Windows/10.0.22621 aau/0.4.3 c/LC0oUxRR0PcFDkwS747o1g s/CzpWn_A0YgsU0yFxUYPw5Q e/gWNhDQXf31RBz9Rv-COcQQ
+          administrator : False
+             netrc file : None
+           offline mode : False
+
+> conda install --file path\to\VirtualWorkspaceNetwork\requirements.txt
+
+>_
+```
+
+>***Python Lib Setup:*** 
+>
+>>Save Active Conda Environment package list for distribution across virtual workspace microservice network with your custom packages using :
+>>
+>
+>```
+> pip freeze > requirements.txt
+>```
+
+
 ## Cloud Setup
 
-The repository is set up to work with cloud environments. To configure the cloud setup, see the [Cloud Setup](CLOUD_SETUP.md) file.
+The repository is set up to work with cloud environments. To configure the cloud setup, see the [Cloud Setup](INFO_CLOUD.md) file.
 
 ---
 
 ## Doxygen Documentation
 
-Each microservice has its own Doxygen-generated documentation. To generate and access the documentation, see the [HELP_Doc](HELP_Doc) file.
+Each microservice has its own Doxygen-generated documentation. To generate and access the documentation, see the [HELP_Doc](INFO_DOC.md) file.
 
 ---
 ## Further Resources
 
-- [HELP_Doc](./HELP_Doc): Detailed guidelines for project documentation.
-- [HELP_ProjMang](./HELP_ProjMang): A guide to project management practices within the repository.
+- [HELP_Doc](INFO_DOC.md): Detailed guidelines for project documentation.
+- [HELP_ProjMang](INFO_PROJMANG.md): A guide to project management practices within the repository.
+- [CLOUD_SETUP](INFO_CLOUD.md): A guide for project microservice cloud managment.
 
 ---
 
-## Contributing
+## Contributors
+<!-- Contributions are welcome! Feel free to open an issue or submit a pull request. -->
+- Wesley Thomas
 
-Please see the [CONTRIBUTING](CONTRIBUTING.md) file for guidelines on how to contribute to the project.
-Please follow the GitFlow workflow when making contributions to this repository.
+We welcome contributions! Please see our [Contributing Guide](../CONTRIBUTING.md) for more information on how to get involved.
+
+---
+## Acknowledgements
+
+- [Redis](https://redis.io/) for their amazing open-source project
+- [Docker](https://www.docker.com/) for their containerization platform
+- [OpenAI](https://www.openai.com/) for the GPT-4 architecture
+- etc...
 
 ---
 
@@ -235,8 +240,72 @@ Please follow the GitFlow workflow when making contributions to this repository.
 
 "This project is built using open-source components and is NOT open source itself. This software is the property of the author, and any copying, distribution, or modification without the explicit written consent of the author is strictly prohibited. For any inquiries or requests for permission, please contact the author at wesleythomas360@gmail.com."
 
+<!-- This project is licensed under the [MIT License.](https://opensource.org/license/mit/) -->
 
-This `README` file provides step-by-step instructions for setting up and working with the "Virtual Workspace Microservice Cluster" repository, organized using the GitFlow workflow.
+This project is licensed under a [CUSTOM License.](LICENSE.md)
 
 ---
-[END]
+
+[END OF PROJECT](README.md)
+
+---
+
+/**
+  @page README Virtual Workspace Microservice Cluster
+
+  This repository combines multiple private microservice repositories as submodules, organized under the GitFlow workflow. The repository also includes Doxygen-generated documentation for each microservice, as well as additional resources and tools to help manage and maintain the project. Follow the steps below to set up the project and access its features.
+
+  @section toc Table of Contents
+
+  1. [Setting Up SSH for Microservers](#setting-up-ssh-for-the-microservers)
+  2. [Project Folder Structure](#project-folder-structure)
+  3. [Working with GitFlow branches](#working-with-gitflow-branches)
+  4. [Setting up submodules](#setting-up-submodules)
+  5. [Cloud Setup](#cloud-setup)
+  6. [Doxygen Documentation](#doxygen-documentation)
+  7. [Contributing](#contributing)
+  8. [License](#license)
+
+  @section setting-up-ssh-for-the-microservers Setting Up SSH for Microservers
+
+  ...
+
+  @section project-folder-structure Project Folder Structure
+
+  ...
+
+  @section working-with-gitflow-branches Working with GitFlow branches
+
+  ...
+
+  @section setting-up-submodules Setting up submodules
+
+  ...
+
+  @section cloud-setup Cloud Setup
+
+  ...
+
+  @section doxygen-documentation Doxygen Documentation
+
+  Each microservice has its own Doxygen-generated documentation. To generate and access the documentation, see the [HELP_Doc](INFO_DOC.md) file.
+
+  @section further-resources Further Resources
+
+  - [HELP_Doc](INFO_DOC.md): Detailed guidelines for project documentation.
+  - [HELP_ProjMang](INFO_PROJMANG.md): A guide to project management practices within the repository.
+
+  @section contributing Contributing
+
+  Please see the [CONTRIBUTING](CONTRIBUTING.md) file for guidelines on how to contribute to the project.
+  Please follow the GitFlow workflow when making contributions to this repository.
+
+  @section license License
+
+  "This project is built using open-source components and is NOT open source itself. This software is the property of the author, and any copying, distribution, or modification without the explicit written consent of the author is strictly prohibited. For any inquiries or requests for permission, please contact the author at wesleythomas360@gmail.com."
+
+  This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+  This `README` file provides step-by-step instructions for setting up and working with the "Virtual Workspace Microservice Cluster" repository, organized using the GitFlow workflow.
+
+*/

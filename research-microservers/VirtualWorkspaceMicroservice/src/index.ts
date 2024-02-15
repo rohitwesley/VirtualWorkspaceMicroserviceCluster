@@ -128,7 +128,7 @@ const main = async () => {
   
   //----------RedisPUB/SUB(IOT Sensors) CRUD------------
   
-  //----------WebSocket(Streams) CRUD------------
+  //----------WebSoc///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////ket(Streams) CRUD------------
   //Stream Videao-TODO
   expressRouterWrapper.addGetHandlerNoAuth("/videostream/:videoname", handlers.MediaHandlers.getInstance().videoStream);
   // expressRouterWrapper.addGetHandlerNoAuth("/imagestream/:imagename", handlers.MediaHandlers.getInstance().imageStream);
@@ -181,7 +181,7 @@ const main = async () => {
   ]
   const socketIOServer: SocketIOServer = setupSocketIOServer(httpServer, socketIORoutes, serviceOptions)
   
-  process.on('SIGINT', () => {
+  process.on('SIGINT', () => {+
     console.warn('Received interrupt, shutting down')
     httpServer.close()
     process.exit(0)

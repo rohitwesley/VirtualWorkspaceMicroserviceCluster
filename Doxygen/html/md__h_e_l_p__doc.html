@@ -139,6 +139,23 @@ Documentation for JavaScript</h1>
 <p>Keep in mind that this workaround does not provide full TypeScript support. If you want a more TypeScript-focused documentation generator, consider using TypeDoc.</p>
 <hr  />
 <h1><a class="anchor" id="autotoc_md28"></a>
+Support readme files(.md)</h1>
+<p>You can certainly use Doxygen and .md files together in your project documentation. Doxygen is a powerful tool for generating documentation from source code, and it supports a variety of output formats, including HTML, LaTeX, and Markdown.</p>
+<p>To use Doxygen with Markdown files, you can add Markdown support to your Doxygen configuration file (usually named <code>Doxyfile</code>). To do this, set the <code>MARKDOWN_SUPPORT</code> option to YES, and specify the file extensions for your Markdown files using the <code>FILE_PATTERNS</code> option.</p>
+<p>Here's an example <code>Doxyfile</code> configuration that includes Markdown support: </p><div class="fragment"><div class="line"># Doxyfile</div>
+<div class="line"> </div>
+<div class="line"># ...</div>
+<div class="line"> </div>
+<div class="line"># Enable Markdown support</div>
+<div class="line">MARKDOWN_SUPPORT = YES</div>
+<div class="line"> </div>
+<div class="line"># Specify file extensions for Markdown files</div>
+<div class="line">FILE_PATTERNS = *.md</div>
+<div class="line"> </div>
+<div class="line"># ...</div>
+</div><!-- fragment --><p> Once you've configured Doxygen to support Markdown files, you can write your documentation in Markdown syntax and include it in your source code files. Doxygen will automatically process the Markdown files and generate documentation in the output format of your choice.</p>
+<p>Note that Doxygen provides additional support for generating documentation from comments in your source code, using special syntax such as <code>///</code> or <code>/** ... */</code>. You can use this syntax to generate documentation for your code elements, such as functions, classes, and variables. You can also include Markdown syntax in these comments to format your documentation.</p>
+<h1><a class="anchor" id="autotoc_md29"></a>
 Adding Doxygen Comments</h1>
 <p>To add Doxygen comments to your source code, follow the Doxygen commenting style. Here's a brief example of how to add Doxygen comments to a C++ header file: </p><div class="fragment"><div class="line">/**</div>
 <div class="line"> * @file example.h</div>
@@ -176,7 +193,7 @@ Adding Doxygen Comments</h1>
 </div><!-- fragment --></li>
 <li>Open the generated documentation in your web browser. For example, open <code>./docs/html/index.html</code>. For more information on Doxygen and its features, please refer to the <a href="https://www.doxygen.nl/manual/index.html">official Doxygen documentation</a>.</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md29"></a>
+<h1><a class="anchor" id="autotoc_md30"></a>
 Seting Up Doxygen Theme</h1>
 <p>To change the theme in Doxygen, you can use the HTML_EXTRA_STYLESHEET option. Here's how you can update your Doxyfile to get a modern theme UI:</p>
 <ol type="1">
@@ -208,7 +225,7 @@ Seting Up Doxygen Theme</h1>
 </div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 23 2023 22:16:57 for Virtual Workspace Microservice Cluster by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+Generated on Tue Apr 25 2023 00:20:12 for Virtual Workspace Microservice Cluster by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
 </small></address>
 </body>
 </html>
