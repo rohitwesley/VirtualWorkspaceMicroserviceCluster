@@ -3,17 +3,17 @@ $ENV_FILE=".env.example"
 $DOCKERIGNORE_FILE=".dockerignore"
 $GITIGNORE_FILE=".gitignore"
 
+# Create files for virtual Workspce Microserver Cluster
+Write-Output "Setup VirtualWorkspce Microserver Cluster"
+Copy-Item -Path $ENV_FILE -Destination ../.env -Force
+Copy-Item -Path $GITIGNORE_FILE -Destination ../.gitignore -Force
+Copy-Item -Path $DOCKERIGNORE_FILE -Destination ../.dockerignore -Force
+
 # Create files for nginx-microserver
 Write-Output "Setup nginx-microserver"
 Copy-Item -Path $ENV_FILE -Destination nginx-microserver/.env -Force
 Copy-Item -Path $GITIGNORE_FILE -Destination nginx-microserver/.gitignore -Force
 Copy-Item -Path $DOCKERIGNORE_FILE -Destination nginx-microserver/.dockerignore -Force
-
-# Create files for turn-microserver
-Write-Output "Setup turn-microserver"
-Copy-Item -Path $ENV_FILE -Destination turn-microserver/.env -Force
-Copy-Item -Path $GITIGNORE_FILE -Destination turn-microserver/.gitignore -Force
-Copy-Item -Path $DOCKERIGNORE_FILE -Destination turn-microserver/.dockerignore -Force
 
 # Create files for redis-microserver
 Write-Output "Setup redis-microserver"
@@ -33,12 +33,6 @@ Write-Output "Setup python-microserver"
 Copy-Item -Path $ENV_FILE -Destination python-microserver/.env -Force
 Copy-Item -Path $GITIGNORE_FILE -Destination python-microserver/.gitignore -Force
 Copy-Item -Path $DOCKERIGNORE_FILE -Destination python-microserver/.dockerignore -Force
-
-# Create files for ffmpeg-microserver
-Write-Output "Setup ffmpeg-microserver"
-Copy-Item -Path $ENV_FILE -Destination ffmpeg-microserver/.env -Force
-Copy-Item -Path $GITIGNORE_FILE -Destination ffmpeg-microserver/.gitignore -Force
-Copy-Item -Path $DOCKERIGNORE_FILE -Destination ffmpeg-microserver/.dockerignore -Force
 
 # Create files for unity-microserver
 Write-Output "Setup unity-microserver"

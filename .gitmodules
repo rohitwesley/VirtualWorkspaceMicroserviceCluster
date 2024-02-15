@@ -1,21 +1,39 @@
-[submodule "research-microservers/Procedural-Workspace"]
-	path = research-microservers/Procedural-Workspace
-	url = git@github.com:rohitwesley/Procedural-Workspace.git
-	branch = origin/feature/IpadEditor
+# TemplateMicroserver:
+[submodule "microservers/template-microserver"]
+	path = microservers/template-microserver
+	url = git@github.com:rohitwesley/VirtualWorkspaceMicroserviceTemplate.git
+	branch = origin/master
+
+# Network Microservers:
 
 [submodule "microservers/redis-microserver"]
 	path = microservers/redis-microserver
 	url = git@github.com:rohitwesley/VirtualWorkspaceRedisMicroservice.git
 	branch = origin/master
+
+[submodule "microservers/nginx-microserver"]
+	path = microservers/nginx-microserver
+	url = git@github.com:rohitwesley/VirtualWorkspaceNginxMicroservice.git
+	branch = origin/develop
+
 [submodule "microservers/dashboard-microserver"]
 	path = microservers/dashboard-microserver
 	url = git@github.com:rohitwesley/VirtualWorkspaceDashboardMicroservice.git
 	branch = origin/develop
+
 [submodule "microservers/unity-microserver"]
 	path = microservers/unity-microserver
 	url = git@github.com:rohitwesley/VirtualWorkspaceUnityMicroservice.git
 	branch = origin/develop
+
 [submodule "microservers/python-microserver"]
 	path = microservers/python-microserver
 	url = git@github.com:rohitwesley/VirtualWorkspacePythonMicroservice.git
 	branch = origin/develop
+
+# Research Microservers:
+
+[submodule "research-microservers/Procedural-Workspace"]
+	path = research-microservers/Procedural-Workspace
+	url = git@github.com:rohitwesley/Procedural-Workspace.git
+	branch = origin/feature/IpadEditor

@@ -36,6 +36,11 @@ DBarchive/
 DBimage/
 DBvideo/
 
+### Redis ###
+*.rdb
+*.aof
+*.aof.manifest
+
 ### Node ###
 # Logs
 logs
