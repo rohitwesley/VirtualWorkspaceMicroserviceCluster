@@ -562,7 +562,7 @@ export class MediaHandlers {
     if (!range)
     {
       res.sendFile(dbConfig.masterDir + dbConfig.dbVideo + "/videosterio.mp4");
-      res.status(400).send("Range must be provided");
+      // res.status(400).send("Range must be provided");
     }
     else
     {

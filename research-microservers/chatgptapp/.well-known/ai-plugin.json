@@ -1,0 +1,18 @@
+{
+    "schema_version": "v1",
+    "name_for_human": "VirtualWorkspaceChatGPTManager",
+    "name_for_model": "VirtualWorkspaceChatGPTManager",
+    "description_for_human": "Virtual Workspace ChatGPT CRUD Manager Plugin.",
+    "description_for_model": "Plugin for managing ChatGPT CRUD API for Virtual Workspace",
+    "auth": {
+      "type": "none"
+    },
+    "api": {
+      "type": "openapi",
+      "url": "http://localhost:8450/openapi.yaml"
+    },
+    "logo_url": "http://localhost:8450/logo.png",
+    "contact_email": "legal@example.com",
+    "legal_info_url": "http://example.com/legal"
+  }
+  
