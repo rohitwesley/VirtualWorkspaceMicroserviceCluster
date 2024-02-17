@@ -37,6 +37,3 @@
 	path = research-microservers/Procedural-Workspace
 	url = git@github.com:rohitwesley/Procedural-Workspace.git
 	branch = origin/feature/IpadEditor
-[submodule "microservers/nginx-microserver"]
-	path = microservers/nginx-microserver
-	url = git@github.com:rohitwesley/VirtualWorkspaceNginxMicroservice.git
