@@ -18,11 +18,7 @@
 
 ---
 
-<<<<<<< HEAD:INFO_PROJMANG.md
-=======
-
->>>>>>> develop:HELP_ProjMang.md
-## Setting up SSH for the microservers
+Z## Setting up SSH for the microservers
 
 1. **Generate an SSH key**: If you haven't already, generate an SSH key using the Ed25519 algorithm with
 
@@ -305,6 +301,12 @@ git commit -m "Removed submodule"
 6. Delete the submodule directory:
 
 Finally, delete the submodule directory using your file manager or a command:
+
+>Clean using Git:
+>```
+>path\to\submodule\ git clean -dxf 
+>```
+>**WARNING :** *this will clear all untracked data includind unlinked submodule 
 
 >For Windows:
 >```

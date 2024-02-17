@@ -11,6 +11,13 @@ cp -f $ENV_FILE ../.env
 cp -f $GITIGNORE_FILE ../.gitignore
 cp -f $DOCKERIGNORE_FILE ../.dockerignore
 
+# Create files for template-microserver
+echo "Setup template-microserver"
+cp -f $ENV_FILE template-microserver/.env
+cp -f $GITIGNORE_FILE template-microserver/.gitignore
+cp -f $DOCKERIGNORE_FILE template-microserver/.dockerignore
+
+
 # Create files for nginx-microserver
 echo "Setup nginx-microserver"
 cp -f $ENV_FILE nginx-microserver/.env
