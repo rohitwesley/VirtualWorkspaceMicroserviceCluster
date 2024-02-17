@@ -9,6 +9,12 @@ Copy-Item -Path $ENV_FILE -Destination ../.env -Force
 Copy-Item -Path $GITIGNORE_FILE -Destination ../.gitignore -Force
 Copy-Item -Path $DOCKERIGNORE_FILE -Destination ../.dockerignore -Force
 
+# Create files for template-microserver
+Write-Output "Setup template-microserver"
+Copy-Item -Path $ENV_FILE -Destination template-microserver/.env -Force
+Copy-Item -Path $GITIGNORE_FILE -Destination template-microserver/.gitignore -Force
+Copy-Item -Path $DOCKERIGNORE_FILE -Destination template-microserver/.dockerignore -Force
+
 # Create files for nginx-microserver
 Write-Output "Setup nginx-microserver"
 Copy-Item -Path $ENV_FILE -Destination nginx-microserver/.env -Force
