@@ -19,7 +19,7 @@
 [submodule "microservers/dashboard-microserver"]
 	path = microservers/dashboard-microserver
 	url = git@github.com:rohitwesley/VirtualWorkspaceDashboardMicroservice.git
-	branch = origin/feature/dashboard-widgets
+	branch = origin/feature/develop
 
 [submodule "microservers/unity-microserver"]
 	path = microservers/unity-microserver
