@@ -34,13 +34,51 @@ Make sure you have the following installed:
 - Docker Desktop
 - A text editor (Visual Studio Code, Atom, etc.)
 - A command line interface (Terminal on macOS, Command Prompt or PowerShell on Windows, etc.)
+- Anaconda or Miniconda
+
+## Anaconda Environment Setup
+
+To set up a Conda environment for testing the server from the notebook or in Docker when the microserver is live, follow these steps:
+
+1. Install Miniconda or Anaconda on your system if you haven't already. Download the appropriate installer from the [Miniconda website](https://docs.conda.io/en/latest/miniconda.html) or the [Anaconda website](https://www.anaconda.com/products/distribution) and follow the installation instructions.
+2. Create a new Conda environment for the project. Open a terminal or Anaconda prompt, and run:
+
+```
+conda env list
+conda create --name virtualworkspace-microserver
+conda env list
+```
+3. Activate the new Conda environment:
+
+```
+conda activate virtualworkspace-microserver
+```
+4. Install the required packages for the FastAPI server and Gradio frontend:
+
+```
+pip install -r app/requirements.txt
+```
+
+
+## Node Package Manager (NPM/NodeJs) Setup
+
+1. Go to the official Node.js website's download page: [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
+
+2. Download the installer corresponding to your OS and system architecture (Windows, macOS, Linux, etc.).
+
+3. Run the installer and follow the prompts. The installer will install both Node.js and npm, the Node package manager.
+
+4. update npm:
+```
+sudo npm install -g npm
+```
 
 ## Docker-Compose Setup
 
 Install Docker Compose:
 
 ```
-npm install --save-dev docker-compose
+sudo npm install -g docker-compose
 ```
 
 ## Dockerfile Setup
@@ -54,19 +92,48 @@ touch Dockerfile
 In your `Dockerfile`, specify a base image and copy your local code into the Docker image:
 
 ```
-FROM node:14
 
-WORKDIR /usr/src/app
+# Use an official Node.js runtime as a parent image
+FROM node:lts-slim
 
+ARG BUILD_DIR="/usr/app"
+
+# Set the working directory
+# WORKDIR /usr/src/app
+WORKDIR $BUILD_DIR
+
+# Optionally update npm to the latest version
+RUN npm install -g npm
+
+# Install npm-check-updates globally
+RUN npm install -g npm-check-updates
+
+# Copy package.json and package-lock.json to the working directory
 COPY package*.json ./
 
-RUN npm install
+# Update NodeJs packages
+RUN ncu -u
+# RUN npm update --save/--save-dev
 
+# Install any needed packages
+RUN npm install -d
+
+# Copy the rest of the application code
 COPY . .
 
-EXPOSE 3000
+# Copy the public directory
+COPY ./public $BUILD_DIR/public
 
-CMD [ "npm", "start" ]
+# Make sure Webpacky is compiled
+RUN npm run build
+
+# Expose the port the application will run on
+ARG APP_PORT
+EXPOSE 3000 ${APP_PORT}
+
+# Start the application
+CMD ["npm", "start"]
+
 ```
 
 Now, create a `docker-compose.yml` file:
@@ -78,16 +145,40 @@ touch docker-compose.yml
 In `docker-compose.yml`, specify the services for your application:
 
 ```
-version: '3'
+
+version: '3.9'
+
 services:
-  app:
-    build: .
-    volumes:
-      - .:/usr/src/app
-      - /usr/src/app/node_modules
+  # @brief Template microserver service
+  template-microserver:
+    build: 
+      context: .
+    # @brief Container name
+    container_name: template-microserver
+    # @brief Use the custom image
+    image: "vw-template-microservice"
+    # @brief Port mapping
     ports:
       - 3000:3000
-    command: npm run start
+    # @brief Load environment variables from the .env file
+    env_file:
+      - ./.env
+    # @brief Restart policy
+    restart: always
+    # @brief Define the network used by the service
+    networks:
+      - vw-network-cluster
+    
+# @brief Volume definition for persistent data storage
+volumes:
+  template-volume:
+    driver: local
+
+# @brief Network definition
+networks:
+  vw-network-cluster:
+    external: true
+
 ```
 
 ## Running the microserver
@@ -123,32 +214,34 @@ docker network create vw-network-cluster
 In all your microservice have individual Docker Compose files, only replace the networks section with this:
 
 ```
-version: "3.9"
+
+version: '3.9'
 
 services:
-  # dashboard-microserver service
-  dashboard-microserver:
-    # Build settings
-    build:
+  # @brief Template microserver service
+  template-microserver:
+    build: 
       context: .
-      dockerfile: Dockerfile
-    # Container name
-    container_name: dashboard-microserver
-    # Port mapping
+    # @brief Container name
+    container_name: template-microserver
+    # @brief Use the custom image
+    image: "vw-template-microservice"
+    # @brief Port mapping
     ports:
-      - "${APP_PORT}:${APP_PORT}"
-    # Mount the current directory as a volume
-    volumes:
-      - .:/app-dashboard
-    # Load environment variables from the .env file
+      - 3000:3000
+    # @brief Load environment variables from the .env file
     env_file:
-      - .env
-    # Command to start the service
-    command: ["npm", "run", "start"]
-    # Define the network used by the service
+      - ./.env
+    # @brief Restart policy
+    restart: always
+    # @brief Define the network used by the service
     networks:
       - vw-network-cluster
-
+    
+# @brief Volume definition for persistent data storage
+volumes:
+  template-volume:
+    driver: local
   
 # Network definition
 networks:
@@ -161,32 +254,30 @@ This tells Docker Compose to use the vw-network-cluster network that you created
 If you have one big Docker Composer file for all the microservices then add dependancies in each microservice and add them to the same network
 
 ```
-version: "3.9"
+
+version: '3.9'
 
 services:
-  # dashboard-microserver service
-  dashboard-microserver:
-    # Build settings
-    build:
+  # @brief Template microserver service
+  template-microserver:
+    build: 
       context: .
-      dockerfile: Dockerfile
-    # Container name
-    container_name: dashboard-microserver
-    # Port mapping
+    # @brief Container name
+    container_name: template-microserver
+    # @brief Use the custom image
+    image: "vw-template-microservice"
+    # @brief Port mapping
     ports:
-      - "${APP_PORT}:${APP_PORT}"
-    # Mount the current directory as a volume
-    volumes:
-      - .:/app-dashboard
-    # Load environment variables from the .env file
+      - 3000:3000
+    # @brief Load environment variables from the .env file
     env_file:
-      - .env
-    # Dependencies on other services
+      - ./.env
+    # @brief Restart policy
+    restart: always
+    # @brief Dependencies on other services
     depends_on:
       - redis-microserver
-    # Command to start the service
-    command: ["npm", "run", "start"]
-    # Define the network used by the service
+    # @brief Define the network used by the service
     networks:
       - vw-network-cluster
 
@@ -214,30 +305,53 @@ After doing these steps, you should be able to start your services. The services
 > To set up a Docker container for your project and automate deployment to Azure and GitHub, follow these steps:
 
 1. Create a `Dockerfile` in the root directory of your project:
-```
+```5
 # Use a base image with the required dependencies
-FROM node:14
+FROM node:lts-slim
+
+ARG BUILD_DIR="/usr/app"
+ARG CONTAINER_USER="node"
+ARG CONTAINER_EXPOSE_PORT="8000"
 
 # Set the working directory
-WORKDIR /app
+# WORKDIR /usr/src/app
+WORKDIR $BUILD_DIR
 
-# Copy package.json and package-lock.json
+# Optionally update npm to the latest version
+RUN npm install -g npm
+
+# Install npm-check-updates globally
+RUN npm install -g npm-check-updates
+
+# Copy package.json and package-lock.json to the working directory
 COPY package*.json ./
 
-# Install dependencies
-RUN npm install
+# Update NodeJs packages
+RUN ncu -u
+# RUN npm update --save/--save-dev
+
+# Install any needed packages
+RUN npm install -d
 
 # Copy the rest of the application code
 COPY . .
 
+# Copy the public directory
+COPY ./public $BUILD_DIR/public
+
+# Make sure Webpacky is compiled
+RUN npm run build
+
 # Expose the port the application will run on
-EXPOSE 3000
+ARG APP_PORT
+EXPOSE 3000 ${APP_PORT}
 
 # Start the application
 CMD ["npm", "start"]
+
 ```
 
-Replace `node:14` with the appropriate base image for your project, and adjust the installation commands and exposed port as needed.
+Replace `node:lts-slim` with the appropriate base image for your project, and adjust the installation commands and exposed port as needed.
 
 2. Build the Docker image:
 ```
