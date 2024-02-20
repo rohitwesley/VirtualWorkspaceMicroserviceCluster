@@ -191,6 +191,10 @@ docker-compose up --build
 ```
 docker-compose up --force-recreate --build
 ```
+or
+```
+docker-compose up --force-recreate --build -d
+```
 
 Navigate to `http://localhost:3000` in your web browser to view your application.
 
