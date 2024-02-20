@@ -12,9 +12,28 @@
 
 ---
 
->## [Microservice API Documentation](\Doxygen\html\index.html)
+>## [API Documentation](\Doxygen\html\index.html)
+
+>## [Dashboard Documentation](\Doxygen\html\index.html)
+
+>## [IOT Interface Documentation](\Doxygen\html\index.html)
+
+These are all the doxygen generated documents for the various microservices.
+Below is how to create a doxygen documentation for custom microservices.
 
 ---
+
+
+## Table of Contents
+
+1. [Doxygen for Microservices](#doxygen-for-microservices)
+2. [Documentation for JavaScript](#documentation-for-javascript)
+3. [Support Readme Files (.md)](#support-readme-filesmd)
+4. [Adding Doxygen Comments](#adding-doxygen-comments)
+5. [Setting Up Doxygen Theme](#setting-up-doxygen-theme)
+
+---
+
 
 ## Doxygen for microservices:
 
