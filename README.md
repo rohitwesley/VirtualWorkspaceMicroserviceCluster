@@ -109,13 +109,10 @@ In addition, the repository contains the following files:
 │ │ └── ...
 └── ...
 ```
----
 
-<<<<<<< HEAD
-=======
 ## Setting up SSH for the microservers
 Setup SSH to access the microserver. For detailed instructions on settingup SSH Keys for access to the project, see the [HELP_ProjMang](HELP_ProjMang) file.
->>>>>>> develop
+
 ## Working with GitFlow branches
 
 GitFlow is a Git branching model that organizes the project's branches and releases. For detailed instructions on using GitFlow in your project, see the [HELP_ProjMang](INFO_PROJMANG.md) file.

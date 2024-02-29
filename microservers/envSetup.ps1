@@ -1,5 +1,5 @@
 # Set file paths
-$ENV_FILE=".env.example"
+$ENV_FILE=".env.master"
 $DOCKERIGNORE_FILE=".dockerignore"
 $GITIGNORE_FILE=".gitignore"
 

@@ -21,6 +21,7 @@
 
 # Ignore envirment files
 .env
+.env.master
 
 # Ignore SSL certificates
 config/ssl-*.pem
