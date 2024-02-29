@@ -26,10 +26,10 @@
 	url = git@github.com:rohitwesley/VirtualWorkspacePythonMicroservice.git
 	branch = origin/master
 
-# [submodule "microservers/unity-microserver"]
-# 	path = microservers/unity-microserver
-# 	url = git@github.com:rohitwesley/VirtualWorkspaceUnityMicroservice.git
-# 	branch = origin/master
+[submodule "microservers/unity-microserver"]
+	path = microservers/unity-microserver
+	url = git@github.com:rohitwesley/VirtualWorkspaceUnityMicroservice.git
+	branch = origin/master
 
 # Research Microservers:
 
