@@ -13,6 +13,13 @@ cp -f $GITIGNORE_FILE ../.gitignore
 cp -f $GITLFS_FILE ../.gitattributes
 cp -f $DOCKERIGNORE_FILE ../.dockerignore
 
+# Create files for research-microservers
+echo "Setup research-microservers"
+# cp -f $ENV_FILE ../research-microservers/.env
+cp -f $GITIGNORE_FILE ../research-microservers/.gitignore
+cp -f $GITLFS_FILE ../research-microservers/.gitattributes
+# cp -f $DOCKERIGNORE_FILE ../research-microservers/.dockerignore
+
 # Create files for template-microserver
 echo "Setup template-microserver"
 cp -f $ENV_FILE template-microserver/.env
