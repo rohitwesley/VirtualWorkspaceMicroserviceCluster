@@ -59,10 +59,10 @@ cp -f $DOCKERIGNORE_FILE python-microserver/.dockerignore
 
 # Create files for unity-microserver
 echo "Setup unity-microserver"
-cp -f $ENV_FILE unity-microserver/.env
+# cp -f $ENV_FILE unity-microserver/.env
 cp -f $GITIGNORE_FILE unity-microserver/.gitignore
 cp -f $GITLFS_FILE unity-microserver/.gitattributes
-cp -f $DOCKERIGNORE_FILE unity-microserver/.dockerignore
+# cp -f $DOCKERIGNORE_FILE unity-microserver/.dockerignore
 
 # Display success message
 echo "Created $ENV_FILE, $DOCKERIGNORE_FILE, and $GITIGNORE_FILE files."
