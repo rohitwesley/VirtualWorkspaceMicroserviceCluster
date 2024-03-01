@@ -23,12 +23,13 @@
 3. [Microservice Network Setup](#microservice-network-setup)
     - [Docker-Compose Setup](#docker-compose-setup)
     - [Dockerfile Setup](#dockerfile-setup)
-4. [Running the Microserver](#running-the-microserver)
-5. [Microservice Network Cluster](#microservice-network-cluster)
-6. [Squarespace Domain and SSL Setup](#squarespace-domain-and-ssl-setup)
-7. [Azure Docker Microservice's Cluster Setup](#azure-docker-microservices-cluster-setup)
-8. [Run, Debug, Troubleshoot Multiple Microservices](#run-debug-troubleshoot-multiple-microservices)
-9. [Conclusion](#conclusion)
+4. [Microservice Network Cluster](#microservice-network-cluster)
+5. [Microserver Environment setup](#microserver-environment-setup)
+6. [Start the Microservers](#start-the-microserver)
+7. [Squarespace Domain and SSL Setup](#squarespace-domain-and-ssl-setup)
+8. [Azure Docker Microservice's Cluster Setup](#azure-docker-microservices-cluster-setup)
+9. [Run, Debug, Troubleshoot Multiple Microservices](#run-debug-troubleshoot-multiple-microservices)
+10. [Conclusion](#conclusion)
 
 
 
@@ -188,23 +189,6 @@ networks:
 
 ```
 
-## Running the microserver
-Now that you have set up your application, you can build and run it using Docker Compose:
-
-```
-docker-compose up --build
-```
-[for clean build with no cash from previous build]
-```
-docker-compose up --force-recreate --build
-```
-or
-```
-docker-compose up --force-recreate --build
-```
-
-Navigate to `http://localhost:3000` in your web browser to view your application.
-
 # Microservice Network Cluster
 
 Setting up a Docker Network with multiple microservices:
@@ -307,6 +291,51 @@ In your microserver Docker Compose file, remove the depends_on line. Since Docke
 After doing these steps, you should be able to start your services. The services will be able to communicate with each other over the vw-network-cluster network. You can refer to the service by its name (like redis-microserver) when making network requests.
 
 ---
+
+## Microserver Environment Setup
+
+1. Create a `.env.master` file using the `.env.example` Template and fill in all the environment variables to the server and place it in the microservers folder.
+
+>**Key Importan Variables To set**
+>  1. Setup the server IP address env variables.
+>  2. Direct the env variable to the Local Media absolute path.
+>  3. Direct the env variable to the Local SSL absolute path.
+>  4. Setup the Redis env variables.
+>
+
+2. Update `env.Setup.sh` with all required microservers and their paths
+
+3. Run bash script
+
+```
+./env.Setup.sh
+```
+
+---
+
+## Start the Microservers
+Now that you have set up your application, you can build and run it using Docker Compose:
+
+```
+docker-compose up --build
+```
+>**For clean build:**
+>```
+>docker-compose up --force-recreate --build
+>``` 
+>---
+>OR
+>```
+>docker-compose up --force-recreate --build -d
+>```
+
+>**For clean build with no cash from previous build:**
+>```
+>docker-compose down && docker-compose build --no-cache && docker-compose up --force-recreate -d
+>```
+
+Navigate to `http://localhost:3000` in your web browser to view your application.
+
 
 ## Squarspace Domain and SSL Setup
 To achieve this, you'll need to set up a subdomain (dashboard.tecrt.co) that points to your local workstation, configure your local workstation to accept incoming traffic, and then run the Node.js, Socket.io, and lit-html applications in Docker containers. Here's a step-by-step guide to do that:
