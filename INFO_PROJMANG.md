@@ -8,9 +8,9 @@
 | [CLOUD](INFO_CLOUD.md)
 | [LICENSE](LICENSE.md)
 
-# Virtual Workspace Project Mangement
-
 ---
+
+# Virtual Workspace Project Mangement
 
 *"This repository contains a collection of microservices that make up the Virtual Workspace Microservice Cluster. The project is organized as a set of submodules, each representing a microservice within the cluster."*
 

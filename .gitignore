@@ -44,6 +44,9 @@ DBarchive/
 DBimage/
 DBvideo/
 
+# Ignore local unity assets
+Art/
+
 # Blender cash
 *.blend1
 **/Blender/Renders/

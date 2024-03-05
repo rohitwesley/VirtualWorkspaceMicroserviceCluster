@@ -8,24 +8,22 @@
 | [CLOUD](../INFO_CLOUD.md)
 | [LICENSE](../LICENSE.md)
 
+---
+
 # Virtual Workspace Studio Microservice Network Cluster
 
----
 
 >## [Dashboard Microservice](dashboard-microserver/README.md)
->---
->## [Stream Microservice](\ffmpeg-microserver\README.md)
->---
->## [Learn Microservice](\python-microserver\README.md)
->---
->## [Memory Microservice](\redis-microserver\README.md)
->---
->## [Compute Microservice](\unity-microserver\README.md)
->---
 
----
+>## [Learn Microservice](python-microserver/README.md)
+
+>## [Memory Microservice](redis-microserver/README.md)
+
+>## [Compute Microservice](unity-microserver/README.md)
 
 This project demonstrates a Virtual Studio Network using FFmpeg, Node.js, Redis, Docker, and Unity. The system allows processing live and offline video streams from multiple clients.
+
+---
 
 ## Prerequisites
 

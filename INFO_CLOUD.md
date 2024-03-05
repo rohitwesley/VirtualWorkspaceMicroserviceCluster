@@ -8,11 +8,9 @@
 | [CLOUD](INFO_CLOUD.md)
 | [LICENSE](LICENSE.md)
 
-# Microservice Network Setup
-
-# Express.js Docker-Compose Application README
-
 ---
+
+# Microservice Network Setup
 
 ## Table of Contents
 

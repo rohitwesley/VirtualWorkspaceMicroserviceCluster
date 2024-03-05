@@ -8,9 +8,9 @@
 | [CLOUD](INFO_CLOUD.md)
 | [LICENSE](LICENSE.md)
 
-# Documentation Help & Tips:
-
 ---
+
+# Documentation Help & Tips:
 
 >## [API Documentation](\Doxygen\html\index.html)
 

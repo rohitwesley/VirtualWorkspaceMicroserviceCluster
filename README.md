@@ -8,12 +8,13 @@
 | [CLOUD](INFO_CLOUD.md)
 | [LICENSE](LICENSE.md)
 
-# Virtual Workspace Microservice Cluster 
-
 ---
 
->## [Microservice Clust INFO.md](\microservers\INFO.md)
->---
+# Virtual Workspace Microservice Cluster 
+
+
+>## [Microservice Clust INFO.md](microservers/INFO.md)
+
 >## [Microservice API Documentation ](\Doxygen\html\index.html)
 
 This repository combines multiple private microservice repositories as submodules, organized under the GitFlow workflow. The repository also includes Doxygen-generated documentation for each microservice, as well as additional resources and tools to help manage and maintain the project. Follow the steps below to set up the project and access its features.
