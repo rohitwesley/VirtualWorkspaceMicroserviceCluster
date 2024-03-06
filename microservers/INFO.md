@@ -271,22 +271,31 @@ This project demonstrates a Virtual Studio Network using FFmpeg, Node.js, Redis,
 
     >1. Open a terminal window.
     >2. Clone the project from the GitHub repository:
+    >**NOTE** *Replace [username], [repository], [branch], and [path] with the appropriate values for your repository.*
     >```
     >cd microserver
     >git clone https://github.com/[username]/[repository].git
     >```
-    >Replace [username], [repository], [branch], and [path] with the appropriate values for your repository.
     >
     >2. Navigate to the `microserver` directory where you want to customise the `env` the microservice subfolders.
     >3. Copy and paste the following command into the terminal:
-    >unix terminla: `sh envSetup.sh` or in a powershell terminal use `./envSetup.sh` or `./envSetup.ps1`
-
-    >Replace [username], [repository], [branch], and [path] with the appropriate values for your repository.
+    >unix terminla: `./envSetup.sh`.
+    >[**NOTE:** *If on Mac os you may have to give read/write access to your bash scripts```chmod +x envSetup.sh```.]*
     >
     >4. Press Enter to execute the script.
     >5. Wait for the script to finish creating the necessary files for the microservices.
     >6. You should now have three subfolders with the necessary configuration files for each microservice.
-
+    >
+    >**IMPORTANT:** *Run respective microserver preparation environment bash scripts manualy for local runs of microservers it is automated for docker containers*
+    >
+    >Grant read/write acces for prepare_environmennt.sh batch script (Mac OS):
+    >```
+    >chmod +x prepare_environmennt.sh
+    >```
+    >Run Script:
+    >```
+    >./prepare_environment.sh
+    >```
 2. Set up the Redis microservice:
 
 ```

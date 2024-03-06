@@ -73,5 +73,13 @@ cp -f $GITIGNORE_FILE unity-microserver/.gitignore
 cp -f $GITLFS_FILE unity-microserver/.gitattributes
 # cp -f $DOCKERIGNORE_FILE unity-microserver/.dockerignore
 
+# Create files for browser-microserver
+echo "Setup browser-microserver"
+cp -f $LICENSE_FILE browser-microserver/License.md
+cp -f $ENV_FILE browser-microserver/.env
+cp -f $GITIGNORE_FILE browser-microserver/.gitignore
+# cp -f $GITLFS_FILE browser-microserver/.gitattributes
+cp -f $DOCKERIGNORE_FILE browser-microserver/.dockerignore
+
 # Display success message
 echo "Created $LICENSE_FILE, $ENV_FILE, $GITIGNORE_FILE, $GITLFS_FILE, and $DOCKERIGNORE_FILE files."

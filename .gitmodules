@@ -37,3 +37,6 @@
 	path = research-microservers/Procedural-Workspace
 	url = git@github.com:rohitwesley/Procedural-Workspace.git
 	branch = origin/feature/IpadEditor
+[submodule "microservers/browser-microserver"]
+	path = microservers/browser-microserver
+	url = git@github.com:rohitwesley/VirtualWorkspaceBrowserMicroservice.git

@@ -21,6 +21,7 @@
 3. [Microservice Network Setup](#microservice-network-setup)
     - [Docker-Compose Setup](#docker-compose-setup)
     - [Dockerfile Setup](#dockerfile-setup)
+    - [Docker Cleanup](#docker-cleanup)
 4. [Microservice Network Cluster](#microservice-network-cluster)
 5. [Microserver Environment setup](#microserver-environment-setup)
 6. [Start the Microservers](#start-the-microserver)
@@ -186,6 +187,59 @@ networks:
     external: true
 
 ```
+
+## Docker Cleanup
+
+To free up disk space and remove unused Docker resources, follow these cleanup steps:
+
+### Remove Unused Docker Objects
+
+1. **Prune system** - Remove all stopped containers, all dangling images, and all unused networks:
+   ```
+   docker system prune
+   ```
+   To include unused volumes and all unused images, not just dangling ones:
+   ```
+   docker system prune --all --volumes
+   ```
+
+2. **Remove unused images** - To remove images not associated with any container:
+   ```
+   docker image prune -a
+   ```
+
+3. **Remove unused volumes** - Be cautious as this may delete important data:
+   ```
+   docker volume prune
+   ```
+
+### Docker Desktop Cleanup
+
+For Docker Desktop users, cleanup can be done directly from the UI:
+- Navigate to **Preferences** > **Troubleshoot** > **Clean / Purge data** to remove unused images and containers.
+
+### Remove Build Cache
+
+To remove the build cache, which Docker uses to speed up image building:
+```
+docker builder prune
+```
+
+### Viewing Disk Usage
+
+After cleanup, to view how much disk space Docker is using:
+```
+docker system df
+```
+
+### Automating Cleanup
+
+Consider automating cleanup tasks using cron jobs or scheduled tasks if running out of space regularly.
+
+### Warning
+
+Use caution with these commands. Removing volumes, images, and containers can result in data loss. Always ensure that data you wish to keep is backed up before performing cleanup tasks.
+
 
 # Microservice Network Cluster
 

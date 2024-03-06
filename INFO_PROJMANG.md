@@ -537,6 +537,10 @@ To append changes to your most recent commit without changing the commit message
 git add .
 git commit --amend --no-edit
 ```
+or in one line
+```
+git commit -a --amend --no-edit
+```
 > Explanation:
 >
 >1. `git add .` - This command stages all the changes you made. Replace the `.` with the specific file or files you want to add if you don't want to stage all changes.
