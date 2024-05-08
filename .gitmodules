@@ -11,11 +11,6 @@
 	url = git@github.com:rohitwesley/VirtualWorkspaceRedisMicroservice.git
 	branch = origin/master
 
-[submodule "microservers/nginx-microserver"]
-	path = microservers/nginx-microserver
-	url = git@github.com:rohitwesley/VirtualWorkspaceNginxMicroservice.git
-	branch = origin/master
-
 [submodule "microservers/dashboard-microserver"]
 	path = microservers/dashboard-microserver
 	url = git@github.com:rohitwesley/VirtualWorkspaceDashboardMicroservice.git
@@ -31,6 +26,10 @@
 	url = git@github.com:rohitwesley/VirtualWorkspaceUnityMicroservice.git
 	branch = origin/master
 
+[submodule "microservers/browser-microserver"]
+	path = microservers/browser-microserver
+	url = git@github.com:rohitwesley/VirtualWorkspaceBrowserMicroservice.git
+
 # Research Microservers:
 
 [submodule "research-microservers/Eden"]
@@ -42,7 +41,7 @@
 	url = git@github.com:rohitwesley/Procedural-Workspace.git
 	branch = origin/feature/IpadEditor
 	
-[submodule "microservers/browser-microserver"]
-	path = microservers/browser-microserver
-	url = git@github.com:rohitwesley/VirtualWorkspaceBrowserMicroservice.git
 
+[submodule "microservers/nginx-microserver"]
+	path = microservers/nginx-microserver
+	url = git@github.com:rohitwesley/VirtualWorkspaceNginxMicroservice.git
