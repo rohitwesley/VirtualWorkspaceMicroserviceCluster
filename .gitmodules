@@ -11,10 +11,10 @@
 	url = git@github.com:rohitwesley/VirtualWorkspaceRedisMicroservice.git
 	branch = origin/master
 
-# [submodule "microservers/nginx-microserver"]
-# 	path = microservers/nginx-microserver
-# 	url = git@github.com:rohitwesley/VirtualWorkspaceNginxMicroservice.git
-# 	branch = origin/master
+[submodule "microservers/nginx-microserver"]
+	path = microservers/nginx-microserver
+	url = git@github.com:rohitwesley/VirtualWorkspaceNginxMicroservice.git
+	branch = origin/master
 
 [submodule "microservers/dashboard-microserver"]
 	path = microservers/dashboard-microserver
@@ -45,4 +45,4 @@
 [submodule "microservers/browser-microserver"]
 	path = microservers/browser-microserver
 	url = git@github.com:rohitwesley/VirtualWorkspaceBrowserMicroservice.git
-	
+
