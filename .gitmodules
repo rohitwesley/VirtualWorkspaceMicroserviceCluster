@@ -45,3 +45,6 @@
 [submodule "microservers/nginx-microserver"]
 	path = microservers/nginx-microserver
 	url = git@github.com:rohitwesley/VirtualWorkspaceNginxMicroservice.git
+[submodule "research-microservers/microservice-template"]
+	path = research-microservers/microservice-template
+	url = git@github.com:wwlib/microservice-template.git
