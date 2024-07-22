@@ -13,7 +13,7 @@ cp -f $LICENSE_FILE ../License.md
 cp -f $ENV_FILE ../.env
 cp -f $GITIGNORE_FILE ../.gitignore
 cp -f $GITLFS_FILE ../.gitattributes
-cp -f $DOCKERIGNORE_FILE ../.dockerignore
+cp -f $DOCKERIGNORE_FILE ../.dockerignore   
 
 # Create files for research-microservers
 echo "Setup research-microservers"
