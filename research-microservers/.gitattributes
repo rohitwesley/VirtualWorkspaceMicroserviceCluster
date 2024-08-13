@@ -1,3 +1,6 @@
+# Automate Line Ending Conversion with .gitattributes
+* text=auto eol=lf
+
 # Apps
 .exe filter=lfs diff=lfs merge=lfs -text
 
