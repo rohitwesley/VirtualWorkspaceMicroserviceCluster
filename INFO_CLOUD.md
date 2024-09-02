@@ -10,12 +10,13 @@
 
 ---
 
-# Microservice Network Setup
+# Virtual Workspace Microservice Network Setup
 
 ## Table of Contents
 
 1. [Introduction](#introduction)
 2. [Prerequisites](#prerequisites)
+    - [Setup WSL with Custom Conda and Docker Environments (Windows Only)](#setup-wsl-with-custom-conda-and-docker-environments-windows-only)
     - [Anaconda Environment Setup](#anaconda-environment-setup)
     - [Node Package Manager (NPM/NodeJs) Setup](#node-package-manager-npmnodejs-setup)
 3. [Microservice Network Setup](#microservice-network-setup)
@@ -32,16 +33,257 @@
 
 
 
-## Introduction
+# Introduction
 This document provides a step-by-step guide to setting up microserver's in a Network Cluster using Docker containers and Docker compose.
 
-## Prerequisites
+# Prerequisites
 
 Make sure you have the following installed:
 - Docker Desktop
 - A text editor (Visual Studio Code, Atom, etc.)
 - A command line interface (Terminal on macOS, Command Prompt or PowerShell on Windows, etc.)
 - Anaconda or Miniconda
+
+
+## Setup WSL with Custom Conda and Docker Environments (Windows Only)
+Setting Up WSL Debian with Docker Using another Drive for Storage of Docker Content. and accessing the anacodna navigator and env in wsl. 
+
+### Step 1: Clear All Existing WSL Environments
+
+1. **List all installed WSL distributions**:
+   Open your PowerShell terminal in VSCode and run:
+   ```
+   wsl --list --all
+   ```
+
+2. **Unregister all WSL distributions**:
+   For each distribution listed, run:
+   ```
+   wsl --unregister <DistroName>
+   ```
+   Replace `<DistroName>` with the name of the distribution you want to unregister.
+
+3. **Delete the WSL Distribution Files**:
+   
+   After unregistering the distribution, its files are typically located in a specific directory on your drive. By default, WSL distributions are stored in the %LocalAppData%\Packages directory. If you've moved the distribution to another drive, you'll need to delete the files from that location.
+   
+   >**Default Location on C Drive**:
+   > 1. **Navigate to the Distribution's Directory**:
+   >   
+   >     Open File Explorer and go to:
+   >     ```
+   >     %LocalAppData%\Packages
+   >     ```
+   >     You can paste this path into the address bar of File Explorer.
+   >
+   > 2. **Find the Distribution Folder**:
+   > 
+   >     Locate the folder corresponding to your WSL distribution. The folder name typically starts with the distribution name followed by some alphanumeric characters (e.g., CanonicalGroupLimited.Ubuntu... for Ubuntu).
+   >       ```
+   >       %LocalAppData%\Packages\TheDebianProject.Debian_<random_characters>
+   >       %LocalAppData%\Packages\CanonicalGroupLimited.Ubuntu_<random_characters>
+   >       ```
+   >
+   > 3. **Delete the Folder**:
+   > 
+   >     *Right-click* the folder and select Delete to remove it.
+
+### Step 2: Install Debian and Set It as Default
+
+1. **Install Debian**:
+   Open PowerShell in VSCode and run:
+   ```
+   wsl --install -d Debian
+   ```
+
+2. **Set Debian as the default WSL distribution**:
+   ```
+   wsl --set-default Debian[Title](../..)
+   ```
+>   
+>### Moving WSL Debian to Another Drive
+>
+>#### Step 1: Export Your Existing WSL Distribution
+>
+>1. **Open PowerShell as Administrator**:
+>   - Right-click on the Start button and select `Windows PowerShell (Admin)`.
+>
+>2. **Export the Debian Distribution**:
+>   ```
+>   wsl --export Debian D:\VirtualWorkspaceMicroserviceCluster\WSL\Debian.tar
+>   ```
+>   This command exports your existing Debian distribution to a file named `Debian.tar` on the D drive.
+>
+>#### Step 2: Unregister the Existing Debian Distribution
+>
+>1. **Unregister the Debian Distribution**:
+>   ```
+>   wsl --unregister Debian
+>   ```
+>   This command removes the existing Debian distribution from WSL.
+>
+>#### Step 3: Import the Debian Distribution to the New Location
+>
+>1. **Create a Directory for the New Distribution**:
+>   - Open PowerShell as Administrator and run:
+>     ```
+>     mkdir D:\VirtualWorkspaceMicroserviceCluster\WSL\Debian
+>     ```
+>
+>2. **Import the Debian Distribution**:
+>   ```
+>   wsl --import Debian D:\VirtualWorkspaceMicroserviceCluster\WSL\Debian D:\VirtualWorkspaceMicroserviceCluster\WSL\Debian.tar --version 2
+>   ```
+>   This command imports the Debian distribution from the `Debian.tar` file to the specified directory on the D drive and sets it to use WSL 2.
+>
+>#### Step 4: Set Debian as the Default WSL Environment
+>
+>1. **Set Debian as the Default WSL Distribution**:
+>   ```
+>   wsl --set-default Debian
+>   ```
+>
+>#### Step 5: Verify the New Location
+>
+>1. **List Available Distributions**:
+>   ```
+>   wsl --list --all
+>   ```
+>   This command should show Debian with the new installation path.
+>
+>2. **Enter the Debian Distribution**:
+>   ```
+>   wsl -d Debian
+>   ```
+>
+>#### Summary
+>
+>By following these steps, you will move your WSL Debian installation from the default C drive to another drive and make it work from there. This involves exporting the distribution, unregistering it, importing it to the new location, and setting it as the default WSL environment. This setup helps in managing disk space efficiently by relocating the WSL distribution to a different drive.
+
+### Step 3: Configure Docker to Use Another Drive (Eg. D drive)
+
+  1. **Create a directory on the D drive for Docker data**:
+      
+      Open PowerShell in VSCode and run:
+      ```
+      mkdir D:\VirtualWorkspaceMicroserviceCluster\dockerdata\DockerDesktopWSL
+      ```
+  2. **Modify Docker Daemon Configuration**:
+    
+      1. Ensure Docker Desktop is Using WSL 2
+          1. Open Docker Desktop:
+              - Launch Docker Desktop from your Start menu or taskbar.
+          2. Go to Settings:
+              - Click on the gear icon (Settings) in the top-right corner of Docker Desktop.
+          3. Use the WSL 2 Based Engine:
+              - Navigate to `General`.
+              - Ensure that `Use the WSL 2 based engine` is checked.
+      2. Enable WSL Integration with Debian
+          1. Navigate to `Resources` > `WSL Integration`:
+              - In Docker Desktop settings, go to `Resources` in the left sidebar.
+              - Click on `WSL Integration`.
+          2. Enable Integration for Debian:
+              - You will see a list of available WSL distributions.
+              - Ensure that the checkbox next to Debian is checked to enable Docker integration.
+              - The setting should look like this:
+                ```
+                  Enable integration with additional distros:
+                  [Yes] Debian
+                ```
+      3. Enable Debian Engine
+          - Go to `Settings` > `Docker Engine`.
+          - Replace the existing configuration with the following:
+            ```
+            {
+              "builder": {
+                "gc": {
+                  "defaultKeepStorage": "20GB",
+                  "enabled": true
+                }
+              },
+              "experimental": false,
+              "data-root": "D:\\VirtualWorkspaceMicroserviceCluster\\dockerdata"
+            }
+            ```
+      4. Apply and Restart:
+          - After enabling the integration, click on `Apply & Restart` to apply the new configuration and restart Docker.
+
+### Step 4: Update WSL Debian and Verify Docker in WSL Debian
+
+1. **Open Debian WSL**:
+   Open Debian from your Start menu or by running:
+   ```
+   wslw
+
+2. **Update Packages**:
+   ```
+   sudo apt update
+   sudo apt upgrade -y
+   ```
+   
+
+1. **Check Docker Version**:
+   ```
+   docker --version
+   ```
+
+2. **Run a Test Container**:
+   ```
+   docker run hello-world
+   ```
+
+### Step 5: Install and Configure Anaconda Navigator in WSL Debian
+
+1. **Download Anaconda**:
+   Open WSL Debian and download the Anaconda installation script:
+   ```
+   wget https://repo.anaconda.com/archive/Anaconda3-2023.07-Linux-x86_64.sh
+   ```
+
+2. **Run the Installation Script**:
+   ```
+   bash Anaconda3-2023.07-Linux-x86_64.sh
+   ```
+
+3. **Follow the Installation Prompts**:
+   - Accept the license and follow the prompts.
+   - Choose the installation directory (default is usually fine).
+
+4. **Initialize Anaconda**:
+   ```
+   source ~/.bashrc
+   conda init
+   ```
+
+5. **Verify Anaconda Installation**:
+   ```
+   conda --version
+   ```
+
+### Using Docker and Anaconda in WSL Debian
+
+1. **Start Docker Service in WSL Debian**:
+   - You should not need to start the Docker service manually as Docker Desktop handles this.
+   - Ensure Docker Desktop is running on Windows.
+
+2. **Verify Docker Access in WSL Debian**:
+   Open Debian WSL and run:
+   ```
+   docker --version
+   docker run hello-world
+   ```
+
+3. **Use Anaconda**:
+   Open Debian WSL and create a new environment:
+   ```
+   conda create --name myenv
+   conda activate myenv
+   ```
+   You can install packages and use Anaconda as usual.
+
+### WSL Setup Summary
+
+By following these steps, you configure Docker Desktop to use WSL 2 with a Debian distribution and store Docker data on the D drive. Anaconda Navigator will be installed and accessible within the WSL Debian environment. This setup ensures that Docker data does not take up space on your C drive while leveraging the capabilities of Docker Desktop and Anaconda within WSL.
 
 ## Anaconda Environment Setup
 
@@ -79,6 +321,8 @@ pip install -r app/requirements.txt
 ```
 sudo npm install -g npm
 ```
+
+# Microservice Network Setup
 
 ## Docker-Compose Setup
 
