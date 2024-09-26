@@ -57,6 +57,14 @@ cp -f $GITIGNORE_FILE dashboard-microserver/.gitignore
 # cp -f $GITLFS_FILE dashboard-microserver/.gitattributes
 cp -f $DOCKERIGNORE_FILE dashboard-microserver/.dockerignore
 
+# Create files for rust-microserver
+echo "Setup rust-microserver"
+cp -f $LICENSE_FILE rust-microserver/LICENSE.md
+cp -f $ENV_FILE rust-microserver/.env
+cp -f $GITIGNORE_FILE rust-microserver/.gitignore
+# cp -f $GITLFS_FILE rust-microserver/.gitattributes
+cp -f $DOCKERIGNORE_FILE rust-microserver/.dockerignore
+
 # Create files for python-microserver
 echo "Setup python-microserver"
 cp -f $LICENSE_FILE python-microserver/LICENSE.md

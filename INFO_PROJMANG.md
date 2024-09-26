@@ -566,6 +566,30 @@ Replace `origin/branch_name` with the remote branch you want to revert your loca
 >**Warning**: The `--hard` flag will discard any local changes in your working directory and reset the index. If you have any uncommitted changes, they will be lost. Make sure to commit or stash any important changes before running this command.
 
 After running the `git reset --hard` command, your local branch will be reverted to the state of the remote branch, discarding any local changes or commits made since the last synchronization with the remote branch.
+
+## Git Tips and Utilities
+
+>Check the status of the active branch and list out modified file and untracked files
+>```
+>git status
+>```
+
+>Check the commit history starting from current branch 
+>```
+>git logs
+>```
+
+>Check the commit **tree** history starting from current branch 
+>```
+>git log --graph --all
+>```
+
+>Check the **online** commit **tree** history starting from current branch 
+>```
+>git log --graph --oneline --all
+>```
+
+
 ## Project `.gitignore`
 
 A `.gitignore` file specifies intentionally untracked files that Git should ignore. It helps prevent accidentally committing unnecessary files to the repository. Here's a basic `.gitignore` file that you can use for your "Visual Workspace Microserver Cluster" project. It includes common files and directories that are often ignored in software projects:

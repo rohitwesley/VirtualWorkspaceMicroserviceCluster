@@ -24,6 +24,10 @@
 [submodule "microservers/unity-microserver"]
 	path = microservers/unity-microserver
 	url = git@github.com:rohitwesley/VirtualWorkspaceUnityMicroservice.git
+	
+[submodule "microservers/rust-microserver"]
+	path = microservers/rust-microserver
+	url = git@github.com:rohitwesley/VirtualWorkspaceRustMicroserver.git
 
 [submodule "microservers/browser-microserver"]
 	path = microservers/browser-microserver
