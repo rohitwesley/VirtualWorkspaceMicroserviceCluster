@@ -28,7 +28,7 @@ echo "Setup template-microserver"
 cp -f $LICENSE_FILE template-microserver/LICENSE.md
 cp -f $ENV_FILE template-microserver/.env
 cp -f $GITIGNORE_FILE template-microserver/.gitignore
-# cp -f $GITLFS_FILE template-microserver/.gitattributes
+cp -f $GITLFS_FILE template-microserver/.gitattributes
 cp -f $DOCKERIGNORE_FILE template-microserver/.dockerignore
 
 
@@ -37,7 +37,7 @@ echo "Setup nginx-microserver"
 cp -f $LICENSE_FILE nginx-microserver/LICENSE.md
 cp -f $ENV_FILE nginx-microserver/.env
 cp -f $GITIGNORE_FILE nginx-microserver/.gitignore
-# cp -f $GITLFS_FILE nginx-microserver/.gitattributes
+cp -f $GITLFS_FILE nginx-microserver/.gitattributes
 cp -f $DOCKERIGNORE_FILE nginx-microserver/.dockerignore
 
 # Create files for redis-microserver
@@ -46,7 +46,7 @@ echo "Setup redis-microserver"
 cp -f $LICENSE_FILE redis-microserver/LICENSE.md
 cp -f $ENV_FILE redis-microserver/.env
 cp -f $GITIGNORE_FILE redis-microserver/.gitignore
-# cp -f $GITLFS_FILE redis-microserver/.gitattributes
+cp -f $GITLFS_FILE redis-microserver/.gitattributes
 cp -f $DOCKERIGNORE_FILE redis-microserver/.dockerignore
 
 # Create files for dashboard-microserver
@@ -54,7 +54,7 @@ echo "Setup dashboard-microserver"
 cp -f $LICENSE_FILE dashboard-microserver/LICENSE.md
 cp -f $ENV_FILE dashboard-microserver/.env
 cp -f $GITIGNORE_FILE dashboard-microserver/.gitignore
-# cp -f $GITLFS_FILE dashboard-microserver/.gitattributes
+cp -f $GITLFS_FILE dashboard-microserver/.gitattributes
 cp -f $DOCKERIGNORE_FILE dashboard-microserver/.dockerignore
 
 # Create files for rust-microserver
@@ -62,7 +62,7 @@ echo "Setup rust-microserver"
 cp -f $LICENSE_FILE rust-microserver/LICENSE.md
 cp -f $ENV_FILE rust-microserver/.env
 cp -f $GITIGNORE_FILE rust-microserver/.gitignore
-# cp -f $GITLFS_FILE rust-microserver/.gitattributes
+cp -f $GITLFS_FILE rust-microserver/.gitattributes
 cp -f $DOCKERIGNORE_FILE rust-microserver/.dockerignore
 
 # Create files for python-microserver
@@ -70,7 +70,7 @@ echo "Setup python-microserver"
 cp -f $LICENSE_FILE python-microserver/LICENSE.md
 cp -f $ENV_FILE python-microserver/.env
 cp -f $GITIGNORE_FILE python-microserver/.gitignore
-# cp -f $GITLFS_FILE python-microserver/.gitattributes
+cp -f $GITLFS_FILE python-microserver/.gitattributes
 cp -f $DOCKERIGNORE_FILE python-microserver/.dockerignore
 
 # Create files for unity-microserver
@@ -86,7 +86,7 @@ echo "Setup browser-microserver"
 cp -f $LICENSE_FILE browser-microserver/LICENSE.md
 cp -f $ENV_FILE browser-microserver/.env
 cp -f $GITIGNORE_FILE browser-microserver/.gitignore
-# cp -f $GITLFS_FILE browser-microserver/.gitattributes
+cp -f $GITLFS_FILE browser-microserver/.gitattributes
 cp -f $DOCKERIGNORE_FILE browser-microserver/.dockerignore
 
 # Display success message

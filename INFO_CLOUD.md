@@ -329,7 +329,7 @@ sudo npm install -g npm
 Install Docker Compose:
 
 ```
-sudo npm install -g docker-compose
+sudo npm install -g docker compose
 ```
 
 ## Dockerfile Setup
@@ -613,21 +613,21 @@ After doing these steps, you should be able to start your services. The services
 Now that you have set up your application, you can build and run it using Docker Compose:
 
 ```
-docker-compose up --build
+docker compose up --build
 ```
 >**For clean build:**
 >```
->docker-compose up --force-recreate --build
+>docker compose up --force-recreate --build
 >``` 
 >---
 >OR
 >```
->docker-compose up --force-recreate --build -d
+>docker compose up --force-recreate --build -d
 >```
 
 >**For clean build with no cash from previous build:**
 >```
->docker-compose down && docker-compose build --no-cache && docker-compose up --force-recreate -d
+>docker compose down && docker compose build --no-cache && docker compose up --force-recreate -d
 >```
 
 Navigate to `http://localhost:3000` in your web browser to view your application.
@@ -834,7 +834,7 @@ This configuration sets up Nginx to listen on ports 80 and 443, redirecting HTTP
 
 In the directory containing the `docker-compose.yml` file, run the following command to build and start the Docker containers:
 ```
-docker-compose up -d
+docker compose up -d
 ```
 >This command will build the images for each service, create the containers, and start them in detached mode.
 >Once you've completed these steps, your dashboard should be accessible at [dashboard.tecrt.co](https://dashboard.tecrt.co), with the Node.js Express API and Socket.io real-time stream running in Docker containers on your local workstation.
@@ -1022,7 +1022,7 @@ To debug the microservice cluster you can do the following steps:
 ### **Stopping microservice docker container**
 
 ```
-docker-compose down 
+docker compose down 
 ```
 
 ### **Removing microservice docker image**

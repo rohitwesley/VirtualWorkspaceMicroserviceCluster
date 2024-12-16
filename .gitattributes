@@ -2,50 +2,49 @@
 * text=auto eol=lf
 
 # Apps
-.exe filter=lfs diff=lfs merge=lfs -text
+.exe -text
 
 # Images
-*.png filter=lfs diff=lfs merge=lfs -text
-*.jpg filter=lfs diff=lfs merge=lfs -text
-*.jpeg filter=lfs diff=lfs merge=lfs -text
-*.tif filter=lfs diff=lfs merge=lfs -text
-*.tiff filter=lfs diff=lfs merge=lfs -text
-*.tga filter=lfs diff=lfs merge=lfs -text
-*.psd filter=lfs diff=lfs merge=lfs -text
-*.gif filter=lfs diff=lfs merge=lfs -text
-*.bmp filter=lfs diff=lfs merge=lfs -text
-*.exr filter=lfs diff=lfs merge=lfs -text
-*.dds filter=lfs diff=lfs merge=lfs -text
-*.hdr filter=lfs diff=lfs merge=lfs -text
-*.svg filter=lfs diff=lfs merge=lfs -text
+*.png -text
+*.jpg -text
+*.jpeg -text
+*.tif -text
+*.tiff -text
+*.tga -text
+*.psd -text
+*.gif -text
+*.bmp -text
+*.exr -text
+*.dds -text
+*.hdr -text
+*.svg -text
 
 # 3D Models
-*.fbx filter=lfs diff=lfs merge=lfs -text
-*.obj filter=lfs diff=lfs merge=lfs -text
-*.dae filter=lfs diff=lfs merge=lfs -text
-*.3ds filter=lfs diff=lfs merge=lfs -text
-*.blender filter=lfs diff=lfs merge=lfs -text
-*.ma filter=lfs diff=lfs merge=lfs -text
-*.lxo filter=lfs diff=lfs merge=lfs -text
-*.lwo filter=lfs diff=lfs merge=lfs -text
+*.fbx -text
+*.obj -text
+*.dae -text
+*.3ds -text
+*.blender -text
+*.ma -text
+*.lxo -text
+*.lwo -text
 
 # Videos
-*.mp4 filter=lfs diff=lfs merge=lfs -text
-*.avi filter=lfs diff=lfs merge=lfs -text
-*.mov filter=lfs diff=lfs merge=lfs -text
-*.mpg filter=lfs diff=lfs merge=lfs -text
-*.mpeg filter=lfs diff=lfs merge=lfs -text
+*.mp4 -text
+*.avi -text
+*.mov -text
+*.mpg -text
+*.mpeg -text
 
 # Audio
-*.mp3 filter=lfs diff=lfs merge=lfs -text
-*.wav filter=lfs diff=lfs merge=lfs -text
-*.ogg filter=lfs diff=lfs merge=lfs -text
-*.aif filter=lfs diff=lfs merge=lfs -text
-*.aiff filter=lfs diff=lfs merge=lfs -text
-*.flac filter=lfs diff=lfs merge=lfs -text
+*.mp3 -text
+*.wav -text
+*.ogg -text
+*.aif -text
+*.aiff -text
+*.flac -text
 
 # Fonts
-*.otf filter=lfs diff=lfs merge=lfs -text
-*.ttf filter=lfs diff=lfs merge=lfs -text
-*.fnt filter=lfs diff=lfs merge=lfs -text
-clear filter=lfs diff=lfs merge=lfs -text
+*.otf -text
+*.ttf -text
+*.fnt -text

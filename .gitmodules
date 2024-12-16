@@ -29,9 +29,9 @@
 	path = microservers/rust-microserver
 	url = git@github.com:rohitwesley/VirtualWorkspaceRustMicroserver.git
 
-[submodule "microservers/browser-microserver"]
-	path = microservers/browser-microserver
-	url = git@github.com:rohitwesley/VirtualWorkspaceBrowserMicroservice.git
+[submodule "microservers/webnet-microserver"]
+	path = microservers/webnet-microserver
+	url = git@github.com:rohitwesley/VirtualWorkspaceWebNetMicroservice.git
 
 # Research Microservers:
 
