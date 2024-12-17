@@ -89,5 +89,13 @@ cp -f $GITIGNORE_FILE webnet-microserver/.gitignore
 cp -f $GITLFS_FILE webnet-microserver/.gitattributes
 cp -f $DOCKERIGNORE_FILE webnet-microserver/.dockerignore
 
+# Create files for webapp-microserver
+echo "Setup webapp-microserver"
+cp -f $LICENSE_FILE webapp-microserver/LICENSE.md
+cp -f $ENV_FILE webapp-microserver/.env
+cp -f $GITIGNORE_FILE webapp-microserver/.gitignore
+cp -f $GITLFS_FILE webapp-microserver/.gitattributes
+# cp -f $DOCKERIGNORE_FILE webapp-microserver/.dockerignore
+
 # Display success message
 echo "Created $LICENSE_FILE, $ENV_FILE, $GITIGNORE_FILE, $GITLFS_FILE, and $DOCKERIGNORE_FILE files."

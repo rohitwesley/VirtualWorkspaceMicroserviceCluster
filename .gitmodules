@@ -13,9 +13,9 @@
 	path = microservers/nginx-microserver
 	url = git@github.com:rohitwesley/VirtualWorkspaceNginxMicroservice.git
 
-[submodule "microservers/dashboard-microserver"]
-	path = microservers/dashboard-microserver
-	url = git@github.com:rohitwesley/VirtualWorkspaceDashboardMicroservice.git
+[submodule "microservers/nodejs-microserver"]
+	path = microservers/nodejs-microserver
+	url = git@github.com:rohitwesley/VirtualWorkspaceNodeJsMicroservice.git
 
 [submodule "microservers/python-microserver"]
 	path = microservers/python-microserver
@@ -32,6 +32,10 @@
 [submodule "microservers/webnet-microserver"]
 	path = microservers/webnet-microserver
 	url = git@github.com:rohitwesley/VirtualWorkspaceWebNetMicroservice.git
+
+[submodule "microservers/webapp-microserver"]
+	path = microservers/webapp-microserver
+	url = git@github.com:rohitwesley/VirtualWorkspaceWebAppMicroservice.git
 
 # Research Microservers:
 
