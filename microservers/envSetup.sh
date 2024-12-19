@@ -50,12 +50,12 @@ cp -f $GITLFS_FILE redis-microserver/.gitattributes
 cp -f $DOCKERIGNORE_FILE redis-microserver/.dockerignore
 
 # Create files for dashboard-microserver
-echo "Setup dashboard-microserver"
-cp -f $LICENSE_FILE dashboard-microserver/LICENSE.md
-cp -f $ENV_FILE dashboard-microserver/.env
-cp -f $GITIGNORE_FILE dashboard-microserver/.gitignore
-cp -f $GITLFS_FILE dashboard-microserver/.gitattributes
-cp -f $DOCKERIGNORE_FILE dashboard-microserver/.dockerignore
+echo "Setup nodejs-microserver"
+cp -f $LICENSE_FILE nodejs-microserver/LICENSE.md
+cp -f $ENV_FILE nodejs-microserver/.env
+cp -f $GITIGNORE_FILE nodejs-microserver/.gitignore
+cp -f $GITLFS_FILE nodejs-microserver/.gitattributes
+cp -f $DOCKERIGNORE_FILE nodejs-microserver/.dockerignore
 
 # Create files for rust-microserver
 echo "Setup rust-microserver"
