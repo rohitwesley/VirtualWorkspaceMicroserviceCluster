@@ -33,6 +33,11 @@
 nginx.conf
 Dockerfile.nginx
 
+# Ignore redis config
+redis.conf
+Dockerfile.redis
+Dockerfile.redisinsight
+
 # Ignore SSL certificates
 config/ssl-*.pem
 
@@ -74,6 +79,12 @@ Unity/screenshots/
 *.rdb
 *.aof
 *.aof.manifest
+
+### Rust ###
+**/target/
+**/*.rs.bk
+# This line gets auto-added by cargo
+/target
 
 ### Node ###
 # Logs
