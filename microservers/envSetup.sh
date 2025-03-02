@@ -7,6 +7,9 @@ DOCKERIGNORE_FILE=".dockerignore"
 GITIGNORE_FILE=".gitignore"
 GITLFS_FILE=".gitattributes"
 
+BASEDIR=$(dirname "$0")
+pushd $BASEDIR
+
 # Create files for Virtual Workspce Microserver Cluster
 echo "Setup VirtualWorkspce Microserver Cluster"
 cp -f $LICENSE_FILE ../LICENSE.md
@@ -96,6 +99,8 @@ cp -f $ENV_FILE webapp-microserver/.env
 cp -f $GITIGNORE_FILE webapp-microserver/.gitignore
 cp -f $GITLFS_FILE webapp-microserver/.gitattributes
 # cp -f $DOCKERIGNORE_FILE webapp-microserver/.dockerignore
+
+popd
 
 # Display success message
 echo "Created $LICENSE_FILE, $ENV_FILE, $GITIGNORE_FILE, $GITLFS_FILE, and $DOCKERIGNORE_FILE files."
