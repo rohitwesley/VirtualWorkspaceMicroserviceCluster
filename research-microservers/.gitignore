@@ -207,6 +207,9 @@ hide
 *.dll
 *.exe
 *.out
+# Except DLL files in any 'lib/netstandard2.x/' directories or their subdirectories
+!**/lib/netstandard2.[0-9]/**/*.dll
+!**/lib/netstandard2.[0-9]/*.dll
 
 # Ignore Python build and cache files
 __pycache__/
