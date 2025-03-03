@@ -308,6 +308,45 @@ conda activate virtualworkspace-microserver
 pip install -r app/requirements.txt
 ```
 
+To delete a Conda environment, follow these steps:
+
+### Step 1: List All Environments
+Before deleting, you can list all available Conda environments to ensure you have the correct name:
+```bash
+conda env list
+```
+This will output something like:
+```
+# conda environments:
+#
+base                  *  /path/to/conda
+myenv                    /path/to/conda/envs/myenv
+```
+The environment names are listed on the left (e.g., `myenv`).
+
+---
+
+### Step 2: Delete the Environment
+Use the `conda remove` command with the `--name` (or `-n`) flag and `--all` to delete the environment:
+```bash
+conda remove --name myenv --all
+```
+Replace `myenv` with the name of the environment you want to delete.
+
+---
+
+### Step 3: Verify Deletion
+Run the following command to confirm the environment has been removed:
+```bash
+conda env list
+```
+The deleted environment should no longer appear in the list.
+
+---
+
+### Notes:
+- The `--all` flag ensures that all packages and dependencies within the environment are removed.
+- Always double-check the environment name to avoid accidentally deleting the wrong environment.
 
 ## Node Package Manager (NPM/NodeJs) Setup
 
